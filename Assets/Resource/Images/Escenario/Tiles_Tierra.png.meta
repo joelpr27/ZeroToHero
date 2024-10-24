@@ -1,0 +1,669 @@
+fileFormatVersion: 2
+guid: 0185df1d9cbc62b4c8acd95f55f2e2d1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 531
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tiles_Tierra_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2133.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16ffd88470f47c479e981b1cc036b43
+      internalID: -1355179286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_1
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 2133.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775f66121f509f1429b7f66e967a9551
+      internalID: 2098509129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_2
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 2133.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63cfc0d953205634e82e115afcd1b18d
+      internalID: -84634046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_3
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 2133.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa2924d9a5d43864f974e66e1c9b101b
+      internalID: 1302159386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_4
+      rect:
+        serializedVersion: 2
+        x: 2132
+        y: 2133.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e162d7c1c7a51d41b39a26a69044b2d
+      internalID: -601934622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_5
+      rect:
+        serializedVersion: 2
+        x: 2665
+        y: 2133.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cddde6ec4c0d49a4fb442ca749395924
+      internalID: -1626694113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1600.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed150643fb490945b44a021ce4de20a
+      internalID: 1140237494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_7
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1600.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dfbe2bba705e214d96a52c413e6b264
+      internalID: -1500953771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_8
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 1600.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc64b70fcaeaa924093cab8557c1d914
+      internalID: 1439193941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_9
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 1600.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b66c5ec62db07499c1e0c5b6f3ed5b
+      internalID: 1591344663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_10
+      rect:
+        serializedVersion: 2
+        x: 2132
+        y: 1600.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f3e8c37fab7f6540ad44060174557fa
+      internalID: -858735586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1067.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71aa874eac2d7ff42a9ed82de5d4809d
+      internalID: -1854241699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_13
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1067.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a568ae13317c354eabc9989a3e3803c
+      internalID: -517495686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_14
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 1067.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b921e3abff24ad247be90a56279e4e62
+      internalID: 764979545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_15
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 1067.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea45c4bde959c56428910e06f839d20c
+      internalID: 1109778605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_16
+      rect:
+        serializedVersion: 2
+        x: 2132
+        y: 1067.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2772fbc5f71e744a114f224945898a
+      internalID: -1302051954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 534.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0de56073503f244abb493daaebf3386
+      internalID: 1448480904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_19
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 534.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83881ecaa34b2db429cc2b49c8f08817
+      internalID: 753609796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_20
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 534.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39c0b002c76a22f498751c940667b8b4
+      internalID: -18190802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_21
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 534.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d36dfa4564d0d447a6a4f7c8700184f
+      internalID: -1932382426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_22
+      rect:
+        serializedVersion: 2
+        x: 2132
+        y: 534.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8475ec8d405575d46afeec6a0f789c2a
+      internalID: -451484254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_23
+      rect:
+        serializedVersion: 2
+        x: 2665
+        y: 534.6
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5378f3d54e1edc6419f8059de5137aa6
+      internalID: 880021406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.5999756
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb5bfb4ef7f7744691a67fcc4fb27e0
+      internalID: 4214014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_28
+      rect:
+        serializedVersion: 2
+        x: 2132
+        y: 1.5999756
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd12a874e2dcccb4cbe9ceff3696c8b6
+      internalID: 1540223298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Tierra_29
+      rect:
+        serializedVersion: 2
+        x: 2665
+        y: 1.5999756
+        width: 533.3333
+        height: 533.4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62938b44725a61f4395a872999d01a80
+      internalID: 1828150135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Tiles_Tierra_0: -1355179286
+      Tiles_Tierra_1: 2098509129
+      Tiles_Tierra_10: -858735586
+      Tiles_Tierra_11: 1620462016
+      Tiles_Tierra_12: -1854241699
+      Tiles_Tierra_13: -517495686
+      Tiles_Tierra_14: 764979545
+      Tiles_Tierra_15: 1109778605
+      Tiles_Tierra_16: -1302051954
+      Tiles_Tierra_17: -321539753
+      Tiles_Tierra_18: 1448480904
+      Tiles_Tierra_19: 753609796
+      Tiles_Tierra_2: -84634046
+      Tiles_Tierra_20: -18190802
+      Tiles_Tierra_21: -1932382426
+      Tiles_Tierra_22: -451484254
+      Tiles_Tierra_23: 880021406
+      Tiles_Tierra_24: 4214014
+      Tiles_Tierra_25: -1362070026
+      Tiles_Tierra_26: 731761376
+      Tiles_Tierra_27: 200105853
+      Tiles_Tierra_28: 1540223298
+      Tiles_Tierra_29: 1828150135
+      Tiles_Tierra_3: 1302159386
+      Tiles_Tierra_4: -601934622
+      Tiles_Tierra_5: -1626694113
+      Tiles_Tierra_6: 1140237494
+      Tiles_Tierra_7: -1500953771
+      Tiles_Tierra_8: 1439193941
+      Tiles_Tierra_9: 1591344663
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
