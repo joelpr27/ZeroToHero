@@ -582,7 +582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 840530751}
-  - component: {fileID: 840530750}
+  - component: {fileID: 840530752}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -590,27 +590,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &840530750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 840530749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c6db7cef1c5cec44a2f09523d4c41cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points: 0
-  currentPoints: 0
-  textScore: {fileID: 378053722}
-  maxCountDelate: 0.5
-  currentCountDelate: 0
-  MenuPanel: {fileID: 0}
-  GamePanel: {fileID: 0}
-  PausePanel: {fileID: 0}
-  OptionsPanel: {fileID: 0}
 --- !u!4 &840530751
 Transform:
   m_ObjectHideFlags: 0
@@ -626,6 +605,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &840530752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840530749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3f8beba9713b047aeb74ddedcf0581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 0
+  currentPoints: 0
+  textScore: {fileID: 0}
+  maxCountDelate: 2
+  currentCountDelate: 0
+  MenuPanel: {fileID: 0}
+  GamePanel: {fileID: 0}
+  PausePanel: {fileID: 0}
+  OptionsPanel: {fileID: 0}
+  LevelsPanel: {fileID: 0}
+  ConsejosPanel: {fileID: 0}
+  CreditsPanel: {fileID: 0}
 --- !u!1001 &1008165956
 PrefabInstance:
   m_ObjectHideFlags: 0

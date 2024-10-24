@@ -25,11 +25,12 @@ public class GameManager : MonoBehaviour
     public GameObject OptionsPanel;
     public GameObject LevelsPanel;
     public GameObject ConsejosPanel;
+    public GameObject CreditsPanel;
 
 #region Partida
     public void Score()
     {
-        currentPoints += Random.Range(100, 150);
+        currentPoints += 100;
     }
 
     void UpdateScoreText()
@@ -79,22 +80,38 @@ public class GameManager : MonoBehaviour
 #region Panels
     public void GamePanelInteract()
     {
-        if(GamePanel)
-        {
-            GamePanel.SetActive(!GamePanel.activeSelf);
-            Debug.Log(GamePanel.activeSelf);    
-        }
+        GamePanel.SetActive(!GamePanel.activeSelf);
+        Debug.Log(GamePanel.activeSelf);
     }
 
     public void PausePanelInteract()
     {
-
+        PausePanel.SetActive(!PausePanel.activeSelf);
+        Debug.Log(PausePanel.activeSelf);
     }
 
     public void OptionsPanelInteract()
     {
         OptionsPanel.SetActive(!OptionsPanel.activeSelf);
         Debug.Log(OptionsPanel.activeSelf);
+    }
+
+    public void LevelsPanelInteract()
+    {
+        LevelsPanel.SetActive(!LevelsPanel.activeSelf);
+        Debug.Log(LevelsPanel.activeSelf);
+    }
+
+    public void ConsejosPanelInteract()
+    {
+        ConsejosPanel.SetActive(!ConsejosPanel.activeSelf);
+        Debug.Log(ConsejosPanel.activeSelf);
+    }
+
+    public void CreditsPanelInteract()
+    {
+        CreditsPanel.SetActive(!CreditsPanel.activeSelf);
+        Debug.Log(CreditsPanel.activeSelf);
     }
 #endregion
     
@@ -113,6 +130,7 @@ public class GameManager : MonoBehaviour
             OptionsPanel.SetActive(false);
             LevelsPanel.SetActive(false);
             ConsejosPanel.SetActive(false);
+            CreditsPanel.SetActive(false);
         }
         if(SceneManager.GetActiveScene().buildIndex >= 1)
         {
@@ -122,6 +140,7 @@ public class GameManager : MonoBehaviour
             OptionsPanel.SetActive(false);
             LevelsPanel.SetActive(false);
             ConsejosPanel.SetActive(false);
+            CreditsPanel.SetActive(false);
         }
     }
 
