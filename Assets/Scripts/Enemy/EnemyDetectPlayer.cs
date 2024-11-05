@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour
+public class EnemyDetectPlayer : MonoBehaviour
 {
     public MeleeEnemy mE;
 
@@ -14,19 +13,19 @@ public class EnemyAttack : MonoBehaviour
     {
         if (other.CompareTag(detectTag))
         {
-            mE.playerInSigth = true;
+            mE.isPlayerDetected = true;
 
             Debug.Log("PalyerIsInRange");
         }
     }
     
-    public void OnTriggerExit2D(Collider2D other)
+    /* public void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag(detectTag))
         {
-            mE.playerInSigth = false;
+            mE.isPlayerDetected = false;
 
             Debug.Log("PalyerIsInRange");
         }
-    }
+    } */
 }

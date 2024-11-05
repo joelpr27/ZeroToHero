@@ -1,30 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour
+public class EnemyNoDetectPlayer : MonoBehaviour
 {
     public MeleeEnemy mE;
 
     public string detectTag = "Player";
 
-    public void OnTriggerEnter2D(Collider2D other)
+    /* public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag(detectTag))
         {
-            mE.playerInSigth = true;
+            mE.isPlayerDetected = true;
 
             Debug.Log("PalyerIsInRange");
         }
-    }
+    } */
     
     public void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag(detectTag))
         {
-            mE.playerInSigth = false;
+            mE.isPlayerDetected = false;
 
             Debug.Log("PalyerIsInRange");
         }
