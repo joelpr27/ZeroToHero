@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Linq;
-using UnityEditor.SceneManagement;
 using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
