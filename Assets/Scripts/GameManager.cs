@@ -1,12 +1,9 @@
 using UnityEngine;
 using TMPro;
 using System.Linq;
-using UnityEditor.SearchService;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
-using UnityEngine.UI;
-using Unity.VisualScripting;
-using UnityEditor.UI;
 
 public class GameManager : MonoBehaviour
 {
