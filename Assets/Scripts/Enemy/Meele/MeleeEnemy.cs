@@ -19,10 +19,11 @@ public class MeleeEnemy : MonoBehaviour
     private int targetPoint;
 
     public bool isPlayerDetected;
-    public float playerDistance;
     [Space]
 
     [Header("Fight")]
+    public GameObject enemyAttack;
+
     public float attackCooldown;
     private float cooldownTimer = Mathf.Infinity;
     public int damage;
@@ -36,12 +37,14 @@ public class MeleeEnemy : MonoBehaviour
     public GameObject particle;
 
 #region Combat
-    public void StunPlayer()
+    public void ActiveStunPlayer()
     {
-        if(playerInSigth == true)
-        {
-            player.playerIsStunning = true;
-        }
+        enemyAttack.SetActive(true);
+    }
+
+    public void DesactiveStunPlayer()
+    {
+        enemyAttack.SetActive(false);
     }
 
     public void Attack()
@@ -58,31 +61,43 @@ public class MeleeEnemy : MonoBehaviour
                 Debug.Log("Attack");
 
                 //quitar para que funcione con un trigger en la animacion
-                StunPlayer();
+                ActiveStunPlayer();
             }
+        }
+        else
+        {
+            //quitar para que funcione con un trigger en la animacion
+            DesactiveStunPlayer();
         }
     }
 #endregion
-    
-#region Death
-    //POR SI TENEMOS QUE AÑADIR COSAS DE LA VIDA
 
-    //ESTA EN EL OnTrigger
-#endregion
+#region Move
+    void FaceDirection(int direction)
+    {
+        Vector3 localScale = transform.localScale;
+        localScale.x = Mathf.Abs(localScale.x) * direction;
+        transform.localScale = localScale;
+    }
 
-#region Patrol
     void Patrol()
     {
-        if(transform.position == pointPatrol[targetPoint].position)
+        if(transform.position.x == pointPatrol[targetPoint].position.x)
         {
             NextTarget();
-
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1;
-            transform.localScale = localScale;
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, pointPatrol[targetPoint].position, speed * Time.deltaTime);
+        if (pointPatrol[targetPoint].position.x < transform.position.x)
+        {
+            FaceDirection(-1);
+        }
+        else
+        {
+            FaceDirection(1);
+        }
+
+        transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, pointPatrol[targetPoint].position.x, speed * Time.deltaTime),
+        transform.position.y);
     }
 
     void NextTarget()
@@ -96,9 +111,17 @@ public class MeleeEnemy : MonoBehaviour
 
     void Pursue()
     {
-        //hecer el que te detecte como player para que gire a tu direccion
+        if (player.transform.position.x < transform.position.x)
+        {
+            FaceDirection(-1);
+        }
+        else
+        {
+            FaceDirection(1);
+        }
 
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.transform.position.x, speed * Time.deltaTime),
+        transform.position.y);
     }
 #endregion
 
