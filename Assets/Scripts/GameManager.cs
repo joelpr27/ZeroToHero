@@ -209,7 +209,7 @@ public class GameManager : MonoBehaviour
             if(SceneManager.GetActiveScene().buildIndex >= 1)
             {
                 MenuPanel.SetActive(false);
-                GamePanel.SetActive(false);
+                GamePanel.SetActive(true);
                 PausePanel.SetActive(false);
                 OptionsPanel.SetActive(false);
                 LevelsPanel.SetActive(false);
