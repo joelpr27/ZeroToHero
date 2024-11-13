@@ -8,8 +8,10 @@ public class ArcherEnemy : MonoBehaviour
 {
     private GameManager gm;
 
+    public GameObject archerEnemy;
+
     [Header("Targget")]
-    public Player player;
+    public GameObject player;
     [Space]
 
     [Header("Move")]
@@ -83,6 +85,8 @@ public class ArcherEnemy : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.Find("Player");
+        
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         #region Patrol
@@ -110,7 +114,7 @@ public class ArcherEnemy : MonoBehaviour
             Instantiate(particle, transform.position, Quaternion.identity);
             Instantiate(particle, transform.position, Quaternion.identity);
             gm.Score();
-            Destroy(gameObject);
+            Destroy(archerEnemy);
         }
     }
 }

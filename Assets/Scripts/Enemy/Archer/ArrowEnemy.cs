@@ -4,35 +4,32 @@ using UnityEngine;
 
 public class ArrowEnemy : MonoBehaviour
 {
-    private GameManager gm;
-
-    [Header("Targget")]
-    public Player player;
-    [Space]
-    
     [Header("Move")]
     public float speed;
+    [Space]
+    public float delateTime;
+    private float currentDelateTime;
     [Space]
 
     [Header("Particle")]
     public GameObject particle;
-    
-
-    public void StunPlayer()
-    {
-        player.playerIsStunning = true;
-
-        Debug.Log("A");
-    }
 
     void Start()
     {
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        currentDelateTime = 0;
     }
 
     void Update()
     {
         transform.Translate(new Vector2(-speed, 0)* Time.deltaTime);
+
+        currentDelateTime += Time.deltaTime;
+
+        if(currentDelateTime >= delateTime)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -40,18 +37,26 @@ public class ArrowEnemy : MonoBehaviour
         if(other.tag == "Player")
         {
             Instantiate(particle, transform.position, Quaternion.identity);
-            Instantiate(particle, transform.position, Quaternion.identity);
 
             Destroy(gameObject);
         }
 
         if(other.tag == "Attack")
         {
-            
-            Instantiate(particle, transform.position, Quaternion.identity);
             Instantiate(particle, transform.position, Quaternion.identity);
 
             Destroy(gameObject);
         }
+
+        /* //No detecta el sualo
+        if(other.tag == "Ground")
+        {
+            Debug.Log("A");
+            
+            Instantiate(particle, transform.position, Quaternion.identity);
+            Instantiate(particle, transform.position, Quaternion.identity);
+            
+            Destroy(gameObject);
+        } */
     }
 }

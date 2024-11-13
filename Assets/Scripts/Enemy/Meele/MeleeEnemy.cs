@@ -6,8 +6,10 @@ public class MeleeEnemy : MonoBehaviour
 {
     private GameManager gm;
 
+    public GameObject meleeEnemy;
+
     [Header("Targget")]
-    public Player player;
+    public GameObject player;
     [Space]
 
     [Header("Move")]
@@ -127,6 +129,8 @@ public class MeleeEnemy : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.Find("Player");
+
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         #region Death
@@ -171,7 +175,7 @@ public class MeleeEnemy : MonoBehaviour
                 Instantiate(particle, transform.position, Quaternion.identity);
                 Instantiate(particle, transform.position, Quaternion.identity);
                 gm.Score();
-                Destroy(gameObject);
+                Destroy(meleeEnemy);
             }
         }
     }

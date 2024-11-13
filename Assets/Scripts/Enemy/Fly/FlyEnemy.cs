@@ -6,8 +6,11 @@ public class FlyEnemy : MonoBehaviour
 {
     private GameManager gm;
 
+    public GameObject flyEnemy;
+
     [Header("Targget")]
-    public Player player;
+    public GameObject targget;
+    private Player player;
     [Space]
 
     [Header("Move")]
@@ -17,6 +20,8 @@ public class FlyEnemy : MonoBehaviour
     private int targetPoint;
 
     public bool isPlayerDetected;
+
+    public GameObject body;
     [Space]
 
     [Header("Fight")]
@@ -36,12 +41,12 @@ public class FlyEnemy : MonoBehaviour
 #region Patrol
     void Patrol()
     {
-        if(transform.position == pointPatrol[targetPoint].position)
+        if(body.transform.position == pointPatrol[targetPoint].position)
         {
             NextTarget();
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, pointPatrol[targetPoint].position, speed * Time.deltaTime);
+        body.transform.position = Vector2.MoveTowards(body.transform.position, pointPatrol[targetPoint].position, speed * Time.deltaTime);
     }
 
     void NextTarget()
@@ -57,12 +62,14 @@ public class FlyEnemy : MonoBehaviour
     {
         //hecer el que te detecte como player para que gire a tu direccion
 
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        body.transform.position = Vector2.MoveTowards(body.transform.position, targget.transform.position, speed * Time.deltaTime);
     }
 #endregion
 
 void Start()
     {
+        targget = GameObject.Find("Player");
+
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         #region Patrol
@@ -88,13 +95,12 @@ public void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
         {
-            StunPlayer();
             Debug.Log("A");
             
             Instantiate(particle, transform.position, Quaternion.identity);
             Instantiate(particle, transform.position, Quaternion.identity);
             gm.Score();
-            Destroy(gameObject);
+            Destroy(flyEnemy);
         }
 
         if(other.tag == "Attack")
@@ -104,7 +110,17 @@ public void OnTriggerEnter2D(Collider2D other)
             Instantiate(particle, transform.position, Quaternion.identity);
             Instantiate(particle, transform.position, Quaternion.identity);
             gm.Score();
-            Destroy(gameObject);
+            Destroy(flyEnemy);
+        }
+
+        if(other.tag == "Ground")
+        {
+            Debug.Log("A");
+            
+            Instantiate(particle, transform.position, Quaternion.identity);
+            Instantiate(particle, transform.position, Quaternion.identity);
+            
+            Destroy(flyEnemy);
         }
     }
 }
