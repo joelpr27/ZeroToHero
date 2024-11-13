@@ -106,19 +106,26 @@ public class Player : MonoBehaviour
             Attack();
         }
     }
-    
-    void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == ("Ground"))
+        if(other.tag == "EnemyAttack")
+        {
+            playerIsStunning = true;
+        }
+    }
+    
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == ("Ground"))
         {
             Debug.Log("Suelo");
             
             isGrounded = true;
         }   
     }
-    void OnCollisionExit2D(Collision2D collision)
+    void OnCollisionExit2D(Collision2D other)
     {
-        if (collision.gameObject.tag == ("Ground"))
+        if (other.gameObject.tag == ("Ground"))
         {
             Debug.Log("Aire");
 

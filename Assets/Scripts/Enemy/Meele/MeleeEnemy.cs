@@ -1,0 +1,182 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MeleeEnemy : MonoBehaviour
+{
+    private GameManager gm;
+
+    public GameObject meleeEnemy;
+
+    [Header("Targget")]
+    public GameObject player;
+    [Space]
+
+    [Header("Move")]
+    public bool staticEnemy;
+
+    public float speed;
+
+    public Transform[] pointPatrol;
+    private int targetPoint;
+
+    public bool isPlayerDetected;
+    [Space]
+
+    [Header("Fight")]
+    public GameObject enemyAttack;
+
+    public float attackCooldown;
+    private float cooldownTimer = Mathf.Infinity;
+    public int damage;
+    public bool playerInSigth;
+    [Space]
+
+    [Header("Helth")]
+    public int enemyHealth = 1;
+    public int currentEnemyHealth;
+
+    public GameObject particle;
+
+#region Combat
+    public void ActiveStunPlayer()
+    {
+        enemyAttack.SetActive(true);
+    }
+
+    public void DesactiveStunPlayer()
+    {
+        enemyAttack.SetActive(false);
+    }
+
+    public void Attack()
+    {
+        cooldownTimer += Time.deltaTime;
+        if(playerInSigth == true)
+        {
+            if(cooldownTimer >= attackCooldown)
+            {
+                cooldownTimer = 0;
+
+                //Poner nombre del trigger de attack para la animacion
+                //anim.SetTrigger("");
+                Debug.Log("Attack");
+
+                //quitar para que funcione con un trigger en la animacion
+                ActiveStunPlayer();
+            }
+        }
+        else
+        {
+            //quitar para que funcione con un trigger en la animacion
+            DesactiveStunPlayer();
+        }
+    }
+#endregion
+
+#region Move
+    void FaceDirection(int direction)
+    {
+        Vector3 localScale = transform.localScale;
+        localScale.x = Mathf.Abs(localScale.x) * direction;
+        transform.localScale = localScale;
+    }
+
+    void Patrol()
+    {
+        if(transform.position.x == pointPatrol[targetPoint].position.x)
+        {
+            NextTarget();
+        }
+
+        if (pointPatrol[targetPoint].position.x < transform.position.x)
+        {
+            FaceDirection(-1);
+        }
+        else
+        {
+            FaceDirection(1);
+        }
+
+        transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, pointPatrol[targetPoint].position.x, speed * Time.deltaTime),
+        transform.position.y);
+    }
+
+    void NextTarget()
+    {
+        targetPoint++;
+        if(targetPoint >= pointPatrol.Length)
+        {
+            targetPoint = 0;
+        }
+    }
+
+    void Pursue()
+    {
+        if (player.transform.position.x < transform.position.x)
+        {
+            FaceDirection(-1);
+        }
+        else
+        {
+            FaceDirection(1);
+        }
+
+        transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.transform.position.x, speed * Time.deltaTime),
+        transform.position.y);
+    }
+#endregion
+
+    void Start()
+    {
+        player = GameObject.Find("Player");
+
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        #region Death
+            currentEnemyHealth = enemyHealth;
+        #endregion
+
+        #region Patrol
+            targetPoint = 0;
+
+            isPlayerDetected = false;
+        #endregion
+    }
+
+    void Update()
+    {
+        Attack();
+
+        if(staticEnemy == false)
+        {
+            if(isPlayerDetected == false)
+            {
+                Patrol();
+            }
+            else
+            {
+                Pursue();
+            }
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Attack")
+        {
+            if(currentEnemyHealth > 0)
+            {
+                Instantiate(particle, transform.position, Quaternion.identity);
+                currentEnemyHealth--;
+            }
+            if(currentEnemyHealth <= 0)
+            {
+                Instantiate(particle, transform.position, Quaternion.identity);
+                Instantiate(particle, transform.position, Quaternion.identity);
+                gm.Score();
+                Destroy(meleeEnemy);
+            }
+        }
+    }
+}
