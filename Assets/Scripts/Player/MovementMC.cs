@@ -13,6 +13,7 @@ public class MovementMC : StatesMC
 /// </summary>
     public Vector2 speed;
     public float maxSpeedX;
+    public bool HermesPowerUpOn;
     private bool doubleJump;
 
     public Transform groundCheck;
@@ -33,8 +34,11 @@ public class MovementMC : StatesMC
             if (IsGrounded() || doubleJump)
             {
                 rb.velocity = new Vector2(rb.velocity.x, speed.y);
-
-                doubleJump = !doubleJump;
+                
+                if (HermesPowerUpOn)
+                {
+                    doubleJump = !doubleJump;
+                }
             }
         }
 
@@ -53,39 +57,46 @@ public class MovementMC : StatesMC
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
+    private void TurnCharacter(){
+        if (movX < 0.0f)
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+        else
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+    }
 
     void Update()
     {
+        UpdateState();
+
         switch(mcState)
         {
             case States.Idle:
-                anim.SetInteger("States", 0);
+                anim.SetInteger("State", 0);
                 //posibles Mecanicas
                 Jump();
+                
             break;
 
             case States.Run:
-                anim.SetInteger("States", 1);
+                anim.SetInteger("State", 1);
 
-                if (movX < 0.0f)
-                {
-                    transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                }
-                else
-                {
-                    transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-                }
+                TurnCharacter();
 
                 movY = 0;
-                //posibles mecanicas
                 if(Input.GetKeyDown("space"))
                 {
-                    rb.velocity = new Vector2(rb.velocity.x, speed.y); //Saltar
+                    rb.velocity = new Vector2(rb.velocity.x, speed.y);
                 }
             break;
 
             case States.Jump:
-                anim.SetInteger("States", 2);
+                anim.SetInteger("State", 2);
+
+                TurnCharacter();
             break;
 
         }

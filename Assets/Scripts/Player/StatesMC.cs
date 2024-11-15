@@ -12,13 +12,6 @@ public class StatesMC : MC
         mcState = States.Idle;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        UpdateState();
-        
-    }
-
 /// <summary>
 /// Checks The state the Character is And changes it if nescesary.
 /// </summary>

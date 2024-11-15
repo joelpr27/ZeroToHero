@@ -4,8 +4,8 @@ using UnityEngine;
 /// </summary>
 public class MC : MonoBehaviour
 {
-    [HideInInspector] public Rigidbody2D rb;
-    [HideInInspector] public Animator anim;
+    /* [HideInInspector] */ public Rigidbody2D rb;
+   /*  [HideInInspector]  */public Animator anim;
 
     void Awake()
     {
