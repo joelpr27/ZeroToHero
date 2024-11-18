@@ -1,27 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
+
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Assertions.Comparers;
 
-public class MovementMC : StatesMC
+public class ControllerMC : StatesMC
 {
     [Header("Movimiento")]
-/// <summary>
-/// .x Horizontal / .y Vertical
-/// </summary>
+
     public Vector2 speed;
     public float maxSpeedX;
+    float movX;
+
+    [Header("PowerUps's")]
     public bool HermesPowerUpOn;
     private bool doubleJump;
 
-    public Transform groundCheck;
-    public LayerMask groundLayer;
 
-    float movX;
-    float movY;
     
+
+    
+    
+
+//Main Actions of the character
     void Jump()
     {
          if (IsGrounded() && !Input.GetButton("Jump"))
@@ -48,10 +47,13 @@ public class MovementMC : StatesMC
         }
     }
 
- /// <summary>
- /// Checks if the player is grounded
- /// </summary>
- /// <returns>true if the ground check object is overlaping with an pobject in the ground later / false if not overlapping </returns>
+    int PunchArm()
+    {
+        return Random.Range(4,6);
+    }
+
+
+//Suplementary Functions
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
@@ -62,7 +64,7 @@ public class MovementMC : StatesMC
         {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
-        else
+        if (movX > 0.0f)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
@@ -72,31 +74,41 @@ public class MovementMC : StatesMC
     {
         UpdateState();
 
+
         switch(mcState)
         {
             case States.Idle:
                 anim.SetInteger("State", 0);
-                //posibles Mecanicas
+                //posibles Mecanicas en el estado Idle
                 Jump();
                 
             break;
 
             case States.Run:
                 anim.SetInteger("State", 1);
-
+                //posibles Mecanicas en el estado Run
+                Jump();
+                
                 TurnCharacter();
-
-                movY = 0;
-                if(Input.GetKeyDown("space"))
-                {
-                    rb.velocity = new Vector2(rb.velocity.x, speed.y);
-                }
             break;
 
             case States.Jump:
                 anim.SetInteger("State", 2);
-
+                //posibles Mecanicas en el estado Jump
+                Jump();
                 TurnCharacter();
+            break;
+
+            case States.Attack:
+                if(IsGrounded())
+                {
+                    rb.velocity = new Vector2(0, 0);
+                    anim.SetInteger("State", PunchArm());
+                }
+                else
+                {
+                    anim.SetInteger("State", PunchArm());
+                }
             break;
 
         }

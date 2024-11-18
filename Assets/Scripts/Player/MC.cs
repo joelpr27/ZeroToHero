@@ -4,8 +4,10 @@ using UnityEngine;
 /// </summary>
 public class MC : MonoBehaviour
 {
-    /* [HideInInspector] */ public Rigidbody2D rb;
-   /*  [HideInInspector]  */public Animator anim;
+    public Rigidbody2D rb;
+    public Animator anim;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
 
     void Awake()
     {
