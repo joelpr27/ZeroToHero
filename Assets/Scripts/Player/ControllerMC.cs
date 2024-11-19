@@ -8,9 +8,7 @@ public class ControllerMC : StatesMC
     public Vector2 speed;
     public float maxSpeedX;
     float movX;
-
-    [Header("PowerUps's")]
-    public bool HermesPowerUpOn;
+    float punchAnimLength = 0.65f;
     private bool doubleJump;
 
 
@@ -44,14 +42,21 @@ public class ControllerMC : StatesMC
     }
 
     void Attack() {
+        if (anim.GetBool("Attack"))
+        {
+            punchAnimLength -= Time.deltaTime;
+        }
+        
+
         if(Input.GetButtonDown(punch))
         {
             anim.SetBool("Attack", true);
             anim.SetLayerWeight(1,1);
         }
 
-        if(Input.GetButtonUp(punch))
+        if(punchAnimLength <= 0.0f && !Input.GetButton(punch))
         {
+            punchAnimLength = 0.65f;
             anim.SetBool("Attack", false);
             anim.SetLayerWeight(1,0);
         }

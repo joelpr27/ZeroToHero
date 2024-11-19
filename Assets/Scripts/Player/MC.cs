@@ -9,9 +9,19 @@ public class MC : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
+    [Header("Inputs")]
     public string punch;
     public string powerUpAttack;
     public string powerUpMovement;
+
+    [Header("PowerUps's")]
+    public bool HermesPowerUpOn;
+    public bool IrisPowerUpOn;
+    public bool AtlasPowerUpOn;
+    public bool ZeusPowerUpOn;
+
+    [Header("PowerUps's")]
+    public GameObject DamageTrigger;
 
     void Awake()
     {
@@ -20,5 +30,12 @@ public class MC : MonoBehaviour
         punch = "Fire1";
         powerUpAttack = "Fire2";
         powerUpMovement = "Fire3";
+    }
+
+    public void DamageOn(){
+        DamageTrigger.SetActive(true);
+    }
+    public void DamageOff(){
+        DamageTrigger.SetActive(false);
     }
 }
