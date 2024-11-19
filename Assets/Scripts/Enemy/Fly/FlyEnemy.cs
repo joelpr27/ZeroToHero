@@ -5,6 +5,7 @@ using UnityEngine;
 public class FlyEnemy : MonoBehaviour
 {
     private GameManager gm;
+    private LevelInfo LI;
 
     public GameObject flyEnemy;
 
@@ -71,6 +72,7 @@ void Start()
         targget = GameObject.Find("Player");
 
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();
 
         #region Patrol
             targetPoint = 0;
@@ -99,7 +101,7 @@ public void OnTriggerEnter2D(Collider2D other)
             
             Instantiate(particle, transform.position, Quaternion.identity);
             Instantiate(particle, transform.position, Quaternion.identity);
-            gm.Score();
+            LI.Score();
             Destroy(flyEnemy);
         }
 
@@ -109,7 +111,7 @@ public void OnTriggerEnter2D(Collider2D other)
             
             Instantiate(particle, transform.position, Quaternion.identity);
             Instantiate(particle, transform.position, Quaternion.identity);
-            gm.Score();
+            LI.Score();
             Destroy(flyEnemy);
         }
 

@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public int jumpForce;
     private bool isGrounded = false;
     [Space]
+    public GameObject spawnPoint;
+    [Space]
 
     [Header("Combat")]
     public GameObject myAttack;
@@ -91,6 +93,8 @@ public class Player : MonoBehaviour
 
         playerIsStunning = false;
         currentStunTime = 0;
+
+        transform.position = spawnPoint.transform.position;
     }
 
     void Update()
