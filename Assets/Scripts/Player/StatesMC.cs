@@ -5,7 +5,7 @@ public class StatesMC : MC
 {
     [Header("Maquina de estados")]
     public States mcState;
-    public enum States{Idle, Run, Jump, Attack};    
+    public enum States{Idle, Run, Jump};    
     
     // Start is called before the first frame update
     void Start()
@@ -28,10 +28,6 @@ public class StatesMC : MC
                 {
                     mcState = States.Run;
                 }
-                else if (Input.GetKeyDown("j"))
-                {
-                    mcState = States.Attack;
-                }
                 break;
 
             case States.Run:
@@ -43,10 +39,6 @@ public class StatesMC : MC
                 {
                     mcState = States.Idle;
                 }
-                else if (Input.GetKeyDown("j"))
-                {
-                    mcState = States.Attack;
-                }
                 break;
 
             case States.Jump:
@@ -57,25 +49,6 @@ public class StatesMC : MC
                 else if (rb.velocity.x != 0.0f && rb.velocity.y == 0.0f)
                 {
                     mcState = States.Run;
-                }
-                else if (Input.GetKeyDown("j"))
-                {
-                    mcState = States.Attack;
-                }
-                break;
-
-            case States.Attack:
-                if (rb.velocity.x == 0.0f && rb.velocity.y == 0.0f)
-                {
-                    mcState = States.Idle;
-                }
-                else if (rb.velocity.x != 0.0f && rb.velocity.y == 0.0f)
-                {
-                    mcState = States.Run;
-                }
-                if (rb.velocity.y != 0.0f)
-                {
-                    mcState = States.Jump;
                 }
                 break;
         }

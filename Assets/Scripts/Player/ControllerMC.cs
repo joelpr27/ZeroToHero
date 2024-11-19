@@ -1,4 +1,3 @@
-
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -15,10 +14,7 @@ public class ControllerMC : StatesMC
     private bool doubleJump;
 
 
-    
 
-    
-    
 
 //Main Actions of the character
     void Jump()
@@ -47,9 +43,18 @@ public class ControllerMC : StatesMC
         }
     }
 
-    int PunchArm()
-    {
-        return Random.Range(4,6);
+    void Attack() {
+        if(Input.GetButtonDown(punch))
+        {
+            anim.SetBool("Attack", true);
+            anim.SetLayerWeight(1,1);
+        }
+
+        if(Input.GetButtonUp(punch))
+        {
+            anim.SetBool("Attack", false);
+            anim.SetLayerWeight(1,0);
+        }
     }
 
 
@@ -78,9 +83,11 @@ public class ControllerMC : StatesMC
         switch(mcState)
         {
             case States.Idle:
+                
                 anim.SetInteger("State", 0);
                 //posibles Mecanicas en el estado Idle
                 Jump();
+                Attack();
                 
             break;
 
@@ -88,7 +95,7 @@ public class ControllerMC : StatesMC
                 anim.SetInteger("State", 1);
                 //posibles Mecanicas en el estado Run
                 Jump();
-                
+                Attack();
                 TurnCharacter();
             break;
 
@@ -96,19 +103,8 @@ public class ControllerMC : StatesMC
                 anim.SetInteger("State", 2);
                 //posibles Mecanicas en el estado Jump
                 Jump();
+                Attack();
                 TurnCharacter();
-            break;
-
-            case States.Attack:
-                if(IsGrounded())
-                {
-                    rb.velocity = new Vector2(0, 0);
-                    anim.SetInteger("State", PunchArm());
-                }
-                else
-                {
-                    anim.SetInteger("State", PunchArm());
-                }
             break;
 
         }

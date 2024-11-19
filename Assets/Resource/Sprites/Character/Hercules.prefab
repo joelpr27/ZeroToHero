@@ -2945,14 +2945,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   anim: {fileID: 0}
-  mcState: 0
-  speed: {x: 100, y: 7}
-  maxSpeedX: 8
-  HermesPowerUpOn: 0
   groundCheck: {fileID: 6769549797816347074}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  mcState: 0
+  speed: {x: 100, y: 7}
+  maxSpeedX: 8
+  HermesPowerUpOn: 0
 --- !u!1 &7698077917842478755
 GameObject:
   m_ObjectHideFlags: 0

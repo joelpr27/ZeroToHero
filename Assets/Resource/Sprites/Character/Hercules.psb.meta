@@ -92,7 +92,406 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
     spritePosition: {x: 0, y: 0}
-  mosaicSpriteImportData: []
+  mosaicSpriteImportData:
+  - name: <Grupo>
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 697
+      y: 4
+      width: 132
+      height: 139
+    spriteID: 42731dff0c189b34aad510fa2bbf200b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 697, y: 4}
+    spritePosition: {x: 103, y: 814}
+  - name: Cuello2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 837
+      y: 4
+      width: 121
+      height: 132
+    spriteID: 1566797dc3b3c66409a73645009c00a4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 837, y: 4}
+    spritePosition: {x: 66, y: 756}
+  - name: Brazo Inf
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 350
+      y: 236
+      width: 173
+      height: 89
+    spriteID: ab53ff80c49eb9e4c9f0a3a3c9e00a65
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 350, y: 236}
+    spritePosition: {x: 5, y: 518}
+  - name: Mano
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 697
+      y: 151
+      width: 69
+      height: 56
+    spriteID: 516eb8473fa2914498453db9754413f8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 697, y: 151}
+    spritePosition: {x: 155, y: 511}
+  - name: Brazo Sup
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 478
+      y: 4
+      width: 106
+      height: 188
+    spriteID: 6ff78f5e4468dba459838fa062a18600
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 478, y: 4}
+    spritePosition: {x: 0, y: 552}
+  - name: <Grupo>
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 230
+      height: 290
+    spriteID: 329596d972181ab46ab59f7e47930191
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 22, y: 489}
+  - name: Capa 33
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 899
+      y: 333
+      width: 60
+      height: 126
+    spriteID: 5f56c66b3531f1a4eace35f13b157e4c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 899, y: 333}
+    spritePosition: {x: 197, y: 387}
+  - name: Capa 31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 708
+      y: 333
+      width: 99
+      height: 128
+    spriteID: 4c1cd4eddac55b04d95f13b3fdc0e684
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 708, y: 333}
+    spritePosition: {x: 153, y: 383}
+  - name: Capa 32
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 499
+      y: 333
+      width: 110
+      height: 131
+    spriteID: e6404fe6edc8dd244b886deff7a33c29
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 499, y: 333}
+    spritePosition: {x: 96, y: 393}
+  - name: Capa 30
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 815
+      y: 333
+      width: 76
+      height: 127
+    spriteID: 8e062d4bf52b4c64dbfab64f863fc5d2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 815, y: 333}
+    spritePosition: {x: 68, y: 397}
+  - name: <Grupo>
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 350
+      y: 333
+      width: 141
+      height: 105
+    spriteID: a1edd9c304926f94b990df9847aed122
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 350, y: 333}
+    spritePosition: {x: 13, y: 0}
+  - name: Pierna Inf
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 359
+      y: 4
+      width: 111
+      height: 188
+    spriteID: dac0d88365e86df4daad47a8e0fe1251
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 359, y: 4}
+    spritePosition: {x: 31, y: 85}
+  - name: <Trazado>
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 242
+      y: 236
+      width: 100
+      height: 234
+    spriteID: 002c36e9918c7b543944c04b6120d7a7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 242, y: 236}
+    spritePosition: {x: 75, y: 233}
+  - name: <Grupo>
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 837
+      y: 144
+      width: 146
+      height: 81
+    spriteID: f4c8db69c5d0efb4486f3af466daf375
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 837, y: 144}
+    spritePosition: {x: 135, y: 37}
+  - name: Pierna Inf
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 592
+      y: 4
+      width: 97
+      height: 191
+    spriteID: 90bc2eb4bc101b5459383c63a26c690b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 592, y: 4}
+    spritePosition: {x: 142, y: 103}
+  - name: Pierna Sup
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 242
+      y: 4
+      width: 109
+      height: 224
+    spriteID: 078ab9a4fec412a45a3aefbc27df36fd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 242, y: 4}
+    spritePosition: {x: 134, y: 260}
+  - name: Brazo Inf
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 617
+      y: 333
+      width: 83
+      height: 167
+    spriteID: 94c7314eae000c143b69c8765b613631
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 617, y: 333}
+    spritePosition: {x: 271, y: 628}
+  - name: Brazo Sup
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 302
+      width: 169
+      height: 128
+    spriteID: 0e9dfa931ad62bb47bd321079471796d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 302}
+    spritePosition: {x: 156, y: 631}
+  - name: Mano
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 774
+      y: 151
+      width: 55
+      height: 65
+    spriteID: 5a490246aa4077643b3fa25981167e43
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 774, y: 151}
+    spritePosition: {x: 307, y: 770}
   rigSpriteImportData:
   - name: <Grupo>
     originalName: 
@@ -109,9 +508,9 @@ ScriptedImporter:
     spriteBone:
     - name: Cabeza
       guid: 95cb4c870e1dc4146b4330bbcdf55290
-      position: {x: 41.572754, y: 51.10016, z: 0}
-      rotation: {x: 0, y: 0, z: 0.3958967, w: 0.9182951}
-      length: 73.02568
+      position: {x: 41.57263, y: 51.10016, z: 0}
+      rotation: {x: 0, y: 0, z: 0.39589673, w: 0.918295}
+      length: 73.02567
       parentId: -1
       color:
         serializedVersion: 2
@@ -503,8 +902,8 @@ ScriptedImporter:
     - name: cuello
       guid: e9cc29435b3b8f849bcc63d90588187c
       position: {x: -4.996826, y: 15.6970215, z: 0}
-      rotation: {x: 0, y: 0, z: 0.4081743, w: 0.91290396}
-      length: 125.33153
+      rotation: {x: 0, y: 0, z: 0.40817425, w: 0.912904}
+      length: 125.33162
       parentId: -1
       color:
         serializedVersion: 2
@@ -851,18 +1250,18 @@ ScriptedImporter:
     spriteBone:
     - name: brazo inf frente
       guid: 86ffdd219e7b0ce46be8381915bce44a
-      position: {x: 37.486145, y: 55.00116, z: 0}
-      rotation: {x: 0, y: 0, z: 0.15393537, w: -0.988081}
-      length: 125.74442
+      position: {x: 37.486115, y: 55.00122, z: 0}
+      rotation: {x: 0, y: 0, z: 0.15393536, w: -0.988081}
+      length: 125.744415
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4286643968
     - name: mano frente
       guid: 3ac5f73611fb7504e886ea5742bda06b
-      position: {x: 125.74439, y: 0.0000047411777, z: 0}
-      rotation: {x: 0, y: 0, z: 0.18289389, w: 0.98313266}
-      length: 50.229076
+      position: {x: 125.74444, y: 0.000017248305, z: 0}
+      rotation: {x: 0, y: 0, z: 0.18289383, w: 0.98313266}
+      length: 50.22908
       parentId: 0
       color:
         serializedVersion: 2
@@ -870,8 +1269,8 @@ ScriptedImporter:
     - name: pecho
       guid: 7903c3360e0254d4ba94b87f335d9e5a
       position: {x: 152.61139, y: 68.262085, z: 0}
-      rotation: {x: 0, y: 0, z: 0.8549965, w: 0.5186339}
-      length: 209.09146
+      rotation: {x: 0, y: 0, z: 0.85499644, w: 0.51863396}
+      length: 209.09149
       parentId: -1
       color:
         serializedVersion: 2
@@ -1185,18 +1584,18 @@ ScriptedImporter:
     spriteBone:
     - name: mano frente
       guid: 3ac5f73611fb7504e886ea5742bda06b
-      position: {x: 125.744415, y: -0.000016619197, z: 0}
-      rotation: {x: 0, y: 0, z: 0.18289389, w: 0.98313266}
-      length: 50.229076
+      position: {x: 125.74439, y: 0.0000045525157, z: 0}
+      rotation: {x: 0, y: 0, z: 0.18289384, w: 0.98313266}
+      length: 50.22908
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4294934528
     - name: brazo inf frente
       guid: 86ffdd219e7b0ce46be8381915bce44a
-      position: {x: -112.513855, y: 62.00116, z: 0}
-      rotation: {x: 0, y: 0, z: 0.15393537, w: -0.988081}
-      length: 125.74442
+      position: {x: -112.513855, y: 62.00122, z: 0}
+      rotation: {x: 0, y: 0, z: 0.15393536, w: -0.988081}
+      length: 125.744415
       parentId: -1
       color:
         serializedVersion: 2
@@ -1521,9 +1920,9 @@ ScriptedImporter:
     spriteBone:
     - name: brazo sup frente
       guid: f9e76cc42a44b4a46805132f91d3c570
-      position: {x: 52.154175, y: 137.10986, z: 0}
-      rotation: {x: 0, y: 0, z: 0.73585993, w: -0.6771338}
-      length: 116.51052
+      position: {x: 52.154175, y: 137.10992, z: 0}
+      rotation: {x: 0, y: 0, z: 0.73586, w: -0.6771338}
+      length: 116.51051
       parentId: -1
       color:
         serializedVersion: 2
@@ -1849,8 +2248,8 @@ ScriptedImporter:
     - name: pecho
       guid: 7903c3360e0254d4ba94b87f335d9e5a
       position: {x: 84.367744, y: -0.0000010176823, z: 0}
-      rotation: {x: 0, y: 0, z: 0.21371783, w: 0.97689545}
-      length: 209.09145
+      rotation: {x: 0, y: 0, z: 0.21371774, w: 0.97689545}
+      length: 209.09149
       parentId: 1
       color:
         serializedVersion: 2
@@ -1866,9 +2265,9 @@ ScriptedImporter:
         rgba: 4286578943
     - name: pie frente_3
       guid: add98c53daf388647b1e919eeb010743
-      position: {x: 50.187035, y: -471.4386, z: 0}
-      rotation: {x: 0, y: 0, z: 0.18320996, w: -0.9830739}
-      length: 41.78442
+      position: {x: 50.187027, y: -471.43863, z: 0}
+      rotation: {x: 0, y: 0, z: 0.18321, w: -0.98307383}
+      length: 41.784424
       parentId: -1
       color:
         serializedVersion: 2
@@ -5366,8 +5765,8 @@ ScriptedImporter:
     spriteBone:
     - name: pie frente
       guid: 69bbb52e57b91634691ceb6c7a0bf8df
-      position: {x: 159.36816, y: 0.00004822387, z: 0}
-      rotation: {x: 0, y: 0, z: 0.14981209, w: 0.9887145}
+      position: {x: 159.3681, y: 0.00003296508, z: 0}
+      rotation: {x: 0, y: 0, z: 0.14981206, w: 0.9887146}
       length: 55.771988
       parentId: 1
       color:
@@ -5375,18 +5774,18 @@ ScriptedImporter:
         rgba: 4278255615
     - name: pierna inf frente
       guid: da0e6eb964e69f04384cefe60fe474c9
-      position: {x: 98.253296, y: 244.1098, z: 0}
+      position: {x: 98.253296, y: 244.10974, z: 0}
       rotation: {x: 0, y: 0, z: 0.8289352, w: -0.5593447}
-      length: 159.36816
+      length: 159.36815
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4286578943
     - name: pie frente_3
       guid: add98c53daf388647b1e919eeb010743
-      position: {x: 76.78968, y: 27.027403, z: 0}
+      position: {x: 76.789696, y: 27.027395, z: 0}
       rotation: {x: 0, y: 0, z: 0.5992568, w: 0.80055696}
-      length: 41.784412
+      length: 41.784416
       parentId: 0
       color:
         serializedVersion: 2
@@ -6477,8 +6876,8 @@ ScriptedImporter:
     spriteBone:
     - name: pie frente
       guid: 69bbb52e57b91634691ceb6c7a0bf8df
-      position: {x: 159.36809, y: 0.000073618205, z: 0}
-      rotation: {x: 0, y: 0, z: 0.14981209, w: 0.9887145}
+      position: {x: 159.36813, y: 0.00005709727, z: 0}
+      rotation: {x: 0, y: 0, z: 0.14981206, w: 0.9887146}
       length: 55.771988
       parentId: 1
       color:
@@ -6486,9 +6885,9 @@ ScriptedImporter:
         rgba: 4278255615
     - name: pierna inf frente
       guid: da0e6eb964e69f04384cefe60fe474c9
-      position: {x: 80.253296, y: 159.10979, z: 0}
+      position: {x: 80.253296, y: 159.10977, z: 0}
       rotation: {x: 0, y: 0, z: 0.8289352, w: -0.5593447}
-      length: 159.36816
+      length: 159.36815
       parentId: -1
       color:
         serializedVersion: 2
@@ -7519,7 +7918,7 @@ ScriptedImporter:
       guid: 0964b4b85cf2c824fa6a96cd632029a1
       position: {x: 53.84253, y: 207.36478, z: 0}
       rotation: {x: 0, y: 0, z: 0.73799264, w: -0.6748088}
-      length: 197.0416
+      length: 197.04161
       parentId: -1
       color:
         serializedVersion: 2
@@ -7844,9 +8243,9 @@ ScriptedImporter:
     spriteBone:
     - name: pie tras
       guid: 9edc08ffd07ed0545a76503e44a29c5d
-      position: {x: 159.37271, y: -0.000043312677, z: 0}
-      rotation: {x: 0, y: 0, z: 0.07928139, w: 0.9968523}
-      length: 53.74716
+      position: {x: 159.37286, y: -0.000010724956, z: 0}
+      rotation: {x: 0, y: 0, z: 0.07928145, w: 0.9968523}
+      length: 53.747177
       parentId: 1
       color:
         serializedVersion: 2
@@ -7854,17 +8253,17 @@ ScriptedImporter:
     - name: pierna inf tras
       guid: f78b3a0e06dcff04e9220dd875c152ae
       position: {x: 73.3822, y: 227.1835, z: 0}
-      rotation: {x: 0, y: 0, z: -0.7873945, w: 0.61644953}
-      length: 159.37282
+      rotation: {x: 0, y: 0, z: -0.78739446, w: 0.6164494}
+      length: 159.37285
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4294967040
     - name: pie tras_2
       guid: 75c50f94e559800438070f96305db35c
-      position: {x: 59.21787, y: 56.551334, z: 0}
-      rotation: {x: 0, y: 0, z: -0.7246629, w: -0.6891036}
-      length: 46.3378
+      position: {x: 59.2178, y: 56.551342, z: 0}
+      rotation: {x: 0, y: 0, z: -0.72466284, w: -0.68910354}
+      length: 46.337822
       parentId: 0
       color:
         serializedVersion: 2
@@ -8895,17 +9294,17 @@ ScriptedImporter:
     - name: pierna inf tras
       guid: f78b3a0e06dcff04e9220dd875c152ae
       position: {x: 66.3822, y: 161.1835, z: 0}
-      rotation: {x: 0, y: 0, z: -0.7873945, w: 0.61644953}
-      length: 159.37282
+      rotation: {x: 0, y: 0, z: -0.78739446, w: 0.6164494}
+      length: 159.37285
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4294967040
     - name: pie tras
       guid: 9edc08ffd07ed0545a76503e44a29c5d
-      position: {x: 159.3728, y: -0.00001681321, z: 0}
-      rotation: {x: 0, y: 0, z: 0.07928138, w: 0.9968523}
-      length: 53.74716
+      position: {x: 159.37286, y: 0.000012474212, z: 0}
+      rotation: {x: 0, y: 0, z: 0.07928145, w: 0.9968523}
+      length: 53.74719
       parentId: 0
       color:
         serializedVersion: 2
@@ -10343,17 +10742,17 @@ ScriptedImporter:
     - name: braz inf tras
       guid: ece72e058f06e8245a57c017152bdb88
       position: {x: 33.199585, y: 33.184326, z: 0}
-      rotation: {x: 0, y: 0, z: 0.59890985, w: 0.8008165}
-      length: 110.0856
+      rotation: {x: 0, y: 0, z: 0.59890985, w: 0.80081654}
+      length: 110.08568
       parentId: -1
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: mano tras
       guid: 40c94660ead1eb1429ace696f927259c
-      position: {x: 110.085594, y: 0.00004740902, z: 0}
-      rotation: {x: 0, y: 0, z: 0.13305993, w: 0.99110806}
-      length: 50.15204
+      position: {x: 110.085655, y: -0.000083745144, z: 0}
+      rotation: {x: 0, y: 0, z: 0.13305987, w: 0.991108}
+      length: 50.152046
       parentId: 0
       color:
         serializedVersion: 2
@@ -10667,9 +11066,9 @@ ScriptedImporter:
     spriteBone:
     - name: brazo sup tras
       guid: 107d9bc866b80724ba6ef7cc534ece52
-      position: {x: 50.513947, y: 86.62244, z: 0}
-      rotation: {x: 0, y: 0, z: -0.25896487, w: 0.96588683}
-      length: 112.817314
+      position: {x: 50.51396, y: 86.62244, z: 0}
+      rotation: {x: 0, y: 0, z: -0.2589647, w: 0.9658868}
+      length: 112.81732
       parentId: -1
       color:
         serializedVersion: 2
@@ -10983,9 +11382,9 @@ ScriptedImporter:
     spriteBone:
     - name: mano tras
       guid: 40c94660ead1eb1429ace696f927259c
-      position: {x: 28.31128, y: -3.2177734, z: 0}
-      rotation: {x: 0, y: 0, z: 0.70014095, w: 0.71400476}
-      length: 50.15203
+      position: {x: 28.311401, y: -3.2177734, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7001409, w: 0.7140048}
+      length: 50.152042
       parentId: -1
       color:
         serializedVersion: 2
@@ -11298,7 +11697,7 @@ ScriptedImporter:
     - name: pecho
       guid: 7903c3360e0254d4ba94b87f335d9e5a
       position: {x: 84.36773, y: 0.000002638164, z: 0}
-      rotation: {x: 0, y: 0, z: 0.21371782, w: 0.97689545}
+      rotation: {x: 0, y: 0, z: 0.21371776, w: 0.97689545}
       length: 209.09148
       parentId: 22
       color:
@@ -11306,17 +11705,17 @@ ScriptedImporter:
         rgba: 4278255615
     - name: cuello
       guid: e9cc29435b3b8f849bcc63d90588187c
-      position: {x: 209.09146, y: -0.00002775594, z: 0}
+      position: {x: 209.09149, y: 0.00001655145, z: 0}
       rotation: {x: 0, y: 0, z: -0.5688367, w: 0.8224506}
-      length: 125.3315
+      length: 125.33159
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4278255360
     - name: Cabeza
       guid: 95cb4c870e1dc4146b4330bbcdf55290
-      position: {x: 125.33159, y: -0.0000049203463, z: 0}
-      rotation: {x: 0, y: 0, z: -0.0134087615, w: 0.9999101}
+      position: {x: 125.33154, y: 0.00007341882, z: 0}
+      rotation: {x: 0, y: 0, z: -0.013408666, w: 0.9999101}
       length: 73.02565
       parentId: 2
       color:
@@ -11325,25 +11724,25 @@ ScriptedImporter:
     - name: brazo sup tras
       guid: 107d9bc866b80724ba6ef7cc534ece52
       position: {x: 93.90343, y: -104.063194, z: 0}
-      rotation: {x: 0, y: -0, z: -0.96013767, w: 0.27952757}
-      length: 112.8173
+      rotation: {x: 0, y: -0, z: -0.96013767, w: 0.27952778}
+      length: 112.81728
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4294901760
     - name: braz inf tras
       guid: ece72e058f06e8245a57c017152bdb88
-      position: {x: 112.81729, y: 0.000031631673, z: 0}
-      rotation: {x: 0, y: -0, z: 0.7858624, w: 0.61840147}
-      length: 110.08559
+      position: {x: 112.81726, y: 0.000017622591, z: 0}
+      rotation: {x: 0, y: -0, z: 0.7858623, w: 0.6184016}
+      length: 110.08563
       parentId: 4
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: mano tras
       guid: 40c94660ead1eb1429ace696f927259c
-      position: {x: 110.08565, y: 0.000009678282, z: 0}
-      rotation: {x: 0, y: 0, z: 0.13305993, w: 0.991108}
+      position: {x: 110.08562, y: -0.0000022148306, z: 0}
+      rotation: {x: 0, y: 0, z: 0.13305983, w: 0.991108}
       length: 50.152023
       parentId: 5
       color:
@@ -11353,23 +11752,23 @@ ScriptedImporter:
       guid: f9e76cc42a44b4a46805132f91d3c570
       position: {x: 139.93683, y: 46.0062, z: 0}
       rotation: {x: 0, y: -0, z: 0.9605889, w: 0.2779731}
-      length: 116.5105
+      length: 116.510506
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4278255488
     - name: brazo inf frente
       guid: 86ffdd219e7b0ce46be8381915bce44a
-      position: {x: 116.5105, y: -0.00005592149, z: 0}
-      rotation: {x: 0, y: 0, z: 0.6228543, w: 0.78233784}
-      length: 125.74441
+      position: {x: 116.51053, y: -0.00005770981, z: 0}
+      rotation: {x: 0, y: 0, z: 0.6228544, w: 0.78233784}
+      length: 125.74439
       parentId: 7
       color:
         serializedVersion: 2
         rgba: 4286643968
     - name: mano frente
       guid: 3ac5f73611fb7504e886ea5742bda06b
-      position: {x: 125.744415, y: -0.000013255694, z: 0}
+      position: {x: 125.744385, y: -0.000045164652, z: 0}
       rotation: {x: 0, y: 0, z: 0.18289387, w: 0.9831327}
       length: 50.22907
       parentId: 8
@@ -11380,24 +11779,24 @@ ScriptedImporter:
       guid: 0964b4b85cf2c824fa6a96cd632029a1
       position: {x: -59.92616, y: 35.957397, z: 0}
       rotation: {x: 0, y: -0, z: 0.99758875, w: 0.06940344}
-      length: 197.04152
+      length: 197.04153
       parentId: 22
       color:
         serializedVersion: 2
         rgba: 4294901888
     - name: pierna inf frente
       guid: da0e6eb964e69f04384cefe60fe474c9
-      position: {x: 197.04152, y: -0.00007783545, z: 0}
+      position: {x: 197.04153, y: -0.00008407229, z: 0}
       rotation: {x: 0, y: 0, z: -0.14658049, w: 0.98919874}
-      length: 159.3681
+      length: 159.36809
       parentId: 10
       color:
         serializedVersion: 2
         rgba: 4286578943
     - name: pie frente
       guid: 69bbb52e57b91634691ceb6c7a0bf8df
-      position: {x: 159.36807, y: 0.000011363235, z: 0}
-      rotation: {x: 0, y: 0, z: 0.14981207, w: 0.9887145}
+      position: {x: 159.36807, y: 0.000010681217, z: 0}
+      rotation: {x: 0, y: 0, z: 0.14981206, w: 0.9887145}
       length: 55.77196
       parentId: 11
       color:
@@ -11415,16 +11814,16 @@ ScriptedImporter:
     - name: pierna inf tras
       guid: f78b3a0e06dcff04e9220dd875c152ae
       position: {x: 170.08655, y: -0.00009755834, z: 0}
-      rotation: {x: 0, y: 0, z: -0.19218792, w: 0.9813582}
-      length: 159.37283
+      rotation: {x: 0, y: 0, z: -0.19218801, w: 0.9813582}
+      length: 159.3728
       parentId: 13
       color:
         serializedVersion: 2
         rgba: 4294967040
     - name: pie tras
       guid: 9edc08ffd07ed0545a76503e44a29c5d
-      position: {x: 159.3728, y: -0.000014350868, z: 0}
-      rotation: {x: 0, y: 0, z: 0.07928139, w: 0.99685234}
+      position: {x: 159.37282, y: 0.0000027669164, z: 0}
+      rotation: {x: 0, y: 0, z: 0.07928148, w: 0.99685234}
       length: 53.747173
       parentId: 14
       color:
@@ -11667,7 +12066,7 @@ ScriptedImporter:
       order: 0
     dimension: {x: 0, y: 0}
     characterGroups: []
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.43471378, y: 0.005056865}
     boneReadOnly: 0
   sharedRigSpriteImportData: []
   sharedRigCharacterData:
@@ -11683,7 +12082,7 @@ ScriptedImporter:
     ignorePlatformSupport: 0
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -11704,8 +12103,8 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   mosaicLayers: 1
   characterMode: 1
-  documentPivot: {x: 0.5, y: 0}
-  documentAlignment: 7
+  documentPivot: {x: 0.43471378, y: 0.005056865}
+  documentAlignment: 9
   importHiddenLayers: 0
   layerMappingOption: 2
   generatePhysicsShape: 0
@@ -11720,7 +12119,287 @@ ScriptedImporter:
     categories: []
   spritePackingTag: 
   resliceFromLayer: 0
-  mosaicPSDLayers: []
+  mosaicPSDLayers:
+  - name: Cabeza2
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 1b7520d4ffe59de4682e0c3215a09ccb
+    layerID: 45
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: <Grupo>
+    spriteName: <Grupo>
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 42731dff0c189b34aad510fa2bbf200b
+    layerID: 44
+    mosaicPosition: {x: 697, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Cuello2
+    spriteName: Cuello2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1566797dc3b3c66409a73645009c00a4
+    layerID: 41
+    mosaicPosition: {x: 837, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Brazo Frente
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: d94f52b632c7db04095284d13e92061c
+    layerID: 39
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Brazo Inf
+    spriteName: Brazo Inf
+    isGroup: 0
+    parentIndex: 3
+    spriteID: ab53ff80c49eb9e4c9f0a3a3c9e00a65
+    layerID: 38
+    mosaicPosition: {x: 350, y: 236}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Mano
+    spriteName: Mano
+    isGroup: 0
+    parentIndex: 3
+    spriteID: 516eb8473fa2914498453db9754413f8
+    layerID: 37
+    mosaicPosition: {x: 697, y: 151}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Brazo Sup
+    spriteName: Brazo Sup
+    isGroup: 0
+    parentIndex: 3
+    spriteID: 6ff78f5e4468dba459838fa062a18600
+    layerID: 36
+    mosaicPosition: {x: 478, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Torso2
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: c08c937292a2a7148a9f74ac3262df06
+    layerID: 34
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: <Grupo>
+    spriteName: <Grupo>
+    isGroup: 0
+    parentIndex: 7
+    spriteID: 329596d972181ab46ab59f7e47930191
+    layerID: 33
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Falda2
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 65890eb85f602f44e8e523ea08da8478
+    layerID: 27
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Capa 33
+    spriteName: Capa 33
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 5f56c66b3531f1a4eace35f13b157e4c
+    layerID: 26
+    mosaicPosition: {x: 899, y: 333}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Capa 31
+    spriteName: Capa 31
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 4c1cd4eddac55b04d95f13b3fdc0e684
+    layerID: 25
+    mosaicPosition: {x: 708, y: 333}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Capa 32
+    spriteName: Capa 32
+    isGroup: 0
+    parentIndex: 9
+    spriteID: e6404fe6edc8dd244b886deff7a33c29
+    layerID: 24
+    mosaicPosition: {x: 499, y: 333}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Capa 30
+    spriteName: Capa 30
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 8e062d4bf52b4c64dbfab64f863fc5d2
+    layerID: 23
+    mosaicPosition: {x: 815, y: 333}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pierna Frente
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 67a8d4b6bf23e9c469a4692e0d26abb0
+    layerID: 21
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Pie
+    spriteName: 
+    isGroup: 1
+    parentIndex: 14
+    spriteID: 0d8291d87b9b37f4c8299d48794b58e6
+    layerID: 19
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: <Grupo>
+    spriteName: <Grupo>
+    isGroup: 0
+    parentIndex: 15
+    spriteID: a1edd9c304926f94b990df9847aed122
+    layerID: 18
+    mosaicPosition: {x: 350, y: 333}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pierna Inf
+    spriteName: Pierna Inf
+    isGroup: 0
+    parentIndex: 14
+    spriteID: dac0d88365e86df4daad47a8e0fe1251
+    layerID: 16
+    mosaicPosition: {x: 359, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: <Trazado>
+    spriteName: <Trazado>
+    isGroup: 0
+    parentIndex: 14
+    spriteID: 002c36e9918c7b543944c04b6120d7a7
+    layerID: 15
+    mosaicPosition: {x: 242, y: 236}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pierna Fondo
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 56a4194f15dcd1b4a92a08480315706a
+    layerID: 13
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: "Pi\xE9"
+    spriteName: 
+    isGroup: 1
+    parentIndex: 19
+    spriteID: 5f50dfa8415c84540a5d27248455688e
+    layerID: 11
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: <Grupo>
+    spriteName: <Grupo>
+    isGroup: 0
+    parentIndex: 20
+    spriteID: f4c8db69c5d0efb4486f3af466daf375
+    layerID: 10
+    mosaicPosition: {x: 837, y: 144}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pierna Inf
+    spriteName: Pierna Inf
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 90bc2eb4bc101b5459383c63a26c690b
+    layerID: 8
+    mosaicPosition: {x: 592, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pierna Sup
+    spriteName: Pierna Sup
+    isGroup: 0
+    parentIndex: 19
+    spriteID: 078ab9a4fec412a45a3aefbc27df36fd
+    layerID: 7
+    mosaicPosition: {x: 242, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Brazo Fondo
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: ecab077384a742840b61970d8733d5f3
+    layerID: 5
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Brazo Inf
+    spriteName: Brazo Inf
+    isGroup: 0
+    parentIndex: 24
+    spriteID: 94c7314eae000c143b69c8765b613631
+    layerID: 4
+    mosaicPosition: {x: 617, y: 333}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Brazo Sup
+    spriteName: Brazo Sup
+    isGroup: 0
+    parentIndex: 24
+    spriteID: 0e9dfa931ad62bb47bd321079471796d
+    layerID: 3
+    mosaicPosition: {x: 4, y: 302}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Mano
+    spriteName: Mano
+    isGroup: 0
+    parentIndex: 24
+    spriteID: 5a490246aa4077643b3fa25981167e43
+    layerID: 2
+    mosaicPosition: {x: 774, y: 151}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   rigPSDLayers:
   - name: Cabeza2
     spriteName: 
@@ -12005,7 +12684,7 @@ ScriptedImporter:
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638676143047473544
   spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 
