@@ -5,11 +5,15 @@ using UnityEngine;
 public class MeleeEnemy : MonoBehaviour
 {
     private GameManager gm;
+    private LevelInfo LI;
 
     public GameObject meleeEnemy;
 
     [Header("Targget")]
     public GameObject player;
+    public GameObject AttackPlayerDetect;
+    public GameObject RangeNoDetect;
+    public GameObject DetectPlayer;
     [Space]
 
     [Header("Move")]
@@ -125,6 +129,17 @@ public class MeleeEnemy : MonoBehaviour
         transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.transform.position.x, speed * Time.deltaTime),
         transform.position.y);
     }
+
+    void Seguimiento()
+    {
+        AttackPlayerDetect.transform.position = gameObject.transform.position;
+        RangeNoDetect.transform.position = gameObject.transform.position;
+        DetectPlayer.transform.position = gameObject.transform.position;
+
+        AttackPlayerDetect.transform.localScale = gameObject.transform.localScale;
+        RangeNoDetect.transform.localScale = gameObject.transform.localScale;
+        DetectPlayer.transform.localScale = gameObject.transform.localScale;
+    }
 #endregion
 
     void Start()
@@ -132,6 +147,7 @@ public class MeleeEnemy : MonoBehaviour
         player = GameObject.Find("Player");
 
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();
 
         #region Death
             currentEnemyHealth = enemyHealth;
@@ -147,6 +163,8 @@ public class MeleeEnemy : MonoBehaviour
     void Update()
     {
         Attack();
+
+        Seguimiento();
 
         if(staticEnemy == false)
         {
@@ -174,7 +192,7 @@ public class MeleeEnemy : MonoBehaviour
             {
                 Instantiate(particle, transform.position, Quaternion.identity);
                 Instantiate(particle, transform.position, Quaternion.identity);
-                gm.Score();
+                LI.Score();
                 Destroy(meleeEnemy);
             }
         }

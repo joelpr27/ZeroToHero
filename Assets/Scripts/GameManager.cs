@@ -8,10 +8,15 @@ using UnityEngine.Audio;
 public class GameManager : MonoBehaviour
 {
     [Header("Partida")]
-    public int points;
+    /* public int points;
     public int currentPoints;
-    public TMP_Text textScore;
+    public TMP_Text textScore; */
 
+    private LevelInfo LI;
+    public bool areYouWinningSon;
+    [Space]
+
+    [Header("particulas")]
     public float maxCountDelate = 2.0f;
     public float currentCountDelate;
     [Space]
@@ -19,11 +24,19 @@ public class GameManager : MonoBehaviour
     [Header("Menus")]
     public GameObject MenuPanel;
     public GameObject GamePanel;
+    public GameObject VictoryPanel;
     public GameObject PausePanel;
     public GameObject OptionsPanel;
     public GameObject LevelsPanel;
     public GameObject ConsejosPanel;
     public GameObject CreditsPanel;
+    [Space]
+
+    [Header("Audio")]
+    public AudioSource hoverButton;
+    public AudioSource pressButton;
+    [Space]
+    public AudioSource menuMusic;
     [Space]
 
     [Header("Settings")]
@@ -36,7 +49,7 @@ public class GameManager : MonoBehaviour
     private int currentResolutionIndex = 0;
 
 #region Partida
-    public void Score()
+    /* public void Score()
     {
         currentPoints += 100;
     }
@@ -44,7 +57,7 @@ public class GameManager : MonoBehaviour
     void UpdateScoreText()
     {
         textScore.text = "PUNTOS " + currentPoints.ToString();
-    }
+    } */
 
     void UpdateTimeDelate()
     {
@@ -155,6 +168,30 @@ public class GameManager : MonoBehaviour
 
         Cursor.visible = true;
     }
+
+    public void WinPanel()
+    {
+        if(areYouWinningSon == true)
+        {
+            VictoryPanel.SetActive(true);
+            GamePanel.SetActive(false);
+
+            Time.timeScale = 0;
+
+            Cursor.visible = true;
+        }
+    }
+
+    public void ButtonHover()
+    {
+        hoverButton.Play();
+    }
+
+    public void ButtonPress()
+    {
+        pressButton.Play();
+    }
+
 #endregion
     
 #region Settings
@@ -178,12 +215,14 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         #region Partida
+            LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();
+
             Time.timeScale = 1;
 
             currentCountDelate = maxCountDelate;
 
-            points = 0;
-            currentPoints = points;
+            /* points = 0;
+            currentPoints = points; */
 
             if(SceneManager.GetActiveScene().buildIndex == 0)
             {
@@ -193,6 +232,8 @@ public class GameManager : MonoBehaviour
             {
                 Cursor.visible = false;
             }
+
+            areYouWinningSon = false;
         #endregion
         
         #region Panels
@@ -200,6 +241,7 @@ public class GameManager : MonoBehaviour
             {
                 MenuPanel.SetActive(true);
                 GamePanel.SetActive(false);
+                VictoryPanel.SetActive(false);
                 PausePanel.SetActive(false);
                 OptionsPanel.SetActive(false);
                 LevelsPanel.SetActive(false);
@@ -209,13 +251,25 @@ public class GameManager : MonoBehaviour
             if(SceneManager.GetActiveScene().buildIndex >= 1)
             {
                 MenuPanel.SetActive(false);
-                GamePanel.SetActive(false);
+                GamePanel.SetActive(true);
+                VictoryPanel.SetActive(false);
                 PausePanel.SetActive(false);
                 OptionsPanel.SetActive(false);
                 LevelsPanel.SetActive(false);
                 ConsejosPanel.SetActive(false);
                 CreditsPanel.SetActive(false);
             }
+        #endregion
+
+        #region Audio
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            menuMusic.Play();
+        }
+        if(SceneManager.GetActiveScene().buildIndex >= 1)
+        {
+            
+        }
         #endregion
 
         #region Settings
@@ -237,7 +291,7 @@ public class GameManager : MonoBehaviour
             List<string> options = new List<string>();
             for (int i = 0; i < filteredResolutions.Count; i++)
             {
-                string resolutionOption = filteredResolutions[i].width + " x " + filteredResolutions[i].height + " " + (float)filteredResolutions[i].refreshRateRatio.value + " Hz";
+                string resolutionOption = filteredResolutions[i].width + " x " + filteredResolutions[i].height;
                 options.Add(resolutionOption);
 
                 if (filteredResolutions[i].width == Screen.width && filteredResolutions[i].height == Screen.height)
@@ -254,10 +308,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        UpdateScoreText();
+        //UpdateScoreText();
 
         UpdateTimeDelate();
 
         PausePanelInteract();
+
+        WinPanel();
     }
 }

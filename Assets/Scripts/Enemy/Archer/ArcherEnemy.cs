@@ -7,6 +7,7 @@ using UnityEngine;
 public class ArcherEnemy : MonoBehaviour
 {
     private GameManager gm;
+    private LevelInfo LI;
 
     public GameObject archerEnemy;
 
@@ -88,6 +89,7 @@ public class ArcherEnemy : MonoBehaviour
         player = GameObject.Find("Player");
         
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();
 
         #region Patrol
             isPlayerDetected = false;
@@ -113,7 +115,7 @@ public class ArcherEnemy : MonoBehaviour
             
             Instantiate(particle, transform.position, Quaternion.identity);
             Instantiate(particle, transform.position, Quaternion.identity);
-            gm.Score();
+            LI.Score();
             Destroy(archerEnemy);
         }
     }
