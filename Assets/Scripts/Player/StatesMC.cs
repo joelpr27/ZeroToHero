@@ -20,7 +20,7 @@ public class StatesMC : MC
         switch (mcState)
         {
             case States.Idle:
-                if (rb.velocity.y <= 0.0f && rb.velocity.y > 0.1f)
+                if (rb.velocity.y != 0.0f)
                 {
                     mcState = States.Jump;
                 }
@@ -31,7 +31,7 @@ public class StatesMC : MC
                 break;
 
             case States.Run:
-                if (rb.velocity.y <= 0.0f && rb.velocity.y > 0.1f)
+                if (rb.velocity.y != 0.0f)
                 {
                     mcState = States.Jump;
                 }

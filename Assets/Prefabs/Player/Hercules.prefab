@@ -2862,7 +2862,7 @@ GameObject:
   - component: {fileID: 9183364458125783636}
   - component: {fileID: 7046591412276249701}
   - component: {fileID: 7395900867538671173}
-  - component: {fileID: 9223263679590900804}
+  - component: {fileID: 2735243821424792580}
   m_Layer: 0
   m_Name: Hercules
   m_TagString: Player
@@ -2984,11 +2984,11 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &9223263679590900804
-CapsuleCollider2D:
+--- !u!61 &2735243821424792580
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3019,9 +3019,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06, y: 0.85}
-  m_Size: {x: 0.3, y: 1.7}
-  m_Direction: 0
+  m_Offset: {x: 0.073193, y: 0.7470573}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3862063, y: 1.4940455}
+  m_EdgeRadius: 0
 --- !u!1 &7664391648833833117
 GameObject:
   m_ObjectHideFlags: 0
