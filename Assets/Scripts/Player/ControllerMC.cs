@@ -10,7 +10,8 @@ public class ControllerMC : StatesMC
     float movX;
     public AnimationClip punchAnimation;
     float punchAnimLength = 0.64f;
-    float lightningAnimLength = 0.64f;
+    float lightningAnimLength = 2.0f;
+    bool canMove = true;
     private bool doubleJump;
 
 
@@ -67,34 +68,36 @@ public class ControllerMC : StatesMC
 
     void SpecialAttack()
     {
-        if (Input.GetButton(powerUpAttack))
+
+
+        if (AtlasPowerUpOn)
         {
-            if (AtlasPowerUpOn)
-            {
 
+        }
+        if (ZeusPowerUpOn)
+        {
+            if (anim.GetBool("AttackZeus"))
+            {
+                lightningAnimLength -= Time.deltaTime;
+                movX = 0;
+                canMove = false;
             }
 
-            if (ZeusPowerUpOn)
+
+            if (Input.GetButton(powerUpAttack))
             {
-                if (anim.GetBool("Attack"))
-                {
-                    lightningAnimLength -= Time.deltaTime;
-                }
-
-
-                if (Input.GetButton(powerUpAttack))
-                {
-                    anim.SetBool("Attack", true);
-                    anim.SetLayerWeight(1, 1);
-                }
-
-                if (lightningAnimLength <= 0.0f && !Input.GetButton(powerUpAttack))
-                {
-                    lightningAnimLength = 0.64f;
-                    anim.SetBool("Attack", false);
-                    anim.SetLayerWeight(1, 0);
-                }
+                anim.SetBool("AttackZeus", true);
+                anim.SetLayerWeight(1, 1);
             }
+
+            if (lightningAnimLength <= 0.0f && !Input.GetButton(powerUpAttack))
+            {
+                lightningAnimLength = 2.0f;
+                anim.SetBool("AttackZeus", false);
+                anim.SetLayerWeight(1, 0);
+                canMove = true;
+            }
+
         }
     }
 
@@ -107,6 +110,7 @@ public class ControllerMC : StatesMC
 
     private void TurnCharacter()
     {
+
         if (movX < 0.0f)
         {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
@@ -158,8 +162,11 @@ public class ControllerMC : StatesMC
 
     void FixedUpdate()
     {
-        movX = Input.GetAxis("Horizontal");
-
+        if (canMove || !IsGrounded())
+        {
+            movX = Input.GetAxis("Horizontal");
+        }
+        
         float tgtVelocityX = speed.x * movX;
 
         if (Mathf.Abs(tgtVelocityX) > maxSpeedX)
@@ -168,5 +175,7 @@ public class ControllerMC : StatesMC
         }
 
         rb.velocity = new Vector2(tgtVelocityX, rb.velocity.y);
+
+
     }
 }
