@@ -20,8 +20,10 @@ public class MC : MonoBehaviour
     public bool AtlasPowerUpOn;
     public bool ZeusPowerUpOn;
 
-    [Header("PowerUps's")]
+    [Header("Attack Triggers")]
     public GameObject DamageTrigger;
+    public BoxCollider2D LigtningTrigger;
+    
 
     void Awake()
     {
@@ -38,4 +40,5 @@ public class MC : MonoBehaviour
     public void DamageOff(){
         DamageTrigger.SetActive(false);
     }
+
 }

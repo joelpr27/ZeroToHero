@@ -48,7 +48,7 @@ public class ControllerMC : StatesMC
         }
         
 
-        if(Input.GetButtonDown(punch))
+        if(Input.GetButton(punch))
         {
             anim.SetBool("Attack", true);
             anim.SetLayerWeight(1,1);
@@ -62,11 +62,26 @@ public class ControllerMC : StatesMC
         }
     }
 
+    void SpecialAttack(){
+        if (Input.GetButton(powerUpAttack))
+        {
+            if (AtlasPowerUpOn)
+            {
+                
+            }
+            
+            if (ZeusPowerUpOn)
+            {
+                
+            }
+        }
+    }
+
 
 //Suplementary Functions
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
     }
 
     private void TurnCharacter(){
