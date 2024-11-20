@@ -3,21 +3,23 @@ using UnityEngine;
 
 public class ControllerMC : StatesMC
 {
-    [Header("Movimiento")]
+    [Header("Controller")]
 
     public Vector2 speed;
     public float maxSpeedX;
     float movX;
-    float punchAnimLength = 0.65f;
+    public AnimationClip punchAnimation;
+    float punchAnimLength = 0.64f;
+    float lightningAnimLength = 0.64f;
     private bool doubleJump;
 
 
 
 
-//Main Actions of the character
+    //Main Actions of the character
     void Jump()
     {
-         if (IsGrounded() && !Input.GetButton("Jump"))
+        if (IsGrounded() && !Input.GetButton("Jump"))
         {
             doubleJump = false;
         }
@@ -27,7 +29,7 @@ public class ControllerMC : StatesMC
             if (IsGrounded() || doubleJump)
             {
                 rb.velocity = new Vector2(rb.velocity.x, speed.y);
-                
+
                 if (HermesPowerUpOn)
                 {
                     doubleJump = !doubleJump;
@@ -41,50 +43,70 @@ public class ControllerMC : StatesMC
         }
     }
 
-    void Attack() {
+    void Attack()
+    {
         if (anim.GetBool("Attack"))
         {
             punchAnimLength -= Time.deltaTime;
         }
-        
 
-        if(Input.GetButton(punch))
+
+        if (Input.GetButton(punch))
         {
             anim.SetBool("Attack", true);
-            anim.SetLayerWeight(1,1);
+            anim.SetLayerWeight(1, 1);
         }
 
-        if(punchAnimLength <= 0.0f && !Input.GetButton(punch))
+        if (punchAnimLength <= 0.0f && !Input.GetButton(punch))
         {
-            punchAnimLength = 0.65f;
+            punchAnimLength = 0.64f;
             anim.SetBool("Attack", false);
-            anim.SetLayerWeight(1,0);
+            anim.SetLayerWeight(1, 0);
         }
     }
 
-    void SpecialAttack(){
+    void SpecialAttack()
+    {
         if (Input.GetButton(powerUpAttack))
         {
             if (AtlasPowerUpOn)
             {
-                
+
             }
-            
+
             if (ZeusPowerUpOn)
             {
-                
+                if (anim.GetBool("Attack"))
+                {
+                    lightningAnimLength -= Time.deltaTime;
+                }
+
+
+                if (Input.GetButton(powerUpAttack))
+                {
+                    anim.SetBool("Attack", true);
+                    anim.SetLayerWeight(1, 1);
+                }
+
+                if (lightningAnimLength <= 0.0f && !Input.GetButton(powerUpAttack))
+                {
+                    lightningAnimLength = 0.64f;
+                    anim.SetBool("Attack", false);
+                    anim.SetLayerWeight(1, 0);
+                }
             }
         }
     }
 
 
-//Suplementary Functions
+    //Suplementary Functions
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
     }
 
-    private void TurnCharacter(){
+    private void TurnCharacter()
+    {
         if (movX < 0.0f)
         {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
@@ -100,42 +122,45 @@ public class ControllerMC : StatesMC
         UpdateState();
 
 
-        switch(mcState)
+        switch (mcState)
         {
             case States.Idle:
-                
+
                 anim.SetInteger("State", 0);
                 //posibles Mecanicas en el estado Idle
                 Jump();
                 Attack();
-                
-            break;
+                SpecialAttack();
+
+                break;
 
             case States.Run:
                 anim.SetInteger("State", 1);
                 //posibles Mecanicas en el estado Run
                 Jump();
                 Attack();
+                SpecialAttack();
                 TurnCharacter();
-            break;
+                break;
 
             case States.Jump:
                 anim.SetInteger("State", 2);
                 //posibles Mecanicas en el estado Jump
                 Jump();
                 Attack();
+                SpecialAttack();
                 TurnCharacter();
-            break;
+                break;
 
         }
-        
+
     }
-    
+
     void FixedUpdate()
     {
         movX = Input.GetAxis("Horizontal");
 
-        float tgtVelocityX = speed.x * movX ;
+        float tgtVelocityX = speed.x * movX;
 
         if (Mathf.Abs(tgtVelocityX) > maxSpeedX)
         {
