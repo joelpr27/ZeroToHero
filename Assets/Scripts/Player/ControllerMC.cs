@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
@@ -19,7 +20,7 @@ public class ControllerMC : StatesMC
     float rockThrowAnimLength = 1.0f;
     bool canMove = true;
     bool loaded = false;
-    bool dash = false;
+    public bool dash = false;
     bool doubleJump;
 
 
@@ -157,26 +158,31 @@ public class ControllerMC : StatesMC
 
     void Dash()
     {
-        if (IrisPowerUpOn)
+        if (IrisPowerUpOn && Input.GetButtonDown(powerUpMovement) && !dash)
         {
-            if (Input.GetButtonDown(powerUpMovement))
-            {   
-                dash = true;
-            }
+            StartCoroutine(DashCd());
         }
+    }
+    IEnumerator DashCd()
+    {
+        dash = true;
+        yield return new WaitForSeconds(dashLength);
+        dash = false;
     }
 
     //Suplementary Functions
     private void TurnCharacter()
     {
-
-        if (movX < 0.0f)
+        if (!dash)
         {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        }
-        if (movX > 0.0f)
-        {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            if (movX < 0.0f)
+            {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+            if (movX > 0.0f)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
         }
     }
 
@@ -247,17 +253,17 @@ public class ControllerMC : StatesMC
 
         if (Mathf.Abs(dashSpeed) > maxDashSpeed)
         {
-            dashSpeed = Mathf.Sign(tgtVelocityX) * maxSpeedX;
+            dashSpeed = Mathf.Sign(dashSpeed) * maxDashSpeed;
         }
 
         if (dash)
         {
-            rb.velocity = new Vector2(dashSpeed, 0);
+            rb.velocity = new Vector2(dashSpeed * movX , 0);
         }
         else
         {
             rb.velocity = new Vector2(tgtVelocityX, rb.velocity.y);
         }
-        
+
     }
 }

@@ -10855,8 +10855,24 @@ PrefabInstance:
       value: Hercules
       objectReference: {fileID: 0}
     - target: {fileID: 9183364458125783636, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
+      propertyPath: dashSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183364458125783636, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
+      propertyPath: dashLength
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183364458125783636, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
       propertyPath: loadedSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183364458125783636, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
+      propertyPath: maxDashSpeed
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183364458125783636, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
+      propertyPath: IrisPowerUpOn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9183364458125783636, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
       propertyPath: ZeusPowerUpOn
