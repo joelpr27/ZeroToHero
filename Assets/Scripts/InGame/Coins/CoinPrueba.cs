@@ -6,14 +6,19 @@ public class CoinPrueba : MonoBehaviour
 {
     public int valor = 1;
     public CoinGameManager gameManager;
+    public GameObject particle;
 
+    private void Start()
+    {
+        gameManager=GameObject.FindWithTag("GameController").GetComponent<CoinGameManager>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             gameManager.SumarPuntos(valor);
-            Destroy(this.gameObject);
+            Instantiate(particle, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
-        
     }
 }

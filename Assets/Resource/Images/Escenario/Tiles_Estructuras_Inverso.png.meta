@@ -1,0 +1,940 @@
+fileFormatVersion: 2
+guid: 14d50ad0b93b30c46912f6c69460a38c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1600.2856
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 2.6666718, y: 0.35717773}
+        - {x: 2.6666718, y: 0.35717773}
+        - {x: 2.6666718, y: 0.35717773}
+        - {x: 2.6666718, y: 0.35717773}
+        - {x: 2.6666718, y: 0.35717773}
+        - {x: 2.6666718, y: 0.35717773}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c319e2bcae110cc4eb903cb327f93030
+      internalID: -1186466398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_1
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 1600.2856
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -29.333313, y: -4.6428223}
+        - {x: -29.333313, y: -4.6428223}
+        - {x: -29.333313, y: -4.6428223}
+        - {x: -29.333313, y: -4.6428223}
+        - {x: -29.333313, y: -4.6428223}
+        - {x: -29.333313, y: -4.6428223}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89281fecd5529f646b8a2a70131e9a69
+      internalID: 1664448538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_2
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1600.2856
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 37.666687, y: 2.3571777}
+        - {x: 37.666687, y: 2.3571777}
+        - {x: 37.666687, y: 2.3571777}
+        - {x: 37.666687, y: 2.3571777}
+        - {x: 37.666687, y: 2.3571777}
+        - {x: 37.666687, y: 2.3571777}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c583ac9cb902ae94ea3aaa91e56e3b01
+      internalID: -678804097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1334.2856
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1.6666718, y: -6.6428223}
+        - {x: 1.6666718, y: -6.6428223}
+        - {x: 0.66667175, y: -6.6428223}
+        - {x: 1.6666718, y: -6.6428223}
+        - {x: 1.6666718, y: -5.6428223}
+        - {x: 2.6666718, y: -7.6428223}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c031bb1e8c3bd4b8cd3b535a5746f7
+      internalID: 1508701333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_5
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 1334.2856
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32.333313, y: 5.3571777}
+        - {x: -32.333313, y: 4.3571777}
+        - {x: -32.333313, y: 5.3571777}
+        - {x: -32.333313, y: 5.3571777}
+        - {x: -32.333313, y: 5.3571777}
+        - {x: -32.333313, y: 5.3571777}
+        - {x: -32.333313, y: 4.3571777}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa80a7ba9d42744bacc521d4abae04a
+      internalID: -415498279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_6
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1334.2856
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 35.666687, y: 37.357178}
+        - {x: 35.666687, y: 37.357178}
+        - {x: 35.666687, y: 37.357178}
+        - {x: 35.666687, y: 37.357178}
+        - {x: 35.666687, y: 37.357178}
+        - {x: 35.666687, y: 37.357178}
+        - {x: 35.666687, y: 37.357178}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fe4b271670264946b412934984956b4
+      internalID: -470887131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1068.2856
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0.66667175, y: -10.642822}
+        - {x: 0.66667175, y: -10.642822}
+        - {x: 0.66667175, y: -10.642822}
+        - {x: 0.66667175, y: -10.642822}
+        - {x: 0.66667175, y: -10.642822}
+        - {x: 0.66667175, y: -10.642822}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352992049960789438b0dd72bbefd75f
+      internalID: 1680477418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_8
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 1068.2856
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -32.333313, y: -13.642822}
+        - {x: -32.333313, y: -13.642822}
+        - {x: -32.333313, y: -13.642822}
+        - {x: -32.333313, y: -13.642822}
+        - {x: -32.333313, y: -13.642822}
+        - {x: -32.333313, y: -13.642822}
+      tessellationDetail: 0
+      bones: []
+      spriteID: baabff4c82dab7c4788ff68730b81a3d
+      internalID: 1082643887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_9
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1068.2856
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 35.666687, y: -2.6428223}
+        - {x: 35.666687, y: -2.6428223}
+        - {x: 36.666687, y: -2.6428223}
+        - {x: 36.666687, y: -2.6428223}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf94aeb7f8a7864cb5dacfbe33889cc
+      internalID: 332339253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 802.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -133.33333, y: -132.64282}
+        - {x: 132.66667, y: -132.64282}
+        - {x: 132.66667, y: -101.64282}
+        - {x: -133.33333, y: -101.64282}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1d243ed165a1c64ea5f7bf64f282537
+      internalID: 2137706001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_11
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 802.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -133.33331, y: -101.64282}
+        - {x: -133.33331, y: -133.35712}
+        - {x: 133.33331, y: -133.35712}
+        - {x: 133.33331, y: -101.64282}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac2fe09d439370f408666b280c6eb3a4
+      internalID: -1153278042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_12
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 802.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -133.33333, y: -133.2143}
+        - {x: 133.33333, y: -133.2143}
+        - {x: 133.33331, y: -101.64282}
+        - {x: -133.33331, y: -101.64282}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae16838bc20a73e49906e3c307177e63
+      internalID: -324311597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_13
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 802.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -133.33333, y: -133.2143}
+        - {x: 133.33333, y: -133.2143}
+        - {x: 133.33331, y: -101.64282}
+        - {x: -133.33331, y: -101.64282}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd6833ce9ab64a40b1dd37e5fba182c
+      internalID: -25543962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 536.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -33.33333, y: -102.64282}
+        - {x: -33.33333, y: -133.35712}
+        - {x: 133.33333, y: -133.2143}
+        - {x: 133.33333, y: -102.64282}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599514523aa3dae449745c5175a0dd24
+      internalID: 1128639569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_16
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 536.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -133.33331, y: -102.64282}
+        - {x: -133.33333, y: -133.2143}
+        - {x: 33.666687, y: -133.35712}
+        - {x: 33.666687, y: -102.64282}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1022ef06e7c5d134ba87bbbcbfc4d4db
+      internalID: 1479394231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_17
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 536.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1.666687, y: -102.64282}
+        - {x: 1.666687, y: -133.35712}
+        - {x: 133.33333, y: -133.2143}
+        - {x: 133.33331, y: -102.64282}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c52e494aa9ffea44a53abd892a4da03
+      internalID: -648092889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_18
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 536.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -133.33331, y: -102.64282}
+        - {x: -133.33333, y: -133.2143}
+        - {x: 1.666687, y: -133.35712}
+        - {x: 1.666687, y: -102.64282}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 064e1a8382f53e048b21afc23c5d22f7
+      internalID: -806763629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_19
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 536.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64.333374, y: -102.64282}
+        - {x: -64.333374, y: -133.35712}
+        - {x: 133.33333, y: -133.2143}
+        - {x: 133.33325, y: -102.64282}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f2376cc6bb89f4eb610933072d2076
+      internalID: -1793359122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_20
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 536.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -133.33337, y: -102.64282}
+        - {x: -133.33333, y: -133.2143}
+        - {x: 69.666626, y: -133.35712}
+        - {x: 69.666626, y: -102.64282}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d9046362a3bd448b93e48f3ba46c32
+      internalID: -1717233192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -33.33333, y: -102.64285}
+        - {x: -33.33333, y: -133.35715}
+        - {x: 133.33333, y: -133.2143}
+        - {x: 133.33333, y: -103.64285}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1740f9a58d61c7e4084f760ef0042f9f
+      internalID: 351033762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_22
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 270.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -133.33331, y: -103.64285}
+        - {x: -133.33333, y: -133.2143}
+        - {x: 33.666687, y: -133.35715}
+        - {x: 33.666687, y: -103.64285}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c59964ac39888be4da4834a67ddac61d
+      internalID: -1984049327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_23
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 270.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 1.666687, y: -103.64285}
+        - {x: 1.666687, y: -132.64285}
+        - {x: 133.33333, y: -133.2143}
+        - {x: 133.33331, y: -103.64285}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 989ddef107521c04990e0703818bea5e
+      internalID: -988305568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_24
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 270.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -133.33331, y: -103.64285}
+        - {x: -133.33333, y: -133.2143}
+        - {x: 2.666687, y: -133.35715}
+        - {x: 2.666687, y: -103.64285}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba698eb8195598d4fa7e295defc4a598
+      internalID: -912362485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_25
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 270.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64.333374, y: -103.64285}
+        - {x: -64.333374, y: -133.35715}
+        - {x: 133.33333, y: -133.2143}
+        - {x: 133.33325, y: -103.64285}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d5f89ad52d4074c997673a4784fbbd
+      internalID: 2050136395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_26
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 270.2857
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -133.33337, y: -103.64285}
+        - {x: -133.33333, y: -133.2143}
+        - {x: 70.666626, y: -133.35715}
+        - {x: 70.666626, y: -103.64285}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05877a6751cff4144a4ec991a4df2490
+      internalID: -229755157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4.2857056
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -33.33333, y: -104.64285}
+        - {x: -33.33333, y: -133.35715}
+        - {x: 133.33333, y: -133.2143}
+        - {x: 133.33333, y: -104.64285}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ca744bd1928fe49ac3e8b8393c2068
+      internalID: -1295969212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_28
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 4.2857056
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -133.33331, y: -104.64285}
+        - {x: -133.33333, y: -133.2143}
+        - {x: 34.666687, y: -133.35715}
+        - {x: 34.666687, y: -104.64285}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 160b08d983965124080ce7d02c0092a0
+      internalID: -1505547425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_29
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 4.2857056
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0.666687, y: -104.64285}
+        - {x: 0.666687, y: -133.35715}
+        - {x: 133.33333, y: -133.2143}
+        - {x: 133.33331, y: -104.64285}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6697f6493f4064439c202e860d26999
+      internalID: 948988783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_30
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 4.2857056
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -133.33331, y: -104.64285}
+        - {x: -133.33333, y: -133.2143}
+        - {x: 2.666687, y: -133.35715}
+        - {x: 2.666687, y: -104.64285}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d8dad45fa3712841b9238cc3cf70f8d
+      internalID: -60236539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_31
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 4.2857056
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64.333374, y: -104.64285}
+        - {x: -64.333374, y: -133.35715}
+        - {x: 133.33333, y: -133.2143}
+        - {x: 133.33325, y: -104.64285}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70ea086426d4b5449bb35f4e7090699b
+      internalID: 562246571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_Inverso_32
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 4.2857056
+        width: 266.66666
+        height: 266.7143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -133.33337, y: -104.64285}
+        - {x: -133.33333, y: -133.2143}
+        - {x: 69.666626, y: -133.35715}
+        - {x: 69.666626, y: -104.64285}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a11b8474d3f5d409eb69a25ed7496c
+      internalID: 841913410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Tiles_Estructuras_Inverso_0: -1186466398
+      Tiles_Estructuras_Inverso_1: 1664448538
+      Tiles_Estructuras_Inverso_10: 2137706001
+      Tiles_Estructuras_Inverso_11: -1153278042
+      Tiles_Estructuras_Inverso_12: -324311597
+      Tiles_Estructuras_Inverso_13: -25543962
+      Tiles_Estructuras_Inverso_14: 1391197932
+      Tiles_Estructuras_Inverso_15: 1128639569
+      Tiles_Estructuras_Inverso_16: 1479394231
+      Tiles_Estructuras_Inverso_17: -648092889
+      Tiles_Estructuras_Inverso_18: -806763629
+      Tiles_Estructuras_Inverso_19: -1793359122
+      Tiles_Estructuras_Inverso_2: -678804097
+      Tiles_Estructuras_Inverso_20: -1717233192
+      Tiles_Estructuras_Inverso_21: 351033762
+      Tiles_Estructuras_Inverso_22: -1984049327
+      Tiles_Estructuras_Inverso_23: -988305568
+      Tiles_Estructuras_Inverso_24: -912362485
+      Tiles_Estructuras_Inverso_25: 2050136395
+      Tiles_Estructuras_Inverso_26: -229755157
+      Tiles_Estructuras_Inverso_27: -1295969212
+      Tiles_Estructuras_Inverso_28: -1505547425
+      Tiles_Estructuras_Inverso_29: 948988783
+      Tiles_Estructuras_Inverso_3: -889022973
+      Tiles_Estructuras_Inverso_30: -60236539
+      Tiles_Estructuras_Inverso_31: 562246571
+      Tiles_Estructuras_Inverso_32: 841913410
+      Tiles_Estructuras_Inverso_4: 1508701333
+      Tiles_Estructuras_Inverso_5: -415498279
+      Tiles_Estructuras_Inverso_6: -470887131
+      Tiles_Estructuras_Inverso_7: 1680477418
+      Tiles_Estructuras_Inverso_8: 1082643887
+      Tiles_Estructuras_Inverso_9: 332339253
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
