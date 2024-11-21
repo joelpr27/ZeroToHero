@@ -5,8 +5,8 @@ public class StatesMC : MC
 {
     [Header("Maquina de estados")]
     public States mcState;
-    public enum States{Idle, Run, Jump};    
-    
+    public enum States{Idle, Run, Jump};  
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class StatesMC : MC
         switch (mcState)
         {
             case States.Idle:
-                if (rb.velocity.y != 0.0f)
+                if (!IsGrounded())
                 {
                     mcState = States.Jump;
                 }
@@ -31,7 +31,7 @@ public class StatesMC : MC
                 break;
 
             case States.Run:
-                if (rb.velocity.y != 0.0f)
+                if (!IsGrounded())
                 {
                     mcState = States.Jump;
                 }

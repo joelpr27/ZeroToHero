@@ -154,11 +154,6 @@ public class ControllerMC : StatesMC
 
 
     //Suplementary Functions
-    private bool IsGrounded()
-    {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
-    }
-
     private void TurnCharacter()
     {
 
