@@ -9,8 +9,8 @@ public class Pelea : MonoBehaviour
 
     public Animator animator;
 
-    [Header("Combate:")]
 
+    [Header("Combate:")]
     public int ataque;
     public bool ataqueZarpa;
     public bool ataqueMordisco;
@@ -19,16 +19,16 @@ public class Pelea : MonoBehaviour
 
     public int tiempoPrimerAtaque;
     public int tiempoEntreAtaques;
+    public GameObject triggerCabezas;
 
 
     [Header("Trigger Deteccion:")]
-
     public GameObject triggerZarpa;
     public GameObject triggerMordisco;
     public GameObject triggerFuego;
 
-    [Header("Trigger Impacto:")]
 
+    [Header("Trigger Impacto:")]
     public GameObject impactorZarpa;
     public GameObject impactorMordisco;
     public GameObject impactorFuego;
@@ -289,6 +289,18 @@ public class Pelea : MonoBehaviour
     public void DesactivarImpactoFuego()
     {
         impactorFuego.SetActive(false);
+    }
+
+    public void ActivarTriggerCabeza()
+    {
+        triggerCabezas.SetActive(true);
+
+    }
+
+    public void DesactivarTriggerCabeza()
+    {
+        triggerCabezas.SetActive(false);
+
     }
 
 }

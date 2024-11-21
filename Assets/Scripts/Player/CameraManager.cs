@@ -13,7 +13,7 @@ public class CameraManager : MonoBehaviour
     
     void Start()
     {
-        target = GameObject.Find("Player");
+        target = GameObject.FindWithTag("Player");
 
         transform.position = new Vector3(target.transform.position.x, target.transform.position.y, -10);
     }
