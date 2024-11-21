@@ -17,8 +17,8 @@ public class Pelea : MonoBehaviour
     public bool ataqueFuego;
     public bool impactoAtaque;
 
-    public int tiempoPrimerAtaque = 20;
-    public int tiempoEntreAtaques = 10;
+    public int tiempoPrimerAtaque;
+    public int tiempoEntreAtaques;
 
 
     [Header("Trigger Deteccion:")]
@@ -41,7 +41,6 @@ public class Pelea : MonoBehaviour
     void Start()
     {
         DesactivarTriggers("all");
-        StartCoroutine(ActivarTriggers(tiempoPrimerAtaque));
 
         animator = GetComponent<Animator>();
         state = State.Idle;
@@ -150,6 +149,12 @@ public class Pelea : MonoBehaviour
 
         }
 
+    }
+
+    public void IniciarBatalla()
+    {
+        Debug.Log("Tiempo: " + tiempoPrimerAtaque);
+        StartCoroutine(ActivarTriggers(tiempoPrimerAtaque));
     }
 
     IEnumerator GoIdle(float tiempo)

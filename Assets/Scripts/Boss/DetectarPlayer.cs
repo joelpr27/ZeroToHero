@@ -11,12 +11,18 @@ public class DetectarPlayer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        TriggerActual(other);
+        if (other.tag == "Player")
+        {
+            TriggerActual(other);
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        ComprobarEsquive(other);
+        if (other.tag == "Player")
+        {
+            ComprobarEsquive(other);
+        }
     }
 
     //La hydra golpea en el trigger que ha detectado al player
@@ -66,7 +72,7 @@ public class DetectarPlayer : MonoBehaviour
             {
                 Debug.Log("ESQUIVE TriggerZarpazo");
 
-                hydra.GetComponent<Pelea>().Esquive(4.8f);
+                hydra.GetComponent<Pelea>().Esquive(4.2f);
             }
             if (zona.name == "TriggerMordisco")
             {

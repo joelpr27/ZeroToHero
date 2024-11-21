@@ -11,7 +11,10 @@ public class DetectarImpacto : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        ComprobarImpacto(other);
+        if (other.tag == "Player")
+        {
+            ComprobarImpacto(other);
+        }
     }
 
     public void ComprobarImpacto(Collider2D other)
