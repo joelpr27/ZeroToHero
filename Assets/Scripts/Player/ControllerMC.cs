@@ -10,8 +10,11 @@ public class ControllerMC : StatesMC
     float movX;
     public AnimationClip punchAnimation;
     float punchAnimLength = 0.64f;
-    float lightningAnimLength = 2.0f;
+    float zeusAnimLength = 2.0f;
+    float rockPullAnimLength = 1.5f;
+    float rockThrowAnimLength = 0.0f;
     bool canMove = true;
+    bool loaded = false;
     private bool doubleJump;
 
 
@@ -72,13 +75,50 @@ public class ControllerMC : StatesMC
 
         if (AtlasPowerUpOn)
         {
+            //recoger roca
+            if (anim.GetBool("AttackAtlas") && loaded == false)
+            {
+                rockPullAnimLength -= Time.deltaTime;
+                movX = 0;
+                canMove = false;
+            }
+            
 
+            if (Input.GetButton(powerUpAttack) && loaded == false && rockThrowAnimLength <= 0)
+            {
+                
+                rockThrowAnimLength = 0.0f;
+                anim.SetLayerWeight(1, 1);
+                anim.SetBool("AttackAtlas", true);
+            }
+
+            //Lanzar roca
+            if (rockThrowAnimLength > 0 && loaded == false)
+            {
+                rockThrowAnimLength -= Time.deltaTime;
+            }
+
+
+            if (Input.GetButton(powerUpAttack) && loaded == true)
+            {
+                rockThrowAnimLength = 1.0f;
+                anim.SetBool("AttackAtlas", false);
+                loaded = false;
+            }
+
+            if (rockPullAnimLength <= 0.0f && !Input.GetButton(powerUpAttack))
+            {
+                rockPullAnimLength = 1.5f;
+                canMove = true;
+                loaded = true;
+            }
         }
+
         if (ZeusPowerUpOn)
         {
             if (anim.GetBool("AttackZeus"))
             {
-                lightningAnimLength -= Time.deltaTime;
+                zeusAnimLength -= Time.deltaTime;
                 movX = 0;
                 canMove = false;
             }
@@ -90,9 +130,9 @@ public class ControllerMC : StatesMC
                 anim.SetLayerWeight(1, 1);
             }
 
-            if (lightningAnimLength <= 0.0f && !Input.GetButton(powerUpAttack))
+            if (zeusAnimLength <= 0.0f && !Input.GetButton(powerUpAttack))
             {
-                lightningAnimLength = 2.0f;
+                zeusAnimLength = 2.0f;
                 anim.SetBool("AttackZeus", false);
                 anim.SetLayerWeight(1, 0);
                 canMove = true;
@@ -166,7 +206,7 @@ public class ControllerMC : StatesMC
         {
             movX = Input.GetAxis("Horizontal");
         }
-        
+
         float tgtVelocityX = speed.x * movX;
 
         if (Mathf.Abs(tgtVelocityX) > maxSpeedX)
