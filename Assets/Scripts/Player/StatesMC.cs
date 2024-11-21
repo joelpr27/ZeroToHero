@@ -24,7 +24,7 @@ public class StatesMC : MC
                 {
                     mcState = States.Jump;
                 }
-                else if (rb.velocity.x != 0.0f && rb.velocity.y == 0.0f)
+                else if (rb.velocity.x != 0.0f && IsGrounded())
                 {
                     mcState = States.Run;
                 }
@@ -35,18 +35,18 @@ public class StatesMC : MC
                 {
                     mcState = States.Jump;
                 }
-                else if (rb.velocity.x == 0.0f && rb.velocity.y == 0.0f)
+                else if (rb.velocity.x == 0.0f && IsGrounded())
                 {
                     mcState = States.Idle;
                 }
                 break;
 
             case States.Jump:
-                if (rb.velocity.x == 0.0f && rb.velocity.y == 0.0f)
+                if (rb.velocity.x == 0.0f && IsGrounded())
                 {
                     mcState = States.Idle;
                 }
-                else if (rb.velocity.x != 0.0f && rb.velocity.y == 0.0f)
+                else if (rb.velocity.x != 0.0f && IsGrounded())
                 {
                     mcState = States.Run;
                 }

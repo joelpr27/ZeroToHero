@@ -1,4 +1,5 @@
 using Unity.VisualScripting;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class ControllerMC : StatesMC
@@ -6,8 +7,11 @@ public class ControllerMC : StatesMC
     [Header("Controller")]
 
     public Vector2 speed;
-    public float loadedSpeed;
     public float maxSpeedX;
+    public float loadedSpeed;
+    public float dashSpeed;
+    public float maxDashSpeed;
+    public float dashLength;
     float movX;
     float punchAnimLength = 0.64f;
     float zeusAnimLength = 2.0f;
@@ -15,6 +19,7 @@ public class ControllerMC : StatesMC
     float rockThrowAnimLength = 1.0f;
     bool canMove = true;
     bool loaded = false;
+    bool dash = false;
     bool doubleJump;
 
 
@@ -55,7 +60,7 @@ public class ControllerMC : StatesMC
         }
 
 
-        if (Input.GetButton(punch))
+        if (Input.GetButton(punch) && !anim.GetBool("AttackAtlas"))
         {
             anim.SetBool("Attack", true);
             anim.SetLayerWeight(1, 1);
@@ -71,12 +76,10 @@ public class ControllerMC : StatesMC
 
     void SpecialAttack()
     {
-
-
         if (AtlasPowerUpOn)
         {
             //recoger roca
-            if (anim.GetBool("AttackAtlas") && loaded == false)
+            if (anim.GetBool("AttackAtlas") && !loaded)
             {
                 rockPullAnimLength -= Time.deltaTime;
                 movX = 0;
@@ -84,7 +87,7 @@ public class ControllerMC : StatesMC
             }
 
 
-            if (Input.GetButton(powerUpAttack) && loaded == false)
+            if (Input.GetButton(powerUpAttack) && !loaded && IsGrounded() && !anim.GetBool("Attack"))
             {
 
                 rockThrowAnimLength = 0.0f;
@@ -92,8 +95,8 @@ public class ControllerMC : StatesMC
                 anim.SetBool("AttackAtlas", true);
             }
 
-            
-            if (rockPullAnimLength <= 0.0f && !Input.GetButton(powerUpAttack) && loaded == false)
+
+            if (rockPullAnimLength <= 0.0f && !Input.GetButton(powerUpAttack) && !loaded)
             {
                 rockPullAnimLength = 1.5f;
                 canMove = true;
@@ -101,7 +104,7 @@ public class ControllerMC : StatesMC
             }
 
             //Lanzar roca
-            if (rockThrowAnimLength > 0.0f && loaded == true)
+            if (rockThrowAnimLength > 0.0f && loaded)
             {
                 rockThrowAnimLength -= Time.deltaTime;
                 movX = 0;
@@ -109,12 +112,12 @@ public class ControllerMC : StatesMC
             }
 
 
-            if (Input.GetButton(powerUpAttack) && loaded == true)
+            if (Input.GetButton(powerUpAttack) && loaded)
             {
                 rockThrowAnimLength = 1.0f;
                 anim.SetBool("AttackAtlas", false);
             }
-            
+
             if (rockThrowAnimLength <= 0.0f && !Input.GetButton(powerUpAttack) && !anim.GetBool("AttackAtlas"))
             {
                 rockThrowAnimLength = 1.0f;
@@ -152,6 +155,16 @@ public class ControllerMC : StatesMC
         }
     }
 
+    void Dash()
+    {
+        if (IrisPowerUpOn)
+        {
+            if (Input.GetButtonDown(powerUpMovement))
+            {   
+                dash = true;
+            }
+        }
+    }
 
     //Suplementary Functions
     private void TurnCharacter()
@@ -180,6 +193,8 @@ public class ControllerMC : StatesMC
                 Jump();
                 Attack();
                 SpecialAttack();
+                Dash();
+
 
                 break;
 
@@ -189,6 +204,7 @@ public class ControllerMC : StatesMC
                 Jump();
                 Attack();
                 SpecialAttack();
+                Dash();
                 TurnCharacter();
                 break;
 
@@ -198,6 +214,7 @@ public class ControllerMC : StatesMC
                 Jump();
                 Attack();
                 SpecialAttack();
+                Dash();
                 TurnCharacter();
                 break;
 
@@ -216,7 +233,7 @@ public class ControllerMC : StatesMC
 
         if (loaded == true)
         {
-            tgtVelocityX = speed.x * (movX/loadedSpeed);
+            tgtVelocityX = speed.x * (movX / loadedSpeed);
         }
         else
         {
@@ -228,6 +245,19 @@ public class ControllerMC : StatesMC
             tgtVelocityX = Mathf.Sign(tgtVelocityX) * maxSpeedX;
         }
 
-        rb.velocity = new Vector2(tgtVelocityX, rb.velocity.y);
+        if (Mathf.Abs(dashSpeed) > maxDashSpeed)
+        {
+            dashSpeed = Mathf.Sign(tgtVelocityX) * maxSpeedX;
+        }
+
+        if (dash)
+        {
+            rb.velocity = new Vector2(dashSpeed, 0);
+        }
+        else
+        {
+            rb.velocity = new Vector2(tgtVelocityX, rb.velocity.y);
+        }
+        
     }
 }
