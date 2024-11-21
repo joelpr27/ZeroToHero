@@ -6,16 +6,16 @@ public class ControllerMC : StatesMC
     [Header("Controller")]
 
     public Vector2 speed;
+    public float loadedSpeed;
     public float maxSpeedX;
     float movX;
-    public AnimationClip punchAnimation;
     float punchAnimLength = 0.64f;
     float zeusAnimLength = 2.0f;
     float rockPullAnimLength = 1.5f;
-    float rockThrowAnimLength = 0.0f;
+    float rockThrowAnimLength = 1.0f;
     bool canMove = true;
     bool loaded = false;
-    private bool doubleJump;
+    bool doubleJump;
 
 
 
@@ -23,7 +23,7 @@ public class ControllerMC : StatesMC
     //Main Actions of the character
     void Jump()
     {
-        if (IsGrounded() && !Input.GetButton("Jump"))
+        if (IsGrounded() && !Input.GetButton("Jump") && canMove)
         {
             doubleJump = false;
         }
@@ -82,20 +82,30 @@ public class ControllerMC : StatesMC
                 movX = 0;
                 canMove = false;
             }
-            
 
-            if (Input.GetButton(powerUpAttack) && loaded == false && rockThrowAnimLength <= 0)
+
+            if (Input.GetButton(powerUpAttack) && loaded == false)
             {
-                
+
                 rockThrowAnimLength = 0.0f;
                 anim.SetLayerWeight(1, 1);
                 anim.SetBool("AttackAtlas", true);
             }
 
+            
+            if (rockPullAnimLength <= 0.0f && !Input.GetButton(powerUpAttack) && loaded == false)
+            {
+                rockPullAnimLength = 1.5f;
+                canMove = true;
+                loaded = true;
+            }
+
             //Lanzar roca
-            if (rockThrowAnimLength > 0 && loaded == false)
+            if (rockThrowAnimLength > 0.0f && loaded == true)
             {
                 rockThrowAnimLength -= Time.deltaTime;
+                movX = 0;
+                canMove = false;
             }
 
 
@@ -103,15 +113,16 @@ public class ControllerMC : StatesMC
             {
                 rockThrowAnimLength = 1.0f;
                 anim.SetBool("AttackAtlas", false);
+            }
+            
+            if (rockThrowAnimLength <= 0.0f && !Input.GetButton(powerUpAttack) && !anim.GetBool("AttackAtlas"))
+            {
+                rockThrowAnimLength = 1.0f;
+                anim.SetLayerWeight(1, 0);
+                canMove = true;
                 loaded = false;
             }
 
-            if (rockPullAnimLength <= 0.0f && !Input.GetButton(powerUpAttack))
-            {
-                rockPullAnimLength = 1.5f;
-                canMove = true;
-                loaded = true;
-            }
         }
 
         if (ZeusPowerUpOn)
@@ -165,7 +176,6 @@ public class ControllerMC : StatesMC
     {
         UpdateState();
 
-
         switch (mcState)
         {
             case States.Idle:
@@ -207,7 +217,16 @@ public class ControllerMC : StatesMC
             movX = Input.GetAxis("Horizontal");
         }
 
-        float tgtVelocityX = speed.x * movX;
+        float tgtVelocityX;
+
+        if (loaded == true)
+        {
+            tgtVelocityX = speed.x * (movX/loadedSpeed);
+        }
+        else
+        {
+            tgtVelocityX = speed.x * movX;
+        }
 
         if (Mathf.Abs(tgtVelocityX) > maxSpeedX)
         {
@@ -215,7 +234,5 @@ public class ControllerMC : StatesMC
         }
 
         rb.velocity = new Vector2(tgtVelocityX, rb.velocity.y);
-
-
     }
 }
