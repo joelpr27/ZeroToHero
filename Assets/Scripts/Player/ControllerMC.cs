@@ -15,12 +15,13 @@ public class ControllerMC : StatesMC
     public float dashLength;
     float movX;
     float punchAnimLength = 0.64f;
-    float zeusAnimLength = 2.0f;
+    bool zeusAnimReady = true;
     float rockPullAnimLength = 1.5f;
     float rockThrowAnimLength = 1.0f;
     bool canMove = true;
     bool loaded = false;
-    public bool dash = false;
+    bool dash = false;
+    bool dashReady = true;
     bool doubleJump;
 
 
@@ -131,23 +132,21 @@ public class ControllerMC : StatesMC
 
         if (ZeusPowerUpOn)
         {
-            if (anim.GetBool("AttackZeus"))
+            if (Input.GetButton(powerUpAttack))
             {
-                zeusAnimLength -= Time.deltaTime;
-                movX = 0;
-                canMove = false;
+                StartCoroutine(ZeusAnimTime());
             }
 
-
-            if (Input.GetButton(powerUpAttack))
+            IEnumerator ZeusAnimTime()
             {
                 anim.SetBool("AttackZeus", true);
                 anim.SetLayerWeight(1, 1);
-            }
+                canMove = false;
+                movX = 0;
+                rb.velocity = new Vector2(0, rb.velocity.y);
 
-            if (zeusAnimLength <= 0.0f && !Input.GetButton(powerUpAttack))
-            {
-                zeusAnimLength = 2.0f;
+                yield return new WaitForSeconds(2.0f);
+
                 anim.SetBool("AttackZeus", false);
                 anim.SetLayerWeight(1, 0);
                 canMove = true;
@@ -158,16 +157,23 @@ public class ControllerMC : StatesMC
 
     void Dash()
     {
-        if (IrisPowerUpOn && Input.GetButtonDown(powerUpMovement) && !dash)
+        if (IrisPowerUpOn && Input.GetButtonDown(powerUpMovement) && !dash && dashReady)
         {
-            StartCoroutine(DashCd());
+            StartCoroutine(DashTime());
         }
     }
-    IEnumerator DashCd()
+    IEnumerator DashTime()
     {
         dash = true;
         yield return new WaitForSeconds(dashLength);
         dash = false;
+        StartCoroutine(DashCd());
+    }
+    IEnumerator DashCd()
+    {
+        dashReady = false;
+        yield return new WaitForSeconds(dashLength * 2);
+        dashReady = true;
     }
 
     //Suplementary Functions
@@ -233,37 +239,39 @@ public class ControllerMC : StatesMC
         if (canMove || !IsGrounded())
         {
             movX = Input.GetAxis("Horizontal");
+
+            float tgtVelocityX;
+
+            if (loaded == true)
+            {
+                tgtVelocityX = speed.x * (movX / loadedSpeed);
+            }
+            else
+            {
+                tgtVelocityX = speed.x * movX;
+            }
+
+            if (Mathf.Abs(tgtVelocityX) > maxSpeedX)
+            {
+                tgtVelocityX = Mathf.Sign(tgtVelocityX) * maxSpeedX;
+            }
+
+            if (Mathf.Abs(dashSpeed) > maxDashSpeed)
+            {
+                dashSpeed = Mathf.Sign(dashSpeed) * maxDashSpeed;
+            }
+
+            if (dash)
+            {
+                rb.velocity = new Vector2(dashSpeed * movX, 0);
+            }
+            else
+            {
+                rb.velocity = new Vector2(tgtVelocityX, rb.velocity.y);
+            }
+
         }
 
-        float tgtVelocityX;
-
-        if (loaded == true)
-        {
-            tgtVelocityX = speed.x * (movX / loadedSpeed);
-        }
-        else
-        {
-            tgtVelocityX = speed.x * movX;
-        }
-
-        if (Mathf.Abs(tgtVelocityX) > maxSpeedX)
-        {
-            tgtVelocityX = Mathf.Sign(tgtVelocityX) * maxSpeedX;
-        }
-
-        if (Mathf.Abs(dashSpeed) > maxDashSpeed)
-        {
-            dashSpeed = Mathf.Sign(dashSpeed) * maxDashSpeed;
-        }
-
-        if (dash)
-        {
-            rb.velocity = new Vector2(dashSpeed * movX , 0);
-        }
-        else
-        {
-            rb.velocity = new Vector2(tgtVelocityX, rb.velocity.y);
-        }
 
     }
 }
