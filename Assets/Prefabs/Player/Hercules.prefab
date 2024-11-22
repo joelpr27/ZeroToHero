@@ -1036,7 +1036,7 @@ Transform:
   m_GameObject: {fileID: 2806920153858025211}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.147, y: 1.122, z: 0}
+  m_LocalPosition: {x: 0.199, y: 1.122, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1094,28 +1094,37 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.9084511
+        value: 0.4962883
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.16617447
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.52156866, g: 0.29411766, b: 0.09019608, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 0.827451}
-      key2: {r: 0, g: 1, b: 0.041511774, a: 0}
+      key0: {r: 1, g: 0, b: 0, a: 0.7058824}
+      key1: {r: 1, g: 0.8675709, b: 0, a: 0.3529412}
+      key2: {r: 0, g: 1, b: 0.041511774, a: 0.7058824}
       key3: {r: 0, g: 0.8542309, b: 1, a: 0}
       key4: {r: 0.38674036, g: 0.1529412, b: 0.4627451, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 65535
+      ctime1: 18311
       ctime2: 32960
       ctime3: 50693
       ctime4: 65535
@@ -1123,16 +1132,16 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
-      atime2: 0
+      atime1: 32768
+      atime2: 32768
       atime3: 0
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
+      m_Mode: 2
       m_ColorSpace: 0
-      m_NumColorKeys: 2
+      m_NumColorKeys: 5
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
@@ -3080,6 +3089,7 @@ MonoBehaviour:
   dashSpeed: 100
   maxDashSpeed: 40
   dashLength: 0.2
+  dashTrail: {fileID: 2806920153858025211}
 --- !u!95 &7046591412276249701
 Animator:
   serializedVersion: 5

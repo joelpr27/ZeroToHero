@@ -13,6 +13,7 @@ public class ControllerMC : StatesMC
     public float dashSpeed;
     public float maxDashSpeed;
     public float dashLength;
+    public GameObject dashTrail;
     float movX;
     float punchAnimLength = 0.64f;
     bool zeusAnimReady = true;
@@ -165,8 +166,10 @@ public class ControllerMC : StatesMC
     IEnumerator DashTime()
     {
         dash = true;
+        dashTrail.SetActive(true);
         yield return new WaitForSeconds(dashLength);
         dash = false;
+        dashTrail.SetActive(false);
         StartCoroutine(DashCd());
     }
     IEnumerator DashCd()
@@ -238,7 +241,8 @@ public class ControllerMC : StatesMC
     {
         if (canMove || !IsGrounded())
         {
-            movX = Input.GetAxis("Horizontal");
+            if (!dash) movX = Input.GetAxis("Horizontal");
+           
 
             float tgtVelocityX;
 
