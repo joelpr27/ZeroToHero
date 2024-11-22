@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public TMP_Text textScore; */
 
     private LevelInfo LI;
+    public GameObject guardado;
+    public DatosGuardado datosGuardado;
     public bool areYouWinningSon;
     [Space]
 
@@ -33,9 +35,12 @@ public class GameManager : MonoBehaviour
     [Space]
 
     [Header("Audio")]
+    public AudioClip[] audios;
+    [Space]
+    private AudioSource controlAudio;
+    [Space]
     public AudioSource hoverButton;
     public AudioSource pressButton;
-    [Space]
     public AudioSource menuMusic;
     [Space]
 
@@ -47,6 +52,13 @@ public class GameManager : MonoBehaviour
     private List<Resolution> filteredResolutions;
     private float currentRefreshRate;
     private int currentResolutionIndex = 0;
+    [Space]
+
+    [Header("LevelInfo")]
+    public TMP_Text puntosLevel1;
+    public TMP_Text puntosLevel2;
+    public TMP_Text puntosLevel3;
+    public TMP_Text puntosLevelBoss;
 
 #region Partida
     /* public void Score()
@@ -77,17 +89,67 @@ public class GameManager : MonoBehaviour
             currentCountDelate = maxCountDelate;
         }
     }
+    void DelataOtherGameManager()
+    {
+        GameObject gameManager = GameObject.Find("GameManager");
+
+        if (gameManager != null)
+        {
+            int gameManagerCount = GameObject.FindObjectsOfType<GameObject>().Count(obj => obj.name == "GameManager");
+
+            if (gameManagerCount > 1)
+            {
+                Destroy(gameManager);
+            }
+        }
+    }
+
+    public void UpdatePointsMenu()
+    {
+        Debug.Log(guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel1);
+        puntosLevel1.text = guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel1.ToString("0");
+        puntosLevel2.text = guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel2.ToString("0");
+        puntosLevel3.text = guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel3.ToString("0");
+        puntosLevelBoss.text = guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivelBoss.ToString("0");
+    }
 #endregion
 
 #region Scenes
     public void Menu()
     {
         SceneManager.LoadScene(0);
+
+        areYouWinningSon = false;
+
+        //menuMusic.Play();
     }
 
     public void JugarLevel1()
     {
         SceneManager.LoadScene(1);
+
+        IrAJuego();
+    }
+
+    public void JugarLevel2()
+    {
+        SceneManager.LoadScene(2);
+
+        IrAJuego();
+    }
+
+    public void JugarLevel3()
+    {
+        SceneManager.LoadScene(3);
+
+        IrAJuego();
+    }
+
+    public void JugarLevelBoss()
+    {
+        SceneManager.LoadScene(4);
+
+        IrAJuego();
     }
 
     //hacer mas si tenemos mas Escenas
@@ -180,6 +242,10 @@ public class GameManager : MonoBehaviour
 
             Cursor.visible = true;
         }
+        else
+        {
+            VictoryPanel.SetActive(false);
+        }
     }
 
     public void ButtonHover()
@@ -190,6 +256,32 @@ public class GameManager : MonoBehaviour
     public void ButtonPress()
     {
         pressButton.Play();
+    }
+
+    public void IrAJuego()
+    {
+        areYouWinningSon = false;
+
+        MenuPanel.SetActive(false);
+        GamePanel.SetActive(true);
+        VictoryPanel.SetActive(false);
+        PausePanel.SetActive(false);
+        OptionsPanel.SetActive(false);
+        LevelsPanel.SetActive(false);
+        ConsejosPanel.SetActive(false);
+        CreditsPanel.SetActive(false);
+
+        LI.EnterInGame();
+
+        LI.points = 0;
+
+        LI.bounsPoints = 0;
+
+        LI.time = 0;
+
+        LI.starTimer = false;
+
+        menuMusic.Stop();
     }
 
 #endregion
@@ -239,6 +331,8 @@ public class GameManager : MonoBehaviour
         #region Panels
             if(SceneManager.GetActiveScene().buildIndex == 0)
             {
+                LI.EnterInGame();
+
                 MenuPanel.SetActive(true);
                 GamePanel.SetActive(false);
                 VictoryPanel.SetActive(false);
@@ -250,14 +344,7 @@ public class GameManager : MonoBehaviour
             }
             if(SceneManager.GetActiveScene().buildIndex >= 1)
             {
-                MenuPanel.SetActive(false);
-                GamePanel.SetActive(true);
-                VictoryPanel.SetActive(false);
-                PausePanel.SetActive(false);
-                OptionsPanel.SetActive(false);
-                LevelsPanel.SetActive(false);
-                ConsejosPanel.SetActive(false);
-                CreditsPanel.SetActive(false);
+                IrAJuego();
             }
         #endregion
 
@@ -265,10 +352,6 @@ public class GameManager : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {
             menuMusic.Play();
-        }
-        if(SceneManager.GetActiveScene().buildIndex >= 1)
-        {
-            
         }
         #endregion
 
@@ -304,6 +387,8 @@ public class GameManager : MonoBehaviour
             resolutionDropdown.value = currentResolutionIndex;
             resolutionDropdown.RefreshShownValue();
         #endregion
+
+        //DontDestroyOnLoad(gameObject);
     }
 
     void Update()
@@ -315,5 +400,7 @@ public class GameManager : MonoBehaviour
         PausePanelInteract();
 
         WinPanel();
+
+        DelataOtherGameManager();
     }
 }

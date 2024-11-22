@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class LevelInfo : MonoBehaviour
 {
     private GameManager gm;
+    private DatosGuardado datosGuardado;
     
     [Header("Puntos")]
     public int points;
@@ -40,6 +41,11 @@ public class LevelInfo : MonoBehaviour
     }
 
     public void BonusPointsLI()
+    {
+        points += 1000;
+    }
+
+    public void ScoreHidra()
     {
         points += 1000;
     }
@@ -110,16 +116,45 @@ public class LevelInfo : MonoBehaviour
         }
     }
 
-    void Start()
+    public void SaveInfo()
     {
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        //Problema, no lo pilla bien
+        if(SceneManager.GetActiveScene().buildIndex == 1 && totalPoints >= gm.guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel1)
+        {
+            gm.guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel1 = totalPoints;
+        }
 
+        if(SceneManager.GetActiveScene().buildIndex == 2 && totalPoints >= gm.guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel2)
+        {
+            gm.guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel2 = totalPoints;
+        }
+
+        if(SceneManager.GetActiveScene().buildIndex == 3 && totalPoints >= gm.guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel3)
+        {
+            gm.guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel3 = totalPoints;
+        }
+
+        if(SceneManager.GetActiveScene().buildIndex == 4 && totalPoints >= gm.guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivelBoss)
+        {
+            gm.guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivelBoss = totalPoints;
+        }
+    } 
+
+    public void EnterInGame()
+    {
         points = 0;
 
         bounsPoints = 0;
 
         time = 0;
         starTimer = false;
+    }
+
+    void Start()
+    {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        EnterInGame();
     }
 
     void Update()
