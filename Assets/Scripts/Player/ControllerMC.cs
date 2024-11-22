@@ -19,7 +19,6 @@ public class ControllerMC : StatesMC
     bool zeusAnimReady = true;
     float rockPullAnimLength = 1.5f;
     float rockThrowAnimLength = 1.0f;
-    bool canMove = true;
     bool loaded = false;
     bool dash = false;
     bool dashReady = true;

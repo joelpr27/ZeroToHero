@@ -1,3 +1,4 @@
+using Unity.Properties;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -5,7 +6,8 @@ public class StatesMC : MC
 {
     [Header("Maquina de estados")]
     public States mcState;
-    public enum States{Idle, Run, Jump};  
+    public enum States{Idle, Run, Jump, Hit};  
+    [HideInInspector]public bool canMove = true;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +52,11 @@ public class StatesMC : MC
                 {
                     mcState = States.Run;
                 }
+                break;
+
+            case States.Hit:
+                
+
                 break;
         }
     }
