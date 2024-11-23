@@ -996,7 +996,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: bone_1/abdomen/pierna sup tras/pierna inf tras/pie tras
+    path: bone_1/abdomen/pierna sup frente/pierna inf frente/pie frente
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1008,19 +1008,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: bone_1/abdomen/pierna sup tras/pierna inf tras/pie tras
-    classID: 4
-    script: {fileID: 0}
-    flags: 0
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: bone_1/abdomen/pierna sup tras/pierna inf tras/pie tras
+    path: bone_1/abdomen/pierna sup frente/pierna inf frente/pie frente
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1043,8 +1031,20 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: bone_1/abdomen/pierna sup tras/pierna inf tras/pie tras
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: bone_1/abdomen/pierna sup frente/pierna inf frente/pie frente
+    path: bone_1/abdomen/pierna sup tras/pierna inf tras/pie tras
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1056,7 +1056,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: bone_1/abdomen/pierna sup frente/pierna inf frente/pie frente
+    path: bone_1/abdomen/pierna sup tras/pierna inf tras/pie tras
     classID: 4
     script: {fileID: 0}
     flags: 0

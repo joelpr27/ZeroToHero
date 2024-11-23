@@ -1,6 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class ControllerMC : StatesMC
@@ -15,10 +13,7 @@ public class ControllerMC : StatesMC
     public float dashLength;
     public GameObject dashTrail;
     float movX;
-    float punchAnimLength = 0.64f;
-    bool zeusAnimReady = true;
-    float rockPullAnimLength = 1.5f;
-    float rockThrowAnimLength = 1.0f;
+    float punchAnimLength = 0.5f;
     bool loaded = false;
     bool dash = false;
     bool dashReady = true;
@@ -62,7 +57,7 @@ public class ControllerMC : StatesMC
         }
 
 
-        if (Input.GetButton(punch) && !anim.GetBool("AttackAtlas"))
+        if (Input.GetButton(punch) && !anim.GetBool("AttackAtlas") && !anim.GetBool("AttackZeus"))
         {
             anim.SetBool("Attack", true);
             anim.SetLayerWeight(1, 1);
@@ -70,59 +65,48 @@ public class ControllerMC : StatesMC
 
         if (punchAnimLength <= 0.0f && !Input.GetButton(punch))
         {
-            punchAnimLength = 0.64f;
-            anim.SetBool("Attack", false);
+            punchAnimLength = 0.5f;
+             anim.SetBool("Attack", false);
             anim.SetLayerWeight(1, 0);
         }
+
     }
 
     void SpecialAttack()
     {
         if (AtlasPowerUpOn)
         {
-            //recoger roca
-            if (anim.GetBool("AttackAtlas") && !loaded)
+
+            if (Input.GetButton(powerUpAttack) && !loaded && IsGrounded())
             {
-                rockPullAnimLength -= Time.deltaTime;
-                movX = 0;
-                canMove = false;
+                StartCoroutine(AtlasPullAnimTime());
+            }
+
+            if (Input.GetButton(powerUpAttack) && loaded)
+            {
+                StartCoroutine(AtlasThrowAnimTime());
             }
 
 
-            if (Input.GetButton(powerUpAttack) && !loaded && IsGrounded() && !anim.GetBool("Attack"))
+            IEnumerator AtlasPullAnimTime()
             {
-
-                rockThrowAnimLength = 0.0f;
+                canMove = false;
                 anim.SetLayerWeight(1, 1);
                 anim.SetBool("AttackAtlas", true);
-            }
 
+                yield return new WaitForSeconds(1.5f);
 
-            if (rockPullAnimLength <= 0.0f && !Input.GetButton(powerUpAttack) && !loaded)
-            {
-                rockPullAnimLength = 1.5f;
                 canMove = true;
                 loaded = true;
             }
 
-            //Lanzar roca
-            if (rockThrowAnimLength > 0.0f && loaded)
+            IEnumerator AtlasThrowAnimTime()
             {
-                rockThrowAnimLength -= Time.deltaTime;
-                movX = 0;
                 canMove = false;
-            }
-
-
-            if (Input.GetButton(powerUpAttack) && loaded)
-            {
-                rockThrowAnimLength = 1.0f;
                 anim.SetBool("AttackAtlas", false);
-            }
 
-            if (rockThrowAnimLength <= 0.0f && !Input.GetButton(powerUpAttack) && !anim.GetBool("AttackAtlas"))
-            {
-                rockThrowAnimLength = 1.0f;
+                yield return new WaitForSeconds(1.0f);
+
                 anim.SetLayerWeight(1, 0);
                 canMove = true;
                 loaded = false;
@@ -132,7 +116,7 @@ public class ControllerMC : StatesMC
 
         if (ZeusPowerUpOn)
         {
-            if (Input.GetButton(powerUpAttack))
+            if (Input.GetButton(powerUpAttack) && IsGrounded())
             {
                 StartCoroutine(ZeusAnimTime());
             }
@@ -142,7 +126,6 @@ public class ControllerMC : StatesMC
                 anim.SetBool("AttackZeus", true);
                 anim.SetLayerWeight(1, 1);
                 canMove = false;
-                movX = 0;
                 rb.velocity = new Vector2(0, rb.velocity.y);
 
                 yield return new WaitForSeconds(2.0f);
@@ -232,6 +215,9 @@ public class ControllerMC : StatesMC
                 TurnCharacter();
                 break;
 
+            case States.Hit:
+                break;
+
         }
 
     }
@@ -241,7 +227,7 @@ public class ControllerMC : StatesMC
         if (canMove || !IsGrounded())
         {
             if (!dash) movX = Input.GetAxis("Horizontal");
-           
+
 
             float tgtVelocityX;
 
@@ -273,6 +259,10 @@ public class ControllerMC : StatesMC
                 rb.velocity = new Vector2(tgtVelocityX, rb.velocity.y);
             }
 
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
         }
 
 
