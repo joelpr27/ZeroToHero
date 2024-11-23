@@ -12,6 +12,7 @@ public class ControllerMC : StatesMC
     public float maxDashSpeed;
     public float dashLength;
     public GameObject dashTrail;
+    GameObject spawnPoint;
     float movX;
     float punchAnimLength = 0.5f;
     bool loaded = false;
@@ -177,6 +178,11 @@ public class ControllerMC : StatesMC
         }
     }
 
+    public void Start()
+    {
+        spawnPoint = GameObject.FindWithTag("Respawn");
+        transform.position = spawnPoint.transform.position;
+    }
     void Update()
     {
         UpdateState();
@@ -216,6 +222,14 @@ public class ControllerMC : StatesMC
                 break;
 
             case States.Hit:
+            
+                canMove = false;
+                anim.SetInteger("State", 3);
+                anim.SetLayerWeight(1, 0);
+                anim.SetBool("AttackAtlas", false);
+                anim.SetBool("AttackZeus", false);
+                dash = false;
+                loaded = false;
                 break;
 
         }

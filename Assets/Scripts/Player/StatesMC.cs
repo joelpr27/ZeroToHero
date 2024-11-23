@@ -5,19 +5,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class StatesMC : MC
-{
+{   public enum States { Idle, Run, Jump, Hit };
+
     [Header("Maquina de estados")]
-    public States mcState;
-    public enum States { Idle, Run, Jump, Hit };
+    public States mcState = States.Idle;
     [HideInInspector] public bool canMove = true;
     bool isHurt = false;
     public float stunLength;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        mcState = States.Idle;
-    }
 
     /// <summary>
     /// Checks The state the Character is And changes it if nescesary.
@@ -83,13 +77,12 @@ public class StatesMC : MC
     {
         if (other.tag == "EnemyAttack")
         {
-            isHurt = true;
-            canMove = false;
             StartCoroutine(StunTime());
+            isHurt = true;
         }
     }
 
-    IEnumerator StunTime()
+    public IEnumerator StunTime()
     {
         yield return new WaitForSeconds(stunLength);
         isHurt = false;
