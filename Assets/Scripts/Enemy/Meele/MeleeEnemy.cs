@@ -43,7 +43,12 @@ public class MeleeEnemy : MonoBehaviour
 
     public GameObject particle;
 
-#region Combat
+    [Header("Animaciones")]
+    public Animator animator;
+    public GameObject rueda;
+
+
+    #region Combat
     public void ActiveStunPlayer()
     {
         enemyAttack.SetActive(true);
@@ -57,29 +62,40 @@ public class MeleeEnemy : MonoBehaviour
     public void Attack()
     {
         cooldownTimer += Time.deltaTime;
-        if(playerInSigth == true)
+        if (playerInSigth == true)
         {
-            if(cooldownTimer >= attackCooldown)
+            if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
 
                 //Poner nombre del trigger de attack para la animacion
                 //anim.SetTrigger("");
                 Debug.Log("Attack");
+                animator.SetBool("attack", true);
 
-                //quitar para que funcione con un trigger en la animacion
-                ActiveStunPlayer();
+                StartCoroutine(DesactivarAtaque());
+
+                // //quitar para que funcione con un trigger en la animacion
+                // ActiveStunPlayer();
             }
         }
         else
         {
-            //quitar para que funcione con un trigger en la animacion
-            DesactiveStunPlayer();
+            // //quitar para que funcione con un trigger en la animacion
+            // DesactiveStunPlayer();
         }
     }
-#endregion
 
-#region Move
+    IEnumerator DesactivarAtaque()
+    {
+        yield return new WaitForSeconds(1.40f);
+
+        animator.SetBool("attack", false);
+    }
+
+    #endregion
+
+    #region Move
     void FaceDirection(int direction)
     {
         Vector3 localScale = transform.localScale;
@@ -89,18 +105,18 @@ public class MeleeEnemy : MonoBehaviour
 
     void Patrol()
     {
-        if(transform.position.x == pointPatrol[targetPoint].position.x)
+        if (transform.position.x == pointPatrol[targetPoint].position.x)
         {
             NextTarget();
         }
 
         if (pointPatrol[targetPoint].position.x < transform.position.x)
         {
-            FaceDirection(-1);
+            FaceDirection(1);
         }
         else
         {
-            FaceDirection(1);
+            FaceDirection(-1);
         }
 
         transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, pointPatrol[targetPoint].position.x, speed * Time.deltaTime),
@@ -110,7 +126,7 @@ public class MeleeEnemy : MonoBehaviour
     void NextTarget()
     {
         targetPoint++;
-        if(targetPoint >= pointPatrol.Length)
+        if (targetPoint >= pointPatrol.Length)
         {
             targetPoint = 0;
         }
@@ -141,23 +157,23 @@ public class MeleeEnemy : MonoBehaviour
         RangeNoDetect.transform.localScale = gameObject.transform.localScale;
         DetectPlayer.transform.localScale = gameObject.transform.localScale;
     }
-#endregion
+    #endregion
 
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.FindWithTag("Player");
 
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();
 
         #region Death
-            currentEnemyHealth = enemyHealth;
+        currentEnemyHealth = enemyHealth;
         #endregion
 
         #region Patrol
-            targetPoint = 0;
+        targetPoint = 0;
 
-            isPlayerDetected = false;
+        isPlayerDetected = false;
         #endregion
     }
 
@@ -165,11 +181,13 @@ public class MeleeEnemy : MonoBehaviour
     {
         Attack();
 
+        rueda.transform.Rotate(0, 0, 5);
+
         Seguimiento();
 
-        if(staticEnemy == false)
+        if (staticEnemy == false)
         {
-            if(isPlayerDetected == false)
+            if (isPlayerDetected == false)
             {
                 Patrol();
             }
@@ -179,17 +197,17 @@ public class MeleeEnemy : MonoBehaviour
             }
         }
     }
-    
+
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Attack")
+        if (other.tag == "Attack")
         {
-            if(currentEnemyHealth > 0)
+            if (currentEnemyHealth > 0)
             {
                 Instantiate(particle, transform.position, Quaternion.identity);
                 currentEnemyHealth--;
             }
-            if(currentEnemyHealth <= 0)
+            if (currentEnemyHealth <= 0)
             {
                 Instantiate(particle, transform.position, Quaternion.identity);
                 Instantiate(particle, transform.position, Quaternion.identity);
