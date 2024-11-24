@@ -126,6 +126,7 @@ public class GameManager : MonoBehaviour
 #endregion
 
 #region PowerUps
+
     public void IsDashOn()
     {
         IsDash = !IsDash;
@@ -514,7 +515,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        PowerUps();
+        //PowerUps();
 
         Volume();
 
