@@ -16,12 +16,18 @@ public class VidaHydra : MonoBehaviour
     public int currentEnemyHealth;
 
     public GameObject particle;
-    public GameObject humo;
+    public GameObject explosion;
+    public ParticleSystem humo;
+
+    bool mitadVida = false;
+
+
 
 
     void Start()
     {
         LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();
+        humo.Stop();
 
         #region Death
         currentEnemyHealth = enemyHealth;
@@ -44,11 +50,18 @@ public class VidaHydra : MonoBehaviour
             {
                 Instantiate(particle, transform.position, Quaternion.identity);
                 currentEnemyHealth--;
+
+            }
+            if (currentEnemyHealth <= (enemyHealth / 2) && mitadVida == false)
+            {
+                Debug.Log("MITAD VIDA");
+                mitadVida = true;
+                humo.Play();
             }
             if (currentEnemyHealth <= 0)
             {
-                Instantiate(particle, transform.position, Quaternion.identity);
-                Instantiate(particle, transform.position, Quaternion.identity);
+                Instantiate(explosion, transform.position, Quaternion.identity);
+                Instantiate(explosion, transform.position, Quaternion.identity);
                 // LI.ScoreHidra();
                 Destroy(hydra);
             }
@@ -61,13 +74,21 @@ public class VidaHydra : MonoBehaviour
         {
             Instantiate(particle, transform.position, Quaternion.identity);
             currentEnemyHealth--;
+
+        }
+        if (currentEnemyHealth <= (enemyHealth / 2) && mitadVida == false)
+        {
+            Debug.Log("MITAD VIDA");
+            mitadVida = true;
+            humo.Play();
         }
         if (currentEnemyHealth <= 0)
         {
-            Instantiate(humo, transform.position, Quaternion.identity);
-            Instantiate(humo, transform.position, Quaternion.identity);
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            Instantiate(explosion, transform.position, Quaternion.identity);
             // LI.ScoreHidra();
             Destroy(hydra);
         }
     }
+
 }
