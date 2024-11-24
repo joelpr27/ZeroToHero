@@ -16,8 +16,6 @@ public class ArcherEnemyDetect : MonoBehaviour
             aE.isPlayerDetected = true;
 
             Debug.Log("PalyerIsInRange");
-
-
         }
     }
     
