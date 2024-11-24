@@ -16,7 +16,6 @@ public class ControllerMC : StatesMC
     public GameObject rockPLaceholder;
     [Space]
     GameObject spawnPoint;
-    float movX;
     float punchAnimLength = 0.5f;
     bool loaded = false;
     bool dash = false;
@@ -78,6 +77,7 @@ public class ControllerMC : StatesMC
 
     void SpecialAttack()
     {
+
         if (AtlasPowerUpOn)
         {
 
@@ -188,8 +188,11 @@ public class ControllerMC : StatesMC
         spawnPoint = GameObject.FindWithTag("Respawn");
         transform.position = spawnPoint.transform.position;
     }
+    
     void Update()
     {
+        
+        Debug.Log(IsGrounded());
         UpdateState();
 
         switch (mcState)
