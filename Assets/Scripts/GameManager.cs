@@ -467,10 +467,9 @@ public class GameManager : MonoBehaviour
         controlAudio = GetComponent<AudioSource>();
 
         //Hacer que se sincronice con los otros volumenes
-        if(SceneManager.GetActiveScene().buildIndex == 0)
+        if(SceneManager.GetActiveScene().buildIndex <= 3)
         {
             menuMusic.Play();
-            /* SetVolume(menuMusic,volumeSlider.value); */
         }
 
         volumeSlider.value = guardado.GetComponent<GuardarPartida>().datosGuardado.audioVolume;

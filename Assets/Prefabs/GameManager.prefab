@@ -6828,6 +6828,10 @@ MonoBehaviour:
     puntosNivel3: 0
     puntosNivelBoss: 0
     audioVolume: 0.5
+    dash: 0
+    dJump: 0
+    rock: 0
+    light: 0
   areYouWinningSon: 0
   maxCountDelate: 2
   currentCountDelate: 0
@@ -6855,6 +6859,10 @@ MonoBehaviour:
   IsDobleJump: 0
   IsRock: 0
   IsLightPU: 0
+  dash: {fileID: 0}
+  jump: {fileID: 0}
+  rock: {fileID: 0}
+  lightPU: {fileID: 0}
 --- !u!114 &7755672090212104025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14646,6 +14654,10 @@ MonoBehaviour:
     puntosNivel3: 0
     puntosNivelBoss: 0
     audioVolume: 0.5
+    dash: 0
+    dJump: 0
+    rock: 0
+    light: 0
 --- !u!1 &7524767495884300425
 GameObject:
   m_ObjectHideFlags: 0
