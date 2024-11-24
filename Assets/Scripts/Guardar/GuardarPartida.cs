@@ -63,4 +63,9 @@ public class DatosGuardado{
     public float puntosNivelBoss = 0;
     [Space]
     public float audioVolume = 0.5f;
+    [Space]
+    public bool dash = false;
+    public bool dJump = false;
+    public bool rock = false;
+    public bool light = false;
 }

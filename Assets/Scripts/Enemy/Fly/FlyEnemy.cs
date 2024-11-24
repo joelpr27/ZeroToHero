@@ -63,13 +63,13 @@ public class FlyEnemy : MonoBehaviour
     {
         //hecer el que te detecte como player para que gire a tu direccion
 
-        body.transform.position = Vector2.MoveTowards(body.transform.position, targget.transform.position, speed * Time.deltaTime);
+        body.transform.position = Vector2.MoveTowards(body.transform.position, targget.transform.position + new Vector3(0, 1.5f, 0), speed * Time.deltaTime);
     }
 #endregion
 
 void Start()
     {
-        targget = GameObject.Find("Player");
+        targget = GameObject.FindWithTag("Player");
 
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();

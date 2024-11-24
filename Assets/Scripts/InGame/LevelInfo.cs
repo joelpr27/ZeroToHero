@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 public class LevelInfo : MonoBehaviour
 {
     private GameManager gm;
-    private DatosGuardado datosGuardado;
     
     [Header("Puntos")]
     public int points;
