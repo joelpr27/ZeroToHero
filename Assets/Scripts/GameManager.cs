@@ -60,6 +60,17 @@ public class GameManager : MonoBehaviour
     public TMP_Text puntosLevel3;
     public TMP_Text puntosLevelBoss;
 
+    [Header("PowerUps")]
+    public bool IsDash;
+    public bool IsDobleJump;
+    public bool IsRock;
+    public bool IsLightPU;
+    [Space]
+    public Button dash;
+    public Button jump;
+    public Button rock;
+    public Button lightPU;
+
 #region Partida
     /* public void Score()
     {
@@ -111,6 +122,98 @@ public class GameManager : MonoBehaviour
         puntosLevel2.text = guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel2.ToString("0");
         puntosLevel3.text = guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel3.ToString("0");
         puntosLevelBoss.text = guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivelBoss.ToString("0");
+    }
+#endregion
+
+#region PowerUps
+    public void IsDashOn()
+    {
+        IsDash = !IsDash;
+        if (IsDash) 
+        {
+            IsDobleJump = false;
+        }
+
+        guardado.GetComponent<GuardarPartida>().datosGuardado.dash = IsDash;
+        guardado.GetComponent<GuardarPartida>().datosGuardado.dJump = IsDobleJump;
+        Debug.Log(IsDash);
+    }
+
+    public void IsDobleJumpOn()
+    {
+        IsDobleJump = !IsDobleJump;
+        if (IsDobleJump) 
+        {
+            IsDash = false;
+        }
+
+        guardado.GetComponent<GuardarPartida>().datosGuardado.dJump = IsDobleJump;
+        guardado.GetComponent<GuardarPartida>().datosGuardado.dash = IsDash;
+        Debug.Log(IsDobleJump);
+    }
+
+    public void IsRockOn()
+    {
+        IsRock = !IsRock;
+        if (IsRock) 
+        {
+            IsLightPU = false;
+        }
+
+        guardado.GetComponent<GuardarPartida>().datosGuardado.rock = IsRock;
+        guardado.GetComponent<GuardarPartida>().datosGuardado.light = IsLightPU;
+        Debug.Log(IsRock);
+    }
+
+    public void IsLightPUON()
+    {
+        IsLightPU = !IsLightPU;
+        if (IsLightPU) 
+        {
+            IsRock = false;
+        }
+        guardado.GetComponent<GuardarPartida>().datosGuardado.rock = IsRock;
+        guardado.GetComponent<GuardarPartida>().datosGuardado.light = IsLightPU;
+        Debug.Log(IsLightPU);
+    }
+
+    public void PowerUps()
+    {
+        if(IsDash)
+        {
+            dash.GetComponent<Image>().color = new Color32(255, 200, 0, 255);
+        }
+        else
+        {
+            dash.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        }
+
+        if(IsDobleJump)
+        {
+            jump.GetComponent<Image>().color = new Color32(255, 200, 0, 255);
+        }
+        else
+        {
+            jump.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        }
+
+        if(IsRock)
+        {
+            rock.GetComponent<Image>().color = new Color32(255, 200, 0, 255);
+        }
+        else
+        {
+            rock.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        }
+
+        if(IsLightPU)
+        {
+            lightPU.GetComponent<Image>().color = new Color32(255, 200, 0, 255);
+        }
+        else
+        {
+            lightPU.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        }
     }
 #endregion
 
@@ -411,6 +514,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        PowerUps();
+
         Volume();
 
         UpdateTimeDelate();

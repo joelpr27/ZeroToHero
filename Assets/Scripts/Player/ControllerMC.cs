@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class ControllerMC : StatesMC
 {
+    private LevelInfo levelInfo;
+    public GameObject guardado;
+
     [Header("Controller")]
 
     public Vector2 speed;
@@ -187,6 +190,12 @@ public class ControllerMC : StatesMC
     {
         spawnPoint = GameObject.FindWithTag("Respawn");
         transform.position = spawnPoint.transform.position;
+
+        HermesPowerUpOn = levelInfo.GetComponent<GuardarPartida>().datosGuardado.dash;
+        IrisPowerUpOn = levelInfo.GetComponent<GuardarPartida>().datosGuardado.dJump;
+
+        AtlasPowerUpOn = levelInfo.GetComponent<GuardarPartida>().datosGuardado.rock;
+        ZeusPowerUpOn = levelInfo.GetComponent<GuardarPartida>().datosGuardado.light;
     }
     void Update()
     {
