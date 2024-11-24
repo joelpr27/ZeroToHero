@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -38,9 +39,8 @@ public class GameManager : MonoBehaviour
     public AudioClip[] audios;
     [Space]
     private AudioSource controlAudio;
+    public Slider volumeSlider;
     [Space]
-    public AudioSource hoverButton;
-    public AudioSource pressButton;
     public AudioSource menuMusic;
     [Space]
 
@@ -250,12 +250,12 @@ public class GameManager : MonoBehaviour
 
     public void ButtonHover()
     {
-        hoverButton.Play();
+        SetVolume(2,volumeSlider.value);
     }
 
     public void ButtonPress()
     {
-        pressButton.Play();
+        SetVolume(1,volumeSlider.value);
     }
 
     public void IrAJuego()
@@ -281,16 +281,23 @@ public class GameManager : MonoBehaviour
 
         LI.starTimer = false;
 
-        menuMusic.Stop();
+        SetVolume(0, 0);
     }
 
 #endregion
     
 #region Settings
     //repasar el volumen, no va hacia el db negativo y se escuchara muy alto
-    public void SetVolume(float volume)
+    public void SetVolume(int indice, float volumen)
     {
-        audioMixer.SetFloat("volume", volume);
+        volumen = volumeSlider.value;
+
+        controlAudio.PlayOneShot(audios[indice], volumen);
+    }
+
+    public void Volume()
+    {
+        guardado.GetComponent<GuardarPartida>().datosGuardado.audioVolume = volumeSlider.value;
     }
 
     public void FullScreen(bool isFullScreen)
@@ -349,10 +356,15 @@ public class GameManager : MonoBehaviour
         #endregion
 
         #region Audio
+        controlAudio = GetComponent<AudioSource>();
+
+        //Hacer que se sincronice con los otros volumenes
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {
-            menuMusic.Play();
+            SetVolume(0,volumeSlider.value);
         }
+
+        volumeSlider.value = guardado.GetComponent<GuardarPartida>().datosGuardado.audioVolume;
         #endregion
 
         #region Settings
@@ -394,6 +406,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //UpdateScoreText();
+
+        Volume();
 
         UpdateTimeDelate();
 

@@ -8,6 +8,8 @@ public class GuardarPartida : MonoBehaviour
 
     public void Awake()
     {
+        //string carpeta = Application.persistentDataPath + "/HerculesDatosGuardado.json";
+
         string carpeta = Application.dataPath + "/CarpetaGuardados/";
         if (!Directory.Exists(carpeta))
         {
@@ -22,7 +24,6 @@ public class GuardarPartida : MonoBehaviour
         CargarJSON();
     }
     
-    
     /* public void Update()
     {
         //improvisado para debug
@@ -35,7 +36,6 @@ public class GuardarPartida : MonoBehaviour
             CargarJSON();
         }
     } */
-
 
     public void GuardarJSON()
     {
@@ -61,4 +61,6 @@ public class DatosGuardado{
     public float puntosNivel2 = 0;
     public float puntosNivel3 = 0;
     public float puntosNivelBoss = 0;
+    [Space]
+    public float audioVolume = 0.5f;
 }
