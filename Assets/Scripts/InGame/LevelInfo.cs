@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using Microsoft.Unity.VisualStudio.Editor;
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -37,6 +34,11 @@ public class LevelInfo : MonoBehaviour
     public void Score()
     {
         points += 100;
+    }
+
+    public void ScoreCoin()
+    {
+        points += 10;
     }
 
     public void BonusPointsLI()

@@ -4,6 +4,7 @@ using UnityEngine;
 public class ControllerMC : StatesMC
 {
     private LevelInfo levelInfo;
+    private GameManager GM;
     public GameObject guardado;
 
     [Header("Controller")]
@@ -191,11 +192,11 @@ public class ControllerMC : StatesMC
         spawnPoint = GameObject.FindWithTag("Respawn");
         transform.position = spawnPoint.transform.position;
 
-        HermesPowerUpOn = levelInfo.GetComponent<GuardarPartida>().datosGuardado.dash;
-        IrisPowerUpOn = levelInfo.GetComponent<GuardarPartida>().datosGuardado.dJump;
+        HermesPowerUpOn = GM.IsDobleJump;
+        IrisPowerUpOn = GM.IsDash;
 
-        AtlasPowerUpOn = levelInfo.GetComponent<GuardarPartida>().datosGuardado.rock;
-        ZeusPowerUpOn = levelInfo.GetComponent<GuardarPartida>().datosGuardado.light;
+        AtlasPowerUpOn = GM.IsRock;
+        ZeusPowerUpOn = GM.IsLightPU;
     }
     
     void Update()

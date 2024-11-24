@@ -442,6 +442,11 @@ public class GameManager : MonoBehaviour
             }
 
             areYouWinningSon = false;
+
+            IsDobleJump = guardado.GetComponent<GuardarPartida>().datosGuardado.dJump;
+            IsDash = guardado.GetComponent<GuardarPartida>().datosGuardado.dash;
+            IsRock = guardado.GetComponent<GuardarPartida>().datosGuardado.rock;
+            IsLightPU = guardado.GetComponent<GuardarPartida>().datosGuardado.light;
         #endregion
         
         #region Panels
