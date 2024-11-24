@@ -66,7 +66,7 @@ public class ArcherEnemy : MonoBehaviour
 
     void SpawnArriw()
     {
-        Debug.Log("Attack");
+        Debug.Log("Shot");
 
         Instantiate(arrow, bow.position, bow.rotation);
     }

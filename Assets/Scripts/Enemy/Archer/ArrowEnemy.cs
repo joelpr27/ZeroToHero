@@ -16,7 +16,6 @@ public class ArrowEnemy : MonoBehaviour
 
     void Start()
     {
-
         currentDelateTime = 0;
     }
 
@@ -34,29 +33,13 @@ public class ArrowEnemy : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" || other.tag == "Ground")
         {
             Instantiate(particle, transform.position, Quaternion.identity);
 
             Destroy(gameObject);
         }
-
-        if(other.tag == "Attack")
-        {
-            Instantiate(particle, transform.position, Quaternion.identity);
-
-            Destroy(gameObject);
-        }
-
-        /* //No detecta el sualo
-        if(other.tag == "Ground")
-        {
-            Debug.Log("A");
-            
-            Instantiate(particle, transform.position, Quaternion.identity);
-            Instantiate(particle, transform.position, Quaternion.identity);
-            
-            Destroy(gameObject);
-        } */
+        
+        Debug.Log(other.tag);
     }
 }
