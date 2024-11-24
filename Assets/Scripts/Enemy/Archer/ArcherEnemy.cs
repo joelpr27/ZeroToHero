@@ -56,7 +56,7 @@ public class ArcherEnemy : MonoBehaviour
     {
         Vector3 direction = player.transform.position - bow.position;
         //calcula la tangente
-        float angle = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(-direction.y - 1, -direction.x) * Mathf.Rad2Deg;
         //
         bow.rotation = Quaternion.Euler(0, 0, angle);
     }
@@ -86,7 +86,7 @@ public class ArcherEnemy : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.FindWithTag("Player");
         
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();

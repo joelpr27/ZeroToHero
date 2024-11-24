@@ -239,6 +239,21 @@ public class ControllerMC : StatesMC
 
         }
 
+        if(isHurt)
+        {
+            currentStunLength += Time.deltaTime;
+
+            /* isHurt = true; */
+
+            if(currentStunLength >= stunLength)
+            {
+                currentStunLength = 0;
+
+                isHurt = false;
+                canMove = true;
+            }
+            Debug.Log("Stun");
+        }
     }
 
     void FixedUpdate()

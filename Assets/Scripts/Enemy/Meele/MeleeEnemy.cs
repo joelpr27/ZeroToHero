@@ -61,27 +61,29 @@ public class MeleeEnemy : MonoBehaviour
 
     public void Attack()
     {
-        cooldownTimer += Time.deltaTime;
-        if (playerInSigth == true)
+        if(playerInSigth == true)
         {
-            if (cooldownTimer >= attackCooldown)
+            cooldownTimer += Time.deltaTime;
+
+            if(cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
 
                 //Poner nombre del trigger de attack para la animacion
+                //anim.SetTrigger("");
                 Debug.Log("Attack");
-                animator.SetBool("attack", true);
 
-                StartCoroutine(DesactivarAtaque());
-
-                // //quitar para que funcione con un trigger en la animacion
-                // ActiveStunPlayer();
+                //quitar para que funcione con un trigger en la animacion
+                animator.SetBool("Attack", true);
+            }
+            else
+            {
+                animator.SetBool("Attack", false);
             }
         }
         else
         {
-            // //quitar para que funcione con un trigger en la animacion
-            // DesactiveStunPlayer();
+            cooldownTimer = 0;
         }
     }
 

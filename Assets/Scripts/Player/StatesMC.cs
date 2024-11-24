@@ -10,8 +10,9 @@ public class StatesMC : MC
     [Header("Maquina de estados")]
     public States mcState = States.Idle;
     [HideInInspector] public bool canMove = true;
-    bool isHurt = false;
+    public bool isHurt = false;
     public float stunLength;
+    public float currentStunLength;
 
     /// <summary>
     /// Checks The state the Character is And changes it if nescesary.
@@ -77,15 +78,15 @@ public class StatesMC : MC
     {
         if (other.tag == "EnemyAttack")
         {
-            StartCoroutine(StunTime());
+            /* StartCoroutine(StunTime()); */
             isHurt = true;
         }
     }
 
-    public IEnumerator StunTime()
+    /* public IEnumerator StunTime()
     {
         yield return new WaitForSeconds(stunLength);
         isHurt = false;
         canMove = true;
-    }
+    } */
 }

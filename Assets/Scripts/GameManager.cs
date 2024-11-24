@@ -169,7 +169,7 @@ public class GameManager : MonoBehaviour
 
     public void PausePanelInteract()
     {
-        if(SceneManager.GetActiveScene().buildIndex >= 1 && Input.GetButtonDown("Cancel"))
+        if(SceneManager.GetActiveScene().buildIndex >= 1 && Input.GetButtonDown("Cancel") && areYouWinningSon == false)
         {
             PausePanel.SetActive(!PausePanel.activeSelf);
             Debug.Log(PausePanel.activeSelf);
@@ -258,6 +258,11 @@ public class GameManager : MonoBehaviour
         SetVolume(1,volumeSlider.value);
     }
 
+    public void Music()
+    {
+        SetVolume(0,volumeSlider.value);
+    }
+
     public void IrAJuego()
     {
         areYouWinningSon = false;
@@ -280,8 +285,6 @@ public class GameManager : MonoBehaviour
         LI.time = 0;
 
         LI.starTimer = false;
-
-        SetVolume(0, 0);
     }
 
 #endregion
@@ -405,8 +408,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        //UpdateScoreText();
-
         Volume();
 
         UpdateTimeDelate();
