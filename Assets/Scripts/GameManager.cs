@@ -281,7 +281,7 @@ public class GameManager : MonoBehaviour
 
         LI.starTimer = false;
 
-        SetVolume(0, 0);
+        //SetVolume(0, 0);
     }
 
 #endregion
