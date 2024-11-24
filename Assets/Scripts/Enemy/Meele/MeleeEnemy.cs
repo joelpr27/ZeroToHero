@@ -69,7 +69,6 @@ public class MeleeEnemy : MonoBehaviour
                 cooldownTimer = 0;
 
                 //Poner nombre del trigger de attack para la animacion
-                //anim.SetTrigger("");
                 Debug.Log("Attack");
                 animator.SetBool("attack", true);
 
@@ -88,7 +87,7 @@ public class MeleeEnemy : MonoBehaviour
 
     IEnumerator DesactivarAtaque()
     {
-        yield return new WaitForSeconds(1.40f);
+        yield return new WaitForSeconds(attackCooldown);
 
         animator.SetBool("attack", false);
     }
@@ -112,11 +111,11 @@ public class MeleeEnemy : MonoBehaviour
 
         if (pointPatrol[targetPoint].position.x < transform.position.x)
         {
-            FaceDirection(1);
+            FaceDirection(-1);
         }
         else
         {
-            FaceDirection(-1);
+            FaceDirection(1);
         }
 
         transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, pointPatrol[targetPoint].position.x, speed * Time.deltaTime),

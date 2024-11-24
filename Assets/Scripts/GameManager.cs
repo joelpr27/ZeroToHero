@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     [Header("Audio")]
     public AudioClip[] audios;
     [Space]
-    private AudioSource controlAudio;
+    public AudioSource controlAudio;
     public Slider volumeSlider;
     [Space]
     public AudioSource menuMusic;
