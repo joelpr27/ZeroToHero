@@ -19,7 +19,6 @@ public class ControllerMC : StatesMC
     public GameObject rockPLaceholder;
     [Space]
     GameObject spawnPoint;
-    float movX;
     float punchAnimLength = 0.5f;
     bool loaded = false;
     bool dash = false;
@@ -81,6 +80,7 @@ public class ControllerMC : StatesMC
 
     void SpecialAttack()
     {
+
         if (AtlasPowerUpOn)
         {
 
@@ -197,8 +197,11 @@ public class ControllerMC : StatesMC
         AtlasPowerUpOn = levelInfo.GetComponent<GuardarPartida>().datosGuardado.rock;
         ZeusPowerUpOn = levelInfo.GetComponent<GuardarPartida>().datosGuardado.light;
     }
+    
     void Update()
     {
+        
+        Debug.Log(IsGrounded());
         UpdateState();
 
         switch (mcState)

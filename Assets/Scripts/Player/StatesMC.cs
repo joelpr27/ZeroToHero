@@ -13,6 +13,8 @@ public class StatesMC : MC
     public bool isHurt = false;
     public float stunLength;
     public float currentStunLength;
+    
+    public float movX;
 
     /// <summary>
     /// Checks The state the Character is And changes it if nescesary.
@@ -26,7 +28,7 @@ public class StatesMC : MC
                 {
                     mcState = States.Jump;
                 }
-                else if (rb.velocity.x != 0.0f && IsGrounded())
+                else if (movX != 0 && IsGrounded())
                 {
                     mcState = States.Run;
                 }
@@ -41,7 +43,7 @@ public class StatesMC : MC
                 {
                     mcState = States.Jump;
                 }
-                else if (rb.velocity.x == 0.0f && IsGrounded())
+                else if (movX == 0 && IsGrounded())
                 {
                     mcState = States.Idle;
                 }
@@ -52,11 +54,11 @@ public class StatesMC : MC
                 break;
 
             case States.Jump:
-                if (rb.velocity.x == 0.0f && IsGrounded())
+                if (movX == 0 && IsGrounded())
                 {
                     mcState = States.Idle;
                 }
-                else if (rb.velocity.x != 0.0f && IsGrounded())
+                else if (movX != 0  && IsGrounded())
                 {
                     mcState = States.Run;
                 }
