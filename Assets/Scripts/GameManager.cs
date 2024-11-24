@@ -514,7 +514,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        PowerUps();
+        if(LevelsPanel.activeSelf)
+        {
+            PowerUps();
+        }
 
         Volume();
 
