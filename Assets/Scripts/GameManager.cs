@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     [Header("Audio")]
     public AudioClip[] audios;
     [Space]
-    public AudioSource controlAudio;
+    private AudioSource controlAudio;
     public Slider volumeSlider;
     [Space]
     public AudioSource menuMusic;
@@ -301,6 +301,8 @@ public class GameManager : MonoBehaviour
     public void Volume()
     {
         guardado.GetComponent<GuardarPartida>().datosGuardado.audioVolume = volumeSlider.value;
+
+        menuMusic.volume = volumeSlider.value;
     }
 
     public void FullScreen(bool isFullScreen)
@@ -364,7 +366,8 @@ public class GameManager : MonoBehaviour
         //Hacer que se sincronice con los otros volumenes
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {
-            SetVolume(0,volumeSlider.value);
+            menuMusic.Play();
+            /* SetVolume(menuMusic,volumeSlider.value); */
         }
 
         volumeSlider.value = guardado.GetComponent<GuardarPartida>().datosGuardado.audioVolume;

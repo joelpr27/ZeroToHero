@@ -6133,7 +6133,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3544334152575473174}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e503d00bed6ddbb41995ea8a61f8902e, type: 3}
@@ -6446,9 +6446,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e503d00bed6ddbb41995ea8a61f8902e, type: 3}
   - {fileID: 8300000, guid: f62b46eb06190624abde1bbe6a45c1f6, type: 3}
   - {fileID: 8300000, guid: ff43c5f99c5626346ab5502dc8be22c8, type: 3}
-  controlAudio: {fileID: 4492988674193885151}
   volumeSlider: {fileID: 5830672992895663152}
-  menuMusic: {fileID: 0}
+  menuMusic: {fileID: 4492988674193885151}
   audioMixer: {fileID: 24100000, guid: 5d42bd6d986eeeb45b3ffecc59c12b1c, type: 2}
   resolutionDropdown: {fileID: 7090327867565918881}
   puntosLevel1: {fileID: 3584681064440396782}
