@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -25,26 +26,30 @@ public class Rock : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag(ParedTag))
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        
+        if (other.gameObject.CompareTag(ParedTag))
         {
             Instantiate(particle, transform.position, Quaternion.identity);
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag(SueloTag))
+        else if (other.gameObject.CompareTag(SueloTag))
         {
             Instantiate(particle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag(AndamiosTag))
+        else if (other.gameObject.CompareTag(AndamiosTag))
         {
             Instantiate(particle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag(EnemyTag))
+        else if (other.gameObject.CompareTag(EnemyTag))
         {
             Instantiate(particle, transform.position, Quaternion.identity);
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
             Destroy(gameObject);
         }
     }

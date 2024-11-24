@@ -12,6 +12,9 @@ public class ControllerMC : StatesMC
     public float maxDashSpeed;
     public float dashLength;
     public GameObject dashTrail;
+    public GameObject rockPrefab;
+    public GameObject rockPLaceholder;
+    [Space]
     GameObject spawnPoint;
     float movX;
     float punchAnimLength = 0.5f;
@@ -138,7 +141,9 @@ public class ControllerMC : StatesMC
 
         }
     }
-
+    public void SpawnRock(){
+        Instantiate(rockPrefab, rockPLaceholder.transform.position, Quaternion.identity);
+    }
     void Dash()
     {
         if (IrisPowerUpOn && Input.GetButtonDown(powerUpMovement) && !dash && dashReady)
