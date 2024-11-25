@@ -13,16 +13,20 @@ public class CalculoRangos : MonoBehaviour
     public TMP_Text rangoLevel3;
     public TMP_Text rangoLevelBoss;
 
-    private float LimitsD = 10000;
-    private float LimitsC = 20000;
-    private float LimitsB = 40000;
-    private float LimitsA = 60000;
-    private float LimitsS = 80000;
-    private float LimitsSS = 100000f;
+    private float LimitsD = 50000;
+    private float LimitsC = 100000;
+    private float LimitsB = 150000;
+    private float LimitsA = 250000;
+    private float LimitsS = 350000;
+    private float LimitsSS = 40000f;
 
     void Rangos()
     {
         #region Level1
+            if(guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel1 <= LimitsD)
+            {
+                rangoLevel1.text = "E";
+            }
             if(guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel1 >= LimitsD)
             {
                 rangoLevel1.text = "D";
@@ -50,6 +54,10 @@ public class CalculoRangos : MonoBehaviour
         #endregion
 
         #region Level2
+            if(guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel2 <= LimitsD)
+            {
+                rangoLevel2.text = "E";
+            }
             if(guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel2 >= LimitsD)
             {
                 rangoLevel2.text = "D";
@@ -77,6 +85,10 @@ public class CalculoRangos : MonoBehaviour
         #endregion
 
         #region Level3
+            if(guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel3 <= LimitsD)
+            {
+                rangoLevel3.text = "E";
+            }
             if(guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel3 >= LimitsD)
             {
                 rangoLevel3.text = "D";
@@ -104,6 +116,10 @@ public class CalculoRangos : MonoBehaviour
         #endregion
 
         #region LevelBoss
+            if(guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivelBoss <= LimitsD)
+            {
+                rangoLevelBoss.text = "E";
+            }
             if(guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivelBoss >= LimitsD)
             {
                 rangoLevelBoss.text = "D";

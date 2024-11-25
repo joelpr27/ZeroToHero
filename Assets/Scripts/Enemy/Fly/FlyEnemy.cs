@@ -60,9 +60,7 @@ public class FlyEnemy : MonoBehaviour
 
     void Pursue()
     {
-        //hecer el que te detecte como player para que gire a tu direccion
-
-        body.transform.position = Vector2.MoveTowards(body.transform.position, targget.transform.position + new Vector3(0, 1.5f, 0), speed * Time.deltaTime);
+        body.transform.position = Vector2.MoveTowards(body.transform.position, targget.transform.position, speed * Time.deltaTime);
     }
 #endregion
 

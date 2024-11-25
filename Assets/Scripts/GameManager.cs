@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,12 +20,13 @@ public class GameManager : MonoBehaviour
     public bool areYouWinningSon;
     [Space]
 
-    [Header("particulas")]
+    [Header("Particulas")]
     public float maxCountDelate = 2.0f;
     public float currentCountDelate;
     [Space]
 
     [Header("Menus")]
+    private EventSystem eventSystem;
     public GameObject MenuPanel;
     public GameObject GamePanel;
     public GameObject VictoryPanel;
