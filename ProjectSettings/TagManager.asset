@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Attack
+  - Enemy
+  - EnemyAttack
+  - WinObject
+  - StartObject
+  - ParedDestructible
+  - Andamios
   layers:
   - Default
   - TransparentFX
@@ -11,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
@@ -40,4 +48,28 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tilemap
+    uniqueID: 2510231239
+    locked: 0
+  - name: Pared destructible
+    uniqueID: 4176822497
+    locked: 0
+  - name: Jugador
+    uniqueID: 4116139831
+    locked: 0
+  - name: Roca
+    uniqueID: 3381681355
+    locked: 0
+  - name: Andamios
+    uniqueID: 3665465439
+    locked: 0
+  - name: Enemigo
+    uniqueID: 4260865583
+    locked: 0
+  - name: "Mu\xF1eca"
+    uniqueID: 1192151243
+    locked: 0
+  - name: Coin
+    uniqueID: 1250548417
     locked: 0

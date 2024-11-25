@@ -1,0 +1,930 @@
+fileFormatVersion: 2
+guid: c078cab15b2066943a6a97bc488d490b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tiles_Estructuras_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: 112}
+        - {x: 128, y: 112}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6f97f5bcaafe4841830495f2c6ff209
+      internalID: -1310344158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: 112}
+        - {x: 128, y: 112}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2e4cd1e0160ef4495bcce63b9cc3fd
+      internalID: 1178055885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: 112}
+        - {x: 128, y: 112}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe460351580261947958d601deb8c3b8
+      internalID: 156241736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: 112}
+        - {x: 128, y: 112}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ad79af132218e4a87cf5a2320b75d4
+      internalID: -2132401954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -31, y: -2}
+        - {x: -32, y: -2}
+        - {x: -32, y: -2}
+        - {x: -32, y: -2}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f992d6c768515340b00dedbadcf2264
+      internalID: -834622496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -28.883125, y: -38.322388}
+        - {x: -28.883125, y: -37.713013}
+        - {x: -27.054985, y: -37.713013}
+        - {x: -27.054985, y: -38.322388}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dfabd5465d04a946964bddd14813405
+      internalID: 1166446119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -28.883125, y: -38.322388}
+        - {x: -28.883125, y: -37.713013}
+        - {x: -27.054985, y: -37.713013}
+        - {x: -27.054985, y: -38.322388}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e4efc3aa74dc14496d80b0adb14a31
+      internalID: 1244112458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -28.883125, y: -38.322388}
+        - {x: -28.883125, y: -37.713013}
+        - {x: -27.054985, y: -37.713013}
+        - {x: -27.054985, y: -38.322388}
+      tessellationDetail: 0
+      bones: []
+      spriteID: de016185d871929429d6f6b44b5103bb
+      internalID: 2010029530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -28.883125, y: -38.322388}
+        - {x: -28.883125, y: -37.713013}
+        - {x: -27.054985, y: -37.713013}
+        - {x: -27.054985, y: -38.322388}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48961b1db4746054a9460d039702dec7
+      internalID: 984121900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_9
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1280
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -28.883125, y: -38.322388}
+        - {x: -28.883125, y: -37.713013}
+        - {x: -27.054985, y: -37.713013}
+        - {x: -27.054985, y: -38.322388}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7ae6c4de4914b49a3f5d72fbace1db
+      internalID: 1429991258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -28.883125, y: -38.322388}
+        - {x: -28.883125, y: -37.713013}
+        - {x: -27.054985, y: -37.713013}
+        - {x: -27.054985, y: -38.322388}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a3159d0c10f474e81f35ecb9a7a2cb
+      internalID: -451488207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_12
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -28.883125, y: -38.322388}
+        - {x: -28.883125, y: -37.713013}
+        - {x: -27.054985, y: -37.713013}
+        - {x: -27.054985, y: -38.322388}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76131fe0fb6ac98498da5bcfd7b9d4c8
+      internalID: -1189450396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_13
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1024
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -28.883125, y: -38.322388}
+        - {x: -28.883125, y: -37.713013}
+        - {x: -27.054985, y: -37.713013}
+        - {x: -27.054985, y: -38.322388}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b113b92e551b0479dc8b92bff11665
+      internalID: -1726299657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -33, y: 128}
+        - {x: -33, y: 112}
+        - {x: 128, y: 112}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9eda2bf9d0a1049906f6640d696373
+      internalID: -266947679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_17
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: 113}
+        - {x: 32, y: 112}
+        - {x: 32, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6bf49db04da7994f8d7ddf291305b8d
+      internalID: 381899908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_18
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0, y: 128}
+        - {x: 0, y: 112}
+        - {x: 128, y: 112}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1298adfb47c79449d8acc28f11f301
+      internalID: 1779985482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_19
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: 112}
+        - {x: 1, y: 113}
+        - {x: 1, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc836e28560d4d439b50b82aedab682
+      internalID: -521604557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_20
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 128}
+        - {x: -64, y: 113}
+        - {x: 128, y: 113}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd8310ebf2f423c4eb63fd60b5e65265
+      internalID: 581414033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_21
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: 112}
+        - {x: 64, y: 112}
+        - {x: 64, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b56f6307324ab43ba4f25de2b5f3ca
+      internalID: 1138243175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -33, y: 128}
+        - {x: -33, y: 112}
+        - {x: 128, y: 112}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2194526d2e19d446a3522143edbbc70
+      internalID: 1580824179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_23
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: 113}
+        - {x: 32, y: 112}
+        - {x: 32, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23888ff2f0049a94593ce111bbcf1ebc
+      internalID: -748689281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_24
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0, y: 128}
+        - {x: 0, y: 112}
+        - {x: 128, y: 112}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7feed81e8725b740a9a4b0c53a36bf0
+      internalID: 9851514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_25
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: 112}
+        - {x: 1, y: 113}
+        - {x: 1, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811ccce7c48d163489a913cf336eaccc
+      internalID: -78240385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_26
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 128}
+        - {x: -64, y: 113}
+        - {x: 128, y: 113}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb6b233e94317f4abb0180bd1c57ee9
+      internalID: -247683507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_27
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: 112}
+        - {x: 64, y: 112}
+        - {x: 64, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016df5610bb7a464ca7bedab617c6d40
+      internalID: 343257290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -33, y: 128}
+        - {x: -33, y: 112}
+        - {x: 128, y: 112}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d65d4d3ef72e34fad8944f27b548a1
+      internalID: -7491509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_29
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: 113}
+        - {x: 32, y: 112}
+        - {x: 32, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36afb372eddd2bf44ae94c795faccd79
+      internalID: -2037777064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_30
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0, y: 128}
+        - {x: 0, y: 112}
+        - {x: 128, y: 112}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a1272059287ab46bad31c5861f4256
+      internalID: -154669161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_31
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: 112}
+        - {x: 1, y: 113}
+        - {x: 1, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdfbe4560fc7a5e48ab896e2f86efaf3
+      internalID: -1469009861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_32
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -64, y: 128}
+        - {x: -64, y: 113}
+        - {x: 128, y: 113}
+        - {x: 128, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bac6318578e574b86ebd6ab038225d
+      internalID: 1851469005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tiles_Estructuras_33
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -128, y: 128}
+        - {x: -128, y: 112}
+        - {x: 64, y: 112}
+        - {x: 64, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d08b6753532d5ec419e12057e670d95e
+      internalID: 1046842423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Tiles_Estructuras_0: -1310344158
+      Tiles_Estructuras_1: 1178055885
+      Tiles_Estructuras_10: -451488207
+      Tiles_Estructuras_11: -134896181
+      Tiles_Estructuras_12: -1189450396
+      Tiles_Estructuras_13: -1726299657
+      Tiles_Estructuras_14: 938347819
+      Tiles_Estructuras_15: -1674621762
+      Tiles_Estructuras_16: -266947679
+      Tiles_Estructuras_17: 381899908
+      Tiles_Estructuras_18: 1779985482
+      Tiles_Estructuras_19: -521604557
+      Tiles_Estructuras_2: 156241736
+      Tiles_Estructuras_20: 581414033
+      Tiles_Estructuras_21: 1138243175
+      Tiles_Estructuras_22: 1580824179
+      Tiles_Estructuras_23: -748689281
+      Tiles_Estructuras_24: 9851514
+      Tiles_Estructuras_25: -78240385
+      Tiles_Estructuras_26: -247683507
+      Tiles_Estructuras_27: 343257290
+      Tiles_Estructuras_28: -7491509
+      Tiles_Estructuras_29: -2037777064
+      Tiles_Estructuras_3: -2132401954
+      Tiles_Estructuras_30: -154669161
+      Tiles_Estructuras_31: -1469009861
+      Tiles_Estructuras_32: 1851469005
+      Tiles_Estructuras_33: 1046842423
+      Tiles_Estructuras_34: 1445856931
+      Tiles_Estructuras_35: -1243268851
+      Tiles_Estructuras_36: 2054940117
+      Tiles_Estructuras_37: -400284808
+      Tiles_Estructuras_38: 1930701770
+      Tiles_Estructuras_39: -1750047182
+      Tiles_Estructuras_4: -834622496
+      Tiles_Estructuras_40: -1894538908
+      Tiles_Estructuras_5: 1166446119
+      Tiles_Estructuras_6: 1244112458
+      Tiles_Estructuras_7: 2010029530
+      Tiles_Estructuras_8: 984121900
+      Tiles_Estructuras_9: 1429991258
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
