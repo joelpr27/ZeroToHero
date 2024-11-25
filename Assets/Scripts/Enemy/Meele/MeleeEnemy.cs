@@ -28,9 +28,6 @@ public class MeleeEnemy : MonoBehaviour
 
     [Header("Fight")]
     public GameObject enemyAttack;
-
-    public float attackCooldown;
-    private float cooldownTimer = Mathf.Infinity;
     public int damage;
     public bool playerInSigth;
     [Space]
@@ -61,35 +58,12 @@ public class MeleeEnemy : MonoBehaviour
     {
         if(playerInSigth == true)
         {
-            cooldownTimer += Time.deltaTime;
-
-            if(cooldownTimer >= attackCooldown)
-            {
-                cooldownTimer = 0;
-
-                //Poner nombre del trigger de attack para la animacion
-                //anim.SetTrigger("");
-                Debug.Log("Attack");
-
-                //quitar para que funcione con un trigger en la animacion
-                animator.SetBool("Attack", true);
-            }
-            else
-            {
-                animator.SetBool("Attack", false);
-            }
+            animator.SetBool("Attack", true);
         }
         else
         {
-            cooldownTimer = 0;
+            animator.SetBool("Attack", false);
         }
-    }
-
-    IEnumerator DesactivarAtaque()
-    {
-        yield return new WaitForSeconds(attackCooldown);
-
-        animator.SetBool("attack", false);
     }
 
     #endregion
