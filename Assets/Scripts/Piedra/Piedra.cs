@@ -13,13 +13,11 @@ public class Rock : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        LaunchRock();
     }
 
-    private void LaunchRock()
+     void LaunchRock()
     {
-        rb.AddForce(launchForce, ForceMode2D.Impulse);
+        rb.AddForce(launchForce * transform.localScale, ForceMode2D.Impulse);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

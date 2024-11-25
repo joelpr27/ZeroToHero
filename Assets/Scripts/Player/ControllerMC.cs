@@ -146,7 +146,9 @@ public class ControllerMC : StatesMC
         }
     }
     public void SpawnRock(){
-        Instantiate(rockPrefab, rockPLaceholder.transform.position, Quaternion.identity);
+        GameObject newRock = Instantiate(rockPrefab, rockPLaceholder.transform.position, Quaternion.identity);
+        newRock.transform.localScale = rockPrefab.transform.localScale;
+        //newRock.LaunchRock();
     }
     void Dash()
     {
