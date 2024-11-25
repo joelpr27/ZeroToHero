@@ -9,15 +9,12 @@ public class Rock : MonoBehaviour
     public string AndamiosTag = "Andamios";
     public GameObject particle;
     public Vector2 launchForce;
-    private Rigidbody2D rb;
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    public Rigidbody2D rb;
 
-     void LaunchRock()
+    public void LaunchRock(Vector3 forward)
     {
-        rb.AddForce(launchForce * transform.localScale, ForceMode2D.Impulse);
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        rb.AddForce(launchForce * forward, ForceMode2D.Impulse);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
