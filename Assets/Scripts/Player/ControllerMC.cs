@@ -111,10 +111,11 @@ public class ControllerMC : StatesMC
             IEnumerator AtlasThrowAnimTime()
             {
                 canMove = false;
-                loaded = false;
                 anim.SetBool("AttackAtlas", false);
                 yield return new WaitForSeconds(1.0f);
                 anim.SetLayerWeight(1, 0);
+                
+                loaded = false;
                 canMove = true;
             }
 
@@ -122,7 +123,7 @@ public class ControllerMC : StatesMC
 
         if (ZeusPowerUpOn)
         {
-            if (Input.GetButton(powerUpAttack) && IsGrounded())
+            if (Input.GetButton(powerUpAttack) && !anim.GetBool("AttackZeus"))
             {
                 StartCoroutine(ZeusAnimTime());
             }
@@ -132,9 +133,9 @@ public class ControllerMC : StatesMC
                 anim.SetBool("AttackZeus", true);
                 anim.SetLayerWeight(1, 1);
                 canMove = false;
-                rb.velocity = new Vector2(0, rb.velocity.y);
+                movX=0;
 
-                yield return new WaitForSeconds(2.0f);
+                yield return new WaitForSeconds(1.0f);
 
                 anim.SetBool("AttackZeus", false);
                 anim.SetLayerWeight(1, 0);
@@ -191,17 +192,18 @@ public class ControllerMC : StatesMC
     {
         spawnPoint = GameObject.FindWithTag("Respawn");
         transform.position = spawnPoint.transform.position;
-
-        HermesPowerUpOn = GM.IsDobleJump;
-        IrisPowerUpOn = GM.IsDash;
-
-        AtlasPowerUpOn = GM.IsRock;
-        ZeusPowerUpOn = GM.IsLightPU;
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     
     void Update()
     {
         
+        
+        if(HermesPowerUpOn != GM.IsDobleJump) HermesPowerUpOn = GM.IsDobleJump;
+        if(IrisPowerUpOn != GM.IsDash) IrisPowerUpOn = GM.IsDash;
+        if(AtlasPowerUpOn != GM.IsRock) AtlasPowerUpOn = GM.IsRock;
+        if(ZeusPowerUpOn != GM.IsLightPU) ZeusPowerUpOn = GM.IsLightPU;
+
         Debug.Log(IsGrounded());
         UpdateState();
 
