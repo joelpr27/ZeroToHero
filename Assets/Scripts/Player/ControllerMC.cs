@@ -85,12 +85,12 @@ public class ControllerMC : StatesMC
         if (AtlasPowerUpOn)
         {
 
-            if (Input.GetButton(powerUpAttack) && !loaded && IsGrounded())
+            if (Input.GetButton(powerUpAttack) && !loaded && IsGrounded() && !anim.GetBool("AttackAtlas"))
             {
                 StartCoroutine(AtlasPullAnimTime());
             }
 
-            if (Input.GetButton(powerUpAttack) && loaded)
+            if (Input.GetButton(powerUpAttack) && loaded && anim.GetBool("AttackAtlas"))
             {
                 StartCoroutine(AtlasThrowAnimTime());
             }
@@ -111,13 +111,11 @@ public class ControllerMC : StatesMC
             IEnumerator AtlasThrowAnimTime()
             {
                 canMove = false;
+                loaded = false;
                 anim.SetBool("AttackAtlas", false);
-
                 yield return new WaitForSeconds(1.0f);
-
                 anim.SetLayerWeight(1, 0);
                 canMove = true;
-                loaded = false;
             }
 
         }
