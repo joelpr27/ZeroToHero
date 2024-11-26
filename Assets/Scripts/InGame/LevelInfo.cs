@@ -68,13 +68,16 @@ public class LevelInfo : MonoBehaviour
 
     void PointsTotal()
     {
-        totalPoints = (((100 + (bounsPoints * 10)) - (time / 10)) * points);
-        totalScore.text = "Puntos totales: " + totalPoints.ToString("0");
+        totalPoints = (((120 + (bounsPoints * 10)) - (time / 5)) * points);
 
         if(totalPoints <= 0)
         {
             totalPoints = 0;
         }
+        
+        totalScore.text = "Puntos totales: " + totalPoints.ToString("0");
+
+        
     }
 
     void ViewBonusPointsLI()

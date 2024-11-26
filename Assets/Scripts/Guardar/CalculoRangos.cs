@@ -18,7 +18,7 @@ public class CalculoRangos : MonoBehaviour
     private float LimitsB = 150000;
     private float LimitsA = 250000;
     private float LimitsS = 350000;
-    private float LimitsSS = 40000f;
+    private float LimitsSS = 400000f;
 
     void Rangos()
     {

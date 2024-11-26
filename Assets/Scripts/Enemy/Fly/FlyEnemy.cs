@@ -98,7 +98,6 @@ public void OnTriggerEnter2D(Collider2D other)
             
             Instantiate(particle, transform.position, Quaternion.identity);
             Instantiate(particle, transform.position, Quaternion.identity);
-            LI.Score();
             Destroy(flyEnemy);
         }
 
