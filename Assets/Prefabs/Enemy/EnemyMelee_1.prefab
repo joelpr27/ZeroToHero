@@ -690,7 +690,6 @@ MonoBehaviour:
   - {fileID: 5439237673934327132}
   isPlayerDetected: 0
   enemyAttack: {fileID: 2161264555450617317}
-  attackCooldown: 1
   damage: 1
   playerInSigth: 0
   enemyHealth: 3
@@ -791,7 +790,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9e91722ad59fa764db1f6fdde72eb51d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
