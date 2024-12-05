@@ -910,7 +910,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 34d7fa1c773de0247b283508d9fbfdb1, type: 2}
+  - {fileID: 2100000, guid: 74e2420e8abfa4943a84b4abf9c9e68f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4052,7 +4052,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 170
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -7349,7 +7349,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 170
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -11940,7 +11940,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5593893446745249681, guid: 9e756e2be80bf0944bfb20cc2a434d83, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.51
+      value: 27.47
       objectReference: {fileID: 0}
     - target: {fileID: 5593893446745249681, guid: 9e756e2be80bf0944bfb20cc2a434d83, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15113,7 +15113,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5593893446745249681, guid: 9e756e2be80bf0944bfb20cc2a434d83, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.24
+      value: 40.57
       objectReference: {fileID: 0}
     - target: {fileID: 5593893446745249681, guid: 9e756e2be80bf0944bfb20cc2a434d83, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15430,7 +15430,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 34d7fa1c773de0247b283508d9fbfdb1, type: 2}
+  - {fileID: 2100000, guid: 74e2420e8abfa4943a84b4abf9c9e68f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15449,7 +15449,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1784736057
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -23689,7 +23689,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 34d7fa1c773de0247b283508d9fbfdb1, type: 2}
+  - {fileID: 2100000, guid: 74e2420e8abfa4943a84b4abf9c9e68f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89734,8 +89734,20 @@ PrefabInstance:
       value: 0.04285577
       objectReference: {fileID: 0}
     - target: {fileID: 5191655576145957028, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5191655576145957028, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.9990813
+      objectReference: {fileID: 0}
+    - target: {fileID: 5539020658026995589, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5539020658026995589, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -178827465
       objectReference: {fileID: 0}
     - target: {fileID: 6313043021570706658, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
       propertyPath: m_LocalRotation.w
