@@ -1549,7 +1549,7 @@ GameObject:
   - component: {fileID: 8132430009820566470}
   - component: {fileID: 462111180575335197}
   - component: {fileID: 2542756716592042392}
-  - component: {fileID: 2567499790575094121}
+  - component: {fileID: 6805343241201005319}
   m_Layer: 0
   m_Name: "Mu\xF1eco-Multiplicador"
   m_TagString: Untagged
@@ -1622,8 +1622,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 4976911649732914156, guid: f0fcac825c70e1040bb8885dbee9662f, type: 3}
---- !u!61 &2567499790575094121
-BoxCollider2D:
+--- !u!58 &6805343241201005319
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1654,19 +1654,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2555704, y: 1.0827351}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.25819612, y: 1.057103}
   serializedVersion: 2
-  m_Size: {x: 0.3490026, y: 1.0522456}
-  m_EdgeRadius: 0
+  m_Radius: 0.61647743
 --- !u!1 &7616685122175601563
 GameObject:
   m_ObjectHideFlags: 0
