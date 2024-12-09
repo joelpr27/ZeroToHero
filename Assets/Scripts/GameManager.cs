@@ -6,15 +6,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEditor.Animations;
 
 public class GameManager : MonoBehaviour
 {
     [Header("Partida")]
-    /* public int points;
-    public int currentPoints;
-    public TMP_Text textScore; */
-
     private LevelInfo LI;
+    private CalculoRangos cR;
     public GameObject guardado;
     public DatosGuardado datosGuardado;
     public bool areYouWinningSon;
@@ -61,6 +59,12 @@ public class GameManager : MonoBehaviour
     public TMP_Text puntosLevel2;
     public TMP_Text puntosLevel3;
     public TMP_Text puntosLevelBoss;
+    [Space]
+    public Button puntosLevel1Button;
+    public Button puntosLevel2Button;
+    public Button puntosLevel3Button;
+    public Button puntosLevelBossButton;
+    [Space]
 
     [Header("PowerUps")]
     public bool IsDash;
@@ -426,6 +430,7 @@ public class GameManager : MonoBehaviour
     {
         #region Partida
             LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();
+            cR = GameObject.Find("GameManager").GetComponent<CalculoRangos>();
 
             Time.timeScale = 1;
 
@@ -449,6 +454,19 @@ public class GameManager : MonoBehaviour
             IsDash = guardado.GetComponent<GuardarPartida>().datosGuardado.dash;
             IsRock = guardado.GetComponent<GuardarPartida>().datosGuardado.rock;
             IsLightPU = guardado.GetComponent<GuardarPartida>().datosGuardado.light;
+
+            if(guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel1 <= cR.LimitsB)
+            {
+                puntosLevel2Button.interactable = false;
+            }
+            if(guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel2 <= cR.LimitsB)
+            {
+                puntosLevel3Button.interactable = false;
+            }
+            if(guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel3 <= cR.LimitsB)
+            {
+                puntosLevelBossButton.interactable = false;
+            }
         #endregion
         
         #region Panels
