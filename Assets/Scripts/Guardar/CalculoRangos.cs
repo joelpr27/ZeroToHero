@@ -13,12 +13,12 @@ public class CalculoRangos : MonoBehaviour
     public TMP_Text rangoLevel3;
     public TMP_Text rangoLevelBoss;
 
-    private float LimitsD = 50000;
-    private float LimitsC = 100000;
-    private float LimitsB = 150000;
-    private float LimitsA = 250000;
-    private float LimitsS = 350000;
-    private float LimitsSS = 400000f;
+    public float LimitsD = 50000;
+    public float LimitsC = 100000;
+    public float LimitsB = 150000;
+    public float LimitsA = 250000;
+    public float LimitsS = 350000;
+    public float LimitsSS = 400000f;
 
     void Rangos()
     {
