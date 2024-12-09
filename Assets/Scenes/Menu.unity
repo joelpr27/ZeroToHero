@@ -198,6 +198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3584137612732831716, guid: 6057d494ff5cbe24b9cc737bcc9c2ffb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3714782413072515165, guid: 6057d494ff5cbe24b9cc737bcc9c2ffb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
