@@ -779,7 +779,7 @@ MonoBehaviour:
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
-      displayed: 0
+      displayed: 1
       snapOffset: {x: 48, y: 48}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -1159,14 +1159,14 @@ MonoBehaviour:
     - {fileID: -5704228340424003394, guid: 2d770fa75a35b434ea94d9d2c8dbc78a, type: 2}
     - {fileID: 7449302673327627747, guid: 4bba42c59be3e7449a6b7239583f3eb7, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.1
+    - e00: 0.1037736
       e01: 0
       e02: 0
-      e03: 66.85921
+      e03: 9.811317
       e10: 0
-      e11: 0.1
+      e11: 0.1037736
       e12: 0
-      e13: 398.75894
+      e13: 214.79057
       e20: 0
       e21: 0
       e22: 1
@@ -1223,14 +1223,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.19263157
+    - e00: 0.11578949
       e01: 0
       e02: 0
-      e03: 5.3684235
+      e03: 9.2105255
       e10: 0
-      e11: 0.19263157
+      e11: 0.11578949
       e12: 0
-      e13: 289.7
+      e13: 217.8
       e20: 0
       e21: 0
       e22: 1
@@ -1320,9 +1320,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 6b625ce198d7cd64eb9747596cf491da, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 44442c51a11a77b4abac426a7e0484a4, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 6230142911052658875, guid: 6b625ce198d7cd64eb9747596cf491da, type: 2}
+  - m_Target: {fileID: -4347315662193204119, guid: 44442c51a11a77b4abac426a7e0484a4, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -1414,7 +1414,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1422,7 +1422,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\TOT\insti\MASTER 2\Hercules\ZeroToHero
   m_LockTracker:
