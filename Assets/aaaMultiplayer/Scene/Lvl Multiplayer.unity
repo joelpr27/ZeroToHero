@@ -44248,17 +44248,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &1830789228 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3834354688940067237, guid: 165eb246786c48544b45c1586402f863, type: 3}
-  m_PrefabInstance: {fileID: 1881850879163487512}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f156d20dec4913419c685dea99e0ca1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1934497817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59395,11 +59384,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5266342686450561514, guid: 165eb246786c48544b45c1586402f863, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.88
       objectReference: {fileID: 0}
     - target: {fileID: 5266342686450561514, guid: 165eb246786c48544b45c1586402f863, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5.58
       objectReference: {fileID: 0}
     - target: {fileID: 5266342686450561514, guid: 165eb246786c48544b45c1586402f863, type: 3}
       propertyPath: m_LocalPosition.z
@@ -64035,11 +64024,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1533327278280057793, guid: a91fab25d25c8f64f9fd019e3ecbc2e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.09
       objectReference: {fileID: 0}
     - target: {fileID: 1533327278280057793, guid: a91fab25d25c8f64f9fd019e3ecbc2e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 1533327278280057793, guid: a91fab25d25c8f64f9fd019e3ecbc2e3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -64072,14 +64061,6 @@ PrefabInstance:
     - target: {fileID: 1533327278280057793, guid: a91fab25d25c8f64f9fd019e3ecbc2e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6638916705071909247, guid: a91fab25d25c8f64f9fd019e3ecbc2e3, type: 3}
-      propertyPath: puertas.Array.data[0]
-      value: 
-      objectReference: {fileID: 1830789228}
-    - target: {fileID: 6638916705071909247, guid: a91fab25d25c8f64f9fd019e3ecbc2e3, type: 3}
-      propertyPath: puertas.Array.data[1]
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
