@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ParallaxEffect : MonoBehaviour
 {
+    public GameObject cameraPrincpal;
     public Transform cameraTransform;  // Referencia a la cámara
     public Vector2 parallaxMultiplier;  // Velocidad de movimiento de esta capa en relación al movimiento de la cámara
 
@@ -10,6 +11,9 @@ public class ParallaxEffect : MonoBehaviour
 
     void Start()
     {
+        cameraPrincpal = GameObject.FindWithTag("Player");
+        cameraTransform = cameraPrincpal.transform;
+
         // Al iniciar, registra la posición inicial de la cámara
         lastCameraPosition = cameraTransform.position;
     }
