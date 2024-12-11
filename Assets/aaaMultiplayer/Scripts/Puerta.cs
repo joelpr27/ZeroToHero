@@ -6,22 +6,59 @@ using UnityEngine.UIElements;
 
 public class Puerta : MonoBehaviour
 {
-    public int initialPos;
-    public int finalPos;
+    public Transform posUp;
+    public Transform posDown;
+
+    public float speed;
+    private Vector2 target;
 
     public bool IsOpen;
 
-    // Update is called once per frame
+
+    /* public void MoveDoor()
+    {
+        if(IsOpen)
+        {
+            if(transform.position != finalPos)
+            {
+                transform.Translate(Vector3.up * 4);
+            }
+            //transform.localPosition = new Vector2(transform.localPosition.x, finalPos);
+        }
+        else
+        {
+            if(transform.position.y != initialPos)
+            {
+                transform.Translate(Vector3.down * 4);
+            }
+            
+            //transform.localPosition = new Vector2(transform.localPosition.x, initialPos);
+        }
+    } */
+
+    void Start()
+    {
+        if(IsOpen)
+        {
+            transform.position = posUp.position;
+        }
+        else
+        {
+            transform.position = posDown.position;
+        }
+    }
+
     void Update()
     {
         if(IsOpen)
         {
-            transform.Translate(Vector3(transform.localPosition.x, transform.localPosition.y + finalPos, 0), initialPos);
-            transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + finalPos);
+            target = posUp.position;
         }
         else
         {
-            transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + initialPos);
+            target = posDown.position;
         }
+
+        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
     }
 }

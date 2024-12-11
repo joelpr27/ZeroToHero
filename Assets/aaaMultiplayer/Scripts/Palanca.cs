@@ -28,6 +28,8 @@ public class Palanca : MonoBehaviour
             foreach(Puerta puerta in puertas)
             {
                 puerta.IsOpen = !puerta.IsOpen;
+                //puerta.MoveDoor();
+                Debug.Log(puerta.IsOpen);
             }
         }	
     }
