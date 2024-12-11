@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using Mirror;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Puerta : MonoBehaviour
+public class Puerta : NetworkBehaviour
 {
     public Transform posUp;
     public Transform posDown;
@@ -12,29 +13,7 @@ public class Puerta : MonoBehaviour
     public float speed;
     private Vector2 target;
 
-    public bool IsOpen;
-
-
-    /* public void MoveDoor()
-    {
-        if(IsOpen)
-        {
-            if(transform.position != finalPos)
-            {
-                transform.Translate(Vector3.up * 4);
-            }
-            //transform.localPosition = new Vector2(transform.localPosition.x, finalPos);
-        }
-        else
-        {
-            if(transform.position.y != initialPos)
-            {
-                transform.Translate(Vector3.down * 4);
-            }
-            
-            //transform.localPosition = new Vector2(transform.localPosition.x, initialPos);
-        }
-    } */
+    [SyncVar]public bool IsOpen;
 
     void Start()
     {

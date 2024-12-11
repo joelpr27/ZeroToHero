@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class ZonaMuerte : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform respawn;
 
-    // Update is called once per frame
-    void Update()
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if(other.tag == "Player")
+        {
+            other.transform.position = respawn.transform.position;
+        }	
     }
 }
