@@ -191,6 +191,7 @@ public class Pelea : MonoBehaviour
             ataqueFuego = false;
 
             Debug.Log("Empieza Mordisco");
+            Debug.Log("Impacto mordisco= " + impactoAtaque);
 
         }
         else if (zona == "TriggerFuego")

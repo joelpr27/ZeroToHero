@@ -207,7 +207,7 @@ public class ControllerMC : StatesMC
         if (AtlasPowerUpOn != GM.IsRock) AtlasPowerUpOn = GM.IsRock;
         if (ZeusPowerUpOn != GM.IsLightPU) ZeusPowerUpOn = GM.IsLightPU;
 
-        Debug.Log(IsGrounded());
+        // Debug.Log(IsGrounded());
         UpdateState();
 
         switch (mcState)
