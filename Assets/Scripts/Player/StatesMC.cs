@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class StatesMC : MC
 {   public enum States { Idle, Run, Jump, Hit };
 

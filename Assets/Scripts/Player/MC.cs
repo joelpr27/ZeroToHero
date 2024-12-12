@@ -1,8 +1,9 @@
 using UnityEngine;
+using Mirror;
 /// <summary>
 /// Root of the character program, grants acces to the components of the object.
 /// </summary>
-public class MC : MonoBehaviour
+public class MC : NetworkBehaviour
 {
     public Rigidbody2D rb;
     public Animator anim;

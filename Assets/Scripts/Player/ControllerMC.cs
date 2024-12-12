@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Mirror;
 
 public class ControllerMC : StatesMC
 {
@@ -197,12 +198,31 @@ public class ControllerMC : StatesMC
     
     void Update()
     {
+        if(isLocalPlayer)
+        {
+            HermesPowerUpOn = true;
+
+            ZeusPowerUpOn = true;
+
+            IrisPowerUpOn = false;
+
+            AtlasPowerUpOn = false;
+        }
+        else
+        {
+            HermesPowerUpOn = false;
+
+            ZeusPowerUpOn = false;
+
+            IrisPowerUpOn = true;
+
+            AtlasPowerUpOn = true;
+        }
         
-        
-        if(HermesPowerUpOn != GM.IsDobleJump) HermesPowerUpOn = GM.IsDobleJump;
+        /* if(HermesPowerUpOn != GM.IsDobleJump) HermesPowerUpOn = GM.IsDobleJump;
         if(IrisPowerUpOn != GM.IsDash) IrisPowerUpOn = GM.IsDash;
         if(AtlasPowerUpOn != GM.IsRock) AtlasPowerUpOn = GM.IsRock;
-        if(ZeusPowerUpOn != GM.IsLightPU) ZeusPowerUpOn = GM.IsLightPU;
+        if(ZeusPowerUpOn != GM.IsLightPU) ZeusPowerUpOn = GM.IsLightPU; */
 
         //Debug.Log(IsGrounded());
         UpdateState();

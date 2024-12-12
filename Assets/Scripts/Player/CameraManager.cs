@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CameraManager : MonoBehaviour
 {
@@ -9,17 +8,16 @@ public class CameraManager : MonoBehaviour
     public GameObject target;
 
     public Vector3 vel = Vector3.zero;
-
+    
     void Start()
     {
-        
+        target = GameObject.FindWithTag("Player");
 
         transform.position = new Vector3(target.transform.position.x, target.transform.position.y, -10);
     }
 
     void FixedUpdate()
     {
-        target = GameObject.FindWithTag("Player");
         Vector3 targetPosition = target.transform.position + offset;
         targetPosition.z = transform.position.z;
 
