@@ -1,3 +1,4 @@
+using Mirror;
 using UnityEngine;
 
 
@@ -10,14 +11,17 @@ public class StatesMC : MC
     public bool isHurt = false;
     public float stunLength;
     public float currentStunLength;
-    
-    public float movX;
+    [SyncVar]public float movX;
 
     /// <summary>
     /// Checks The state the Character is And changes it if nescesary.
     /// </summary>
     public void UpdateState()
     {
+        if(!isLocalPlayer)
+        {
+            return;
+        }
         switch (mcState)
         {
             case States.Idle:

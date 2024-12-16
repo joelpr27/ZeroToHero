@@ -27,9 +27,6 @@ public class ControllerMC : StatesMC
     bool dashReady = true;
     bool doubleJump;
 
-
-
-
     //Main Actions of the character
     void Jump()
     {
@@ -65,7 +62,7 @@ public class ControllerMC : StatesMC
         }
 
 
-        if (Input.GetButton(punch) && !anim.GetBool("AttackAtlas") && !anim.GetBool("AttackZeus"))
+        if (Input.GetButton(punch) && !anim.GetBool("AttackAtlas") && !anim.GetBool("AttackZeus") && isLocalPlayer)
         {
             anim.SetBool("Attack", true);
             anim.SetLayerWeight(1, 1);
@@ -174,6 +171,7 @@ public class ControllerMC : StatesMC
     }
 
     //Suplementary Functions
+    
     private void TurnCharacter()
     {
         if (!dash)
@@ -198,17 +196,14 @@ public class ControllerMC : StatesMC
     
     void Update()
     {
-        if(isLocalPlayer)
+        TurnCharacter();
+
+        if(!isLocalPlayer)
         {
-            HermesPowerUpOn = true;
-
-            ZeusPowerUpOn = true;
-
-            IrisPowerUpOn = false;
-
-            AtlasPowerUpOn = false;
+            return;
         }
-        else
+
+        if(isServer)
         {
             HermesPowerUpOn = false;
 
@@ -216,49 +211,65 @@ public class ControllerMC : StatesMC
 
             IrisPowerUpOn = true;
 
-            AtlasPowerUpOn = true;
+            AtlasPowerUpOn = false;
         }
-        
+        else
+        {
+            HermesPowerUpOn = true;
+
+            ZeusPowerUpOn = false;
+
+            IrisPowerUpOn = false;
+
+            AtlasPowerUpOn = false;
+        }
+
+        if(true)
+        {
+            UpdateState();
+        }
+
         /* if(HermesPowerUpOn != GM.IsDobleJump) HermesPowerUpOn = GM.IsDobleJump;
         if(IrisPowerUpOn != GM.IsDash) IrisPowerUpOn = GM.IsDash;
         if(AtlasPowerUpOn != GM.IsRock) AtlasPowerUpOn = GM.IsRock;
         if(ZeusPowerUpOn != GM.IsLightPU) ZeusPowerUpOn = GM.IsLightPU; */
 
         //Debug.Log(IsGrounded());
-        UpdateState();
+        
 
         switch (mcState)
         {
             case States.Idle:
-
+                
                 anim.SetInteger("State", 0);
                 //posibles Mecanicas en el estado Idle
-                Jump();
-                Attack();
-                SpecialAttack();
-                Dash();
-
-
+                    Jump();
+                    Attack();
+                    SpecialAttack();
+                    Dash();
+                
                 break;
 
             case States.Run:
                 anim.SetInteger("State", 1);
                 //posibles Mecanicas en el estado Run
-                Jump();
-                Attack();
-                SpecialAttack();
-                Dash();
-                TurnCharacter();
+                    Jump();
+                    Attack();
+                    SpecialAttack();
+                    Dash();
+                    TurnCharacter();
+                
                 break;
 
             case States.Jump:
                 anim.SetInteger("State", 2);
                 //posibles Mecanicas en el estado Jump
-                Jump();
-                Attack();
-                SpecialAttack();
-                Dash();
-                TurnCharacter();
+                    Jump();
+                    Attack();
+                    SpecialAttack();
+                    Dash();
+                    TurnCharacter();
+                
                 break;
 
             case States.Hit:
@@ -293,6 +304,10 @@ public class ControllerMC : StatesMC
 
     void FixedUpdate()
     {
+        if(!isLocalPlayer)
+        {
+            return;
+        }
         if (canMove || !IsGrounded())
         {
             if (!dash) movX = Input.GetAxis("Horizontal");

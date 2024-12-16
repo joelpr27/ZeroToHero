@@ -17,7 +17,7 @@ public class MC : NetworkBehaviour
 
     [Header("PowerUps's")]
     public bool HermesPowerUpOn;
-    public bool IrisPowerUpOn;
+    [SyncVar]public bool IrisPowerUpOn;
     public bool AtlasPowerUpOn;
     public bool ZeusPowerUpOn;
 
