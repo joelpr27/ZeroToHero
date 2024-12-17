@@ -171,20 +171,36 @@ public class ControllerMC : StatesMC
     }
 
     //Suplementary Functions
+
     
-    private void TurnCharacter()
+    public void TurnCharacter()
     {
         if (!dash)
         {
             if (movX < 0.0f)
             {
-                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                
+                TurnCharacter1();
+                if(isClient)transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
             if (movX > 0.0f)
             {
-                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                
+                TurnCharacter2();
+                if(isClient)transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
         }
+    }
+    
+    [ClientRpc]
+    public void TurnCharacter1()
+    {
+        transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+    }
+    [ClientRpc]
+    public void TurnCharacter2()
+    {
+        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
     }
 
     public void Start()

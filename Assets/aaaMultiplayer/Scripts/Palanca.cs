@@ -10,42 +10,51 @@ public class Palanca : NetworkBehaviour
 
     public List<Puerta> puertas;
 
-    private bool activeLaver = false;
+    [SyncVar]public bool activeLever = false;
     
+
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Attack")
         {
             CmdActivarPalanca();
         }	
     }
 
-    [Command(requiresAuthority = false)]
+    /* [Command(requiresAuthority = false)] */
     private void CmdActivarPalanca()
     {
-        activeLaver = !activeLaver;
-        foreach(Puerta puerta in puertas)
+        activeLever = !activeLever;
+        OpenDoor();
+        if(activeLever)
         {
-            puerta.IsOpen = !puerta.IsOpen;
-        }
-        if(activeLaver)
-        {
-            LaverAnimActive();
+            Debug.Log(activeLever);
+            LeverAnimActive();
         }
         else
         {
-            LaverAnimDesactive();
+            Debug.Log(activeLever);
+            LeverAnimDeactive();
         }
     }
 
     [ClientRpc]
-    public void LaverAnimActive()
+    public void OpenDoor()
+    {
+        foreach(Puerta puerta in puertas)
+        {
+            puerta.IsOpen = !puerta.IsOpen;
+        }
+    }
+
+    [ClientRpc]
+    public void LeverAnimActive()
     {
         animator.SetBool("Active", true);
     }
 
     [ClientRpc]
-    public void LaverAnimDesactive()
+    public void LeverAnimDeactive()
     {
         animator.SetBool("Active", false);
     }

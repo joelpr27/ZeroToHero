@@ -105,6 +105,7 @@ MonoBehaviour:
   syncInterval: 0
   animator: {fileID: 3404430847887821706}
   puertas: []
+  activeLaver: 0
 --- !u!114 &3746710568109391790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +121,7 @@ MonoBehaviour:
   sceneId: 0
   _assetId: 1538805694
   serverOnly: 0
-  visibility: 0
+  visibility: 2
   hasSpawned: 0
 --- !u!95 &3404430847887821706
 Animator:
