@@ -26,6 +26,8 @@ public class ControllerMC : StatesMC
     bool dash = false;
     bool dashReady = true;
     bool doubleJump;
+    public GameObject labelP1;
+    public GameObject labelP2;
 
     //Main Actions of the character
     void Jump()
@@ -208,6 +210,17 @@ public class ControllerMC : StatesMC
         spawnPoint = GameObject.FindWithTag("Respawn");
         transform.position = spawnPoint.transform.position;
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        if(isServer)
+        {
+            if(isLocalPlayer)labelP2.SetActive(false);
+            else labelP1.SetActive(false);
+        }
+        else if(isClient)
+        {
+            if(isLocalPlayer)labelP1.SetActive(false);
+            else labelP2.SetActive(false);
+        }
     }
     
     void Update()
