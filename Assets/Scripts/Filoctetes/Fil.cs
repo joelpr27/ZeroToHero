@@ -100,14 +100,14 @@ public class Fil : MonoBehaviour
             animator.SetBool("celebrando", true);
         }
 
-        if (jugador.position.x < transform.position.x)
+        /* if (jugador.position.x < transform.position.x)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else
         {
             transform.rotation = Quaternion.Euler(0, -180, 0);
-        }
+        } */
     }
 
 

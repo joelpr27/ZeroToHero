@@ -6965,6 +6965,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3f8beba9713b047aeb74ddedcf0581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   guardado: {fileID: 7331852197981547639}
   datosGuardado:
     puntosNivel1: 0
