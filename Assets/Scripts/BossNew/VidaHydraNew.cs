@@ -28,6 +28,9 @@ public class VidaHydraNew : MonoBehaviour
     public GameObject muñeca2;
     public GameObject muñeca3;
 
+    [Header("Barra vida")]
+    public GameObject barraVida;
+    public float smoothSpeed = 5f; // Velocidad del efecto smooth
 
 
 
@@ -44,8 +47,7 @@ public class VidaHydraNew : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
+        AjustarTamañoSprite();
     }
 
     public void RecibirDaño()
@@ -133,5 +135,21 @@ public class VidaHydraNew : MonoBehaviour
             animatorMuñeca3.SetBool("L_Suelo", true);
 
         }
+    }
+
+
+    public void AjustarTamañoSprite()
+    {
+        float porcentajeVida = (float)currentEnemyHealth / enemyHealth;
+
+        Vector3 nuevaEscala = barraVida.transform.localScale;
+        nuevaEscala.x = 1 - porcentajeVida;
+
+        // Actualiza la escala suavemente usando Mathf.Lerp
+        barraVida.transform.localScale = Vector3.Lerp(
+            barraVida.transform.localScale,
+            nuevaEscala,
+            Time.deltaTime * smoothSpeed
+        );
     }
 }

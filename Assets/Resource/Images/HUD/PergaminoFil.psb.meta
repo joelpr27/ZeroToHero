@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d2e449656ac1d214498c9ef5f7708676
+guid: dbab1a14efe75284992693a9d7f079f7
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 600
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -94,7 +94,28 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Marco
+  - name: Fil
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2547
+      y: 4
+      width: 712
+      height: 768
+    spriteID: c9869dbc28319914584af1bc19e477cd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2547, y: 4}
+    spritePosition: {x: 2096, y: 0}
+  - name: Borde
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -103,9 +124,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 1135
-      height: 197
-    spriteID: 6ce643f8ac714014989e03b8464dbc23
+      width: 2535
+      height: 631
+    spriteID: a6758af0b244ffb43bf3c4b9b5d673a3
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -114,49 +135,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 0, y: 0}
-  - name: Vacio
-    originalName: 
-    pivot: {x: 1, y: 0.5}
-    alignment: 5
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 209
-      width: 1093
-      height: 99
-    spriteID: bed07f7d9f38e394290bafe7b1ad6003
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 209}
-    spritePosition: {x: 24, y: 49}
-  - name: Capa 3
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 316
-      width: 1066
-      height: 99
-    spriteID: 87cfe886983f9e6438d6a63f65fd898b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 316}
-    spritePosition: {x: 35, y: 49}
+    spritePosition: {x: 0, y: 14}
   characterData:
     bones: []
     parts: []
@@ -172,31 +151,7 @@ ScriptedImporter:
     characterGroups: []
     pivot: {x: 0, y: 0}
     boneReadOnly: 0
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   mosaicLayers: 1
   characterMode: 1
   documentPivot: {x: 0, y: 0}
@@ -217,33 +172,23 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: Marco
-    spriteName: Marco
+  - name: Fil
+    spriteName: Fil
     isGroup: 0
     parentIndex: -1
-    spriteID: 6ce643f8ac714014989e03b8464dbc23
+    spriteID: c9869dbc28319914584af1bc19e477cd
     layerID: 17
+    mosaicPosition: {x: 2547, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Borde
+    spriteName: Borde
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a6758af0b244ffb43bf3c4b9b5d673a3
+    layerID: 5
     mosaicPosition: {x: 4, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Vacio
-    spriteName: Vacio
-    isGroup: 0
-    parentIndex: -1
-    spriteID: bed07f7d9f38e394290bafe7b1ad6003
-    layerID: 16
-    mosaicPosition: {x: 4, y: 209}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Capa 3
-    spriteName: Capa 3
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 87cfe886983f9e6438d6a63f65fd898b
-    layerID: 14
-    mosaicPosition: {x: 4, y: 316}
     flatten: 0
     isImported: 1
     isVisible: 1
