@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -178827465
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -6296808422209784733, guid: 64f0dda2dab46b64db4d4d853e1c60d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -105,6 +105,7 @@ MonoBehaviour:
   AndamiosTag: Andamios
   particle: {fileID: 7841704217411226927, guid: 7aab72b968b3a344d876c409622af7a9, type: 3}
   launchForce: {x: 15, y: 3}
+  rb: {fileID: 0}
 --- !u!50 &5916763021496443194
 Rigidbody2D:
   serializedVersion: 4
