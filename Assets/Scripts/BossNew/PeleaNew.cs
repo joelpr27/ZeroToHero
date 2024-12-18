@@ -9,12 +9,18 @@ public class PeleaNew : MonoBehaviour
     public Animator animator;
     State state;
 
+    public GameObject hydra;
+
+    [Header("Iniciar Pelea:")]
+    public bool iniciarPelea = false;
+
     [Header("Combate:")]
     public int ataque;
     public bool impactoAtaque;
     public int tiempoPrimerAtaque;
     public int tiempoEntreAtaques;
     public GameObject triggerCabezas;
+    public bool muerte = false;
 
 
     [Header("Triggers de Deteccion:")]
@@ -31,11 +37,23 @@ public class PeleaNew : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        DisableTriggers();
     }
 
     void Update()
     {
+        if (iniciarPelea == true)
+        {
+            Debug.Log("¡¡¡INICIA PELEA!!!");
+            iniciarPelea = false;
+            StartCoroutine(EnableTriggers(tiempoPrimerAtaque));
+        }
+
+        if (muerte == true)
+        {
+            Debug.Log("Hydra MUERTA");
+            animator.SetBool("Muerte", true);
+        }
 
         switch (state)
         {
@@ -142,6 +160,14 @@ public class PeleaNew : MonoBehaviour
 
     }
 
+    public void DisableTriggers()
+    {
+        deteccionFuego.SetActive(false);
+        deteccionMordisco.SetActive(false);
+        deteccionZarpa.SetActive(false);
+
+    }
+
     public void ImpactarMordisco()
     {
         impactoAtaque = true;
@@ -176,7 +202,6 @@ public class PeleaNew : MonoBehaviour
     {
         impactoFuego.SetActive(false);
     }
-
 
 
 }

@@ -50,7 +50,7 @@ public class IniciarPelea : MonoBehaviour
             ZonaAzucar.SetActive(false);
             BordePelea.SetActive(true);
 
-            hydra.GetComponent<Pelea>().IniciarBatalla();
+            hydra.GetComponent<PeleaNew>().iniciarPelea = true;
 
         }
     }
