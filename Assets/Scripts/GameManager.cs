@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using UnityEditor.Animations;
+using Mirror;
 
 public class GameManager : MonoBehaviour
 {
@@ -229,6 +229,8 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
 
+        Cursor.visible = true;
+
         areYouWinningSon = false;
 
         //menuMusic.Play();
@@ -378,7 +380,7 @@ public class GameManager : MonoBehaviour
         areYouWinningSon = false;
 
         MenuPanel.SetActive(false);
-        GamePanel.SetActive(true);
+        GamePanel.SetActive(false);
         VictoryPanel.SetActive(false);
         PausePanel.SetActive(false);
         OptionsPanel.SetActive(false);
@@ -431,6 +433,7 @@ public class GameManager : MonoBehaviour
         #region Partida
             LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();
             cR = GameObject.Find("GameManager").GetComponent<CalculoRangos>();
+            
 
             Time.timeScale = 1;
 
@@ -472,6 +475,7 @@ public class GameManager : MonoBehaviour
         #region Panels
             if(SceneManager.GetActiveScene().buildIndex == 0)
             {
+                Cursor.visible = true;
                 LI.EnterInGame();
 
                 MenuPanel.SetActive(true);
@@ -539,6 +543,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Cursor.visible = true;
+        }
         if(LevelsPanel.activeSelf)
         {
             PowerUps();
@@ -548,7 +556,7 @@ public class GameManager : MonoBehaviour
 
         UpdateTimeDelate();
 
-        PausePanelInteract();
+        //PausePanelInteract();
 
         WinPanel();
 

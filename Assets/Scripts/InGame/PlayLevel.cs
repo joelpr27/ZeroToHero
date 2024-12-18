@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayLevel : MonoBehaviour
 {
+    private MultiplayerMenu multiplayerMenu;
+
     private GameManager gm;
     private LevelInfo LI;
     

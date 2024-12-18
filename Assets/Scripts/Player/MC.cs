@@ -1,8 +1,9 @@
 using UnityEngine;
+using Mirror;
 /// <summary>
 /// Root of the character program, grants acces to the components of the object.
 /// </summary>
-public class MC : MonoBehaviour
+public class MC : NetworkBehaviour
 {
     public Rigidbody2D rb;
     public Animator anim;
@@ -16,7 +17,7 @@ public class MC : MonoBehaviour
 
     [Header("PowerUps's")]
     public bool HermesPowerUpOn;
-    public bool IrisPowerUpOn;
+    [SyncVar]public bool IrisPowerUpOn;
     public bool AtlasPowerUpOn;
     public bool ZeusPowerUpOn;
 
