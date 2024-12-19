@@ -638,7 +638,7 @@ MonoBehaviour:
   onlineScene: Assets/aaaMultiplayer/Scene/Lvl Multiplayer.unity
   offlineSceneLoadDelay: 0
   transport: {fileID: 516071390}
-  networkAddress: 172.16.0.191
+  networkAddress: localhost
   maxConnections: 100
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60

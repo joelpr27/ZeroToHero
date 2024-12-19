@@ -1574,7 +1574,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.007, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7586699669366411420}
@@ -7567,7 +7567,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3b9a55a32f8c87b4da78e02253b38086, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5f60eeaee290a4459f00cabac0cdca2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8040,6 +8040,26 @@ MonoBehaviour:
   rockPLaceholder: {fileID: 4361483322517844049}
   labelP1: {fileID: 5594304531494259369}
   labelP2: {fileID: 6723610173788689735}
+  body:
+  - {fileID: 884292525456216119}
+  - {fileID: 8116414176361253994}
+  - {fileID: 7899754286500616352}
+  - {fileID: 3725355599890822990}
+  - {fileID: 3193475183809893736}
+  - {fileID: 2423773400311551458}
+  - {fileID: 602316671060408798}
+  - {fileID: 6212627523510971821}
+  - {fileID: 8693809272718625421}
+  - {fileID: 5219650427654334117}
+  - {fileID: 3503475727381466655}
+  - {fileID: 3139699979984760443}
+  - {fileID: 7024886807087045100}
+  - {fileID: 53418818476413476}
+  - {fileID: 6117890771892008710}
+  - {fileID: 3851816977025519407}
+  - {fileID: 8948809000456138564}
+  - {fileID: 5296294379687665180}
+  - {fileID: 2868461388496963227}
 --- !u!95 &941920667644045372
 Animator:
   serializedVersion: 5
@@ -8394,7 +8414,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c4c260ccc54cf864a8d0d6b18d371353, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 077c0b91287821249885e053890bd90a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

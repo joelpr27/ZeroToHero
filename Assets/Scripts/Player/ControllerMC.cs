@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Mirror;
+using System.Collections.Generic;
 
 public class ControllerMC : StatesMC
 {
@@ -28,6 +29,7 @@ public class ControllerMC : StatesMC
     bool doubleJump;
     public GameObject labelP1;
     public GameObject labelP2;
+    public List<SpriteRenderer> body;
 
     //Main Actions of the character
     void Jump()
@@ -73,7 +75,7 @@ public class ControllerMC : StatesMC
         if (punchAnimLength <= 0.0f && !Input.GetButton(punch))
         {
             punchAnimLength = 0.5f;
-             anim.SetBool("Attack", false);
+            anim.SetBool("Attack", false);
             anim.SetLayerWeight(1, 0);
         }
 
@@ -114,7 +116,7 @@ public class ControllerMC : StatesMC
                 anim.SetBool("AttackAtlas", false);
                 yield return new WaitForSeconds(1.0f);
                 anim.SetLayerWeight(1, 0);
-                
+
                 loaded = false;
                 canMove = true;
             }
@@ -133,7 +135,7 @@ public class ControllerMC : StatesMC
                 anim.SetBool("AttackZeus", true);
                 anim.SetLayerWeight(1, 1);
                 canMove = false;
-                movX=0;
+                movX = 0;
 
                 yield return new WaitForSeconds(1.0f);
 
@@ -144,7 +146,8 @@ public class ControllerMC : StatesMC
 
         }
     }
-    public void SpawnRock(){
+    public void SpawnRock()
+    {
         GameObject newRock = Instantiate(rockPrefab, rockPLaceholder.transform.position, Quaternion.identity);
         newRock.transform.localScale = transform.localScale;
         newRock.GetComponent<Rock>().LaunchRock(transform.localScale);
@@ -174,26 +177,26 @@ public class ControllerMC : StatesMC
 
     //Suplementary Functions
 
-    
+
     public void TurnCharacter()
     {
         if (!dash)
         {
             if (movX < 0.0f)
             {
-                
+
                 TurnCharacter1();
-                if(isClient)transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                if (isClient) transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
             if (movX > 0.0f)
             {
-                
+
                 TurnCharacter2();
-                if(isClient)transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                if (isClient) transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
         }
     }
-    
+
     [ClientRpc]
     public void TurnCharacter1()
     {
@@ -211,28 +214,57 @@ public class ControllerMC : StatesMC
         transform.position = spawnPoint.transform.position;
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-        if(isServer)
+        if (isServer)
         {
-            if(isLocalPlayer)labelP2.SetActive(false);
-            else labelP1.SetActive(false);
+            if (isLocalPlayer)
+            {
+                labelP2.SetActive(false);
+                foreach (SpriteRenderer sprite in body)
+                {
+                    sprite.color = Color.HSVToRGB(0.52f,0.15f,1.0f);
+                }
+            }
+            else
+            {
+                labelP1.SetActive(false);
+                foreach (SpriteRenderer sprite in body)
+                {
+                    
+                    sprite.color = Color.HSVToRGB(0.0f, 0.1f, 1.0f);
+                }
+            }
         }
-        else if(isClient)
+        else if (isClient)
         {
-            if(isLocalPlayer)labelP1.SetActive(false);
-            else labelP2.SetActive(false);
+            if (isLocalPlayer)
+            {
+                labelP1.SetActive(false);
+                foreach (SpriteRenderer sprite in body)
+                {
+                    sprite.color = Color.HSVToRGB(0.0f, 0.1f, 1.0f);
+                }
+            }
+            else
+            {
+                labelP2.SetActive(false);
+                foreach (SpriteRenderer sprite in body)
+                {
+                    sprite.color = Color.HSVToRGB(0.52f,0.15f,1.0f);
+                }
+            }
         }
     }
-    
+
     void Update()
     {
         TurnCharacter();
 
-        if(!isLocalPlayer)
+        if (!isLocalPlayer)
         {
             return;
         }
 
-        if(isServer)
+        if (isServer)
         {
             HermesPowerUpOn = false;
 
@@ -253,7 +285,7 @@ public class ControllerMC : StatesMC
             AtlasPowerUpOn = false;
         }
 
-        if(true)
+        if (true)
         {
             UpdateState();
         }
@@ -264,45 +296,45 @@ public class ControllerMC : StatesMC
         if(ZeusPowerUpOn != GM.IsLightPU) ZeusPowerUpOn = GM.IsLightPU; */
 
         //Debug.Log(IsGrounded());
-        
+
 
         switch (mcState)
         {
             case States.Idle:
-                
+
                 anim.SetInteger("State", 0);
                 //posibles Mecanicas en el estado Idle
-                    Jump();
-                    Attack();
-                    SpecialAttack();
-                    Dash();
-                
+                Jump();
+                Attack();
+                SpecialAttack();
+                Dash();
+
                 break;
 
             case States.Run:
                 anim.SetInteger("State", 1);
                 //posibles Mecanicas en el estado Run
-                    Jump();
-                    Attack();
-                    SpecialAttack();
-                    Dash();
-                    TurnCharacter();
-                
+                Jump();
+                Attack();
+                SpecialAttack();
+                Dash();
+                TurnCharacter();
+
                 break;
 
             case States.Jump:
                 anim.SetInteger("State", 2);
                 //posibles Mecanicas en el estado Jump
-                    Jump();
-                    Attack();
-                    SpecialAttack();
-                    Dash();
-                    TurnCharacter();
-                
+                Jump();
+                Attack();
+                SpecialAttack();
+                Dash();
+                TurnCharacter();
+
                 break;
 
             case States.Hit:
-            
+
                 canMove = false;
                 anim.SetInteger("State", 3);
                 anim.SetLayerWeight(1, 0);
@@ -314,13 +346,13 @@ public class ControllerMC : StatesMC
 
         }
 
-        if(isHurt)
+        if (isHurt)
         {
             currentStunLength += Time.deltaTime;
 
             /* isHurt = true; */
 
-            if(currentStunLength >= stunLength)
+            if (currentStunLength >= stunLength)
             {
                 currentStunLength = 0;
 
@@ -333,7 +365,7 @@ public class ControllerMC : StatesMC
 
     void FixedUpdate()
     {
-        if(!isLocalPlayer)
+        if (!isLocalPlayer)
         {
             return;
         }
