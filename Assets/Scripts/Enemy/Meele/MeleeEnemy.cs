@@ -1,12 +1,10 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class MeleeEnemy : MonoBehaviour
+public class MeleeEnemy : Enemy
 {
     private GameManager gm;
-    private LevelInfo LI;
-
-    public GameObject meleeEnemy;
 
     [Header("Targget")]
     public GameObject player;
@@ -32,12 +30,6 @@ public class MeleeEnemy : MonoBehaviour
     public bool playerInSigth;
     [Space]
 
-    [Header("Helth")]
-    public int enemyHealth = 1;
-    public int currentEnemyHealth;
-
-    public GameObject particle;
-
     [Header("Animaciones")]
     public Animator animator;
     public GameObject rueda;
@@ -56,7 +48,7 @@ public class MeleeEnemy : MonoBehaviour
 
     public void Attack()
     {
-        if(playerInSigth == true)
+        if (playerInSigth == true)
         {
             animator.SetBool("Attack", true);
         }
@@ -116,8 +108,11 @@ public class MeleeEnemy : MonoBehaviour
             FaceDirection(1);
         }
 
-        transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.transform.position.x, speed * Time.deltaTime),
-        transform.position.y);
+        if (!playerInSigth)
+        {
+            transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.transform.position.x, speed * Time.deltaTime),
+            transform.position.y);
+        }
     }
 
     void Seguimiento()
@@ -154,7 +149,8 @@ public class MeleeEnemy : MonoBehaviour
     {
         Attack();
 
-        rueda.transform.Rotate(0, 0, 5);
+        if (!playerInSigth) rueda.transform.Rotate(0, 0, -25 * (5 * Time.deltaTime));
+        
 
         Seguimiento();
 
@@ -173,7 +169,7 @@ public class MeleeEnemy : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Attack")
+        /* if (other.tag == "Attack")
         {
             if (currentEnemyHealth > 0)
             {
@@ -187,6 +183,6 @@ public class MeleeEnemy : MonoBehaviour
                 LI.Score();
                 Destroy(meleeEnemy);
             }
-        }
+        } */
     }
 }

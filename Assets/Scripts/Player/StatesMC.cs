@@ -1,7 +1,10 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StatesMC : MC
-{   public enum States { Idle, Run, Jump, Hit };
+{
+    public enum States { Idle, Run, Jump, Hit };
 
     [Header("Maquina de estados")]
     public States mcState = States.Idle;
@@ -9,7 +12,7 @@ public class StatesMC : MC
     public bool isHurt = false;
     public float stunLength;
     public float currentStunLength;
-    
+
     public float movX;
 
     /// <summary>
@@ -54,7 +57,7 @@ public class StatesMC : MC
                 {
                     mcState = States.Idle;
                 }
-                else if (movX != 0  && IsGrounded())
+                else if (movX != 0 && IsGrounded())
                 {
                     mcState = States.Run;
                 }
@@ -74,17 +77,23 @@ public class StatesMC : MC
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "EnemyAttack")
+        /* if (other.tag == "EnemyAttack")
         {
-            /* StartCoroutine(StunTime()); */
             isHurt = true;
         }
-    }
+        */
+        if (other.tag == "Enemy")
+        {
+            try
+            {
+                other.gameObject.GetComponent<MeleeEnemy>().GetDamage();
+            }
+            catch (Exception ex)
+            {
+                Debug.Log(ex.Message);
+            }
 
-    /* public IEnumerator StunTime()
-    {
-        yield return new WaitForSeconds(stunLength);
-        isHurt = false;
-        canMove = true;
-    } */
+
+        }
+    }
 }
