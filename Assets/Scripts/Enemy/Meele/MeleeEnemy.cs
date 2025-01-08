@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MeleeEnemy : Enemy
 {
-    private GameManager gm;
-
     [Header("Targget")]
     public GameObject player;
     public GameObject AttackPlayerDetect;
@@ -13,13 +11,17 @@ public class MeleeEnemy : Enemy
     public GameObject DetectPlayer;
     [Space]
 
-    [Header("Move")]
+     [Header("Move")]
     public bool staticEnemy;
 
     public float speed;
 
-    public Transform[] pointPatrol;
-    private int targetPoint;
+    public GameObject groundCheck;
+    private bool facingRight;
+    public bool isGrounded;
+    public float circleRadious;
+
+    public LayerMask grounLayer;
 
     public bool isPlayerDetected;
     [Space]
@@ -70,30 +72,34 @@ public class MeleeEnemy : Enemy
 
     void Patrol()
     {
-        if (transform.position.x == pointPatrol[targetPoint].position.x)
+        if (!playerInSigth)
         {
-            NextTarget();
+            transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.transform.position.x, speed * Time.deltaTime),
+            transform.position.y);
         }
 
-        if (pointPatrol[targetPoint].position.x < transform.position.x)
+        isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, circleRadious, grounLayer);
+
+        if(!isGrounded && facingRight)
+        {
+            FaceDirection(1);
+            facingRight = !facingRight;
+            speed = -speed;
+        }
+        else if(!isGrounded && !facingRight)
         {
             FaceDirection(-1);
+            facingRight = !facingRight;
+            speed = -speed;
         }
-        else
+
+        if(facingRight)
         {
             FaceDirection(1);
         }
-
-        transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, pointPatrol[targetPoint].position.x, speed * Time.deltaTime),
-        transform.position.y);
-    }
-
-    void NextTarget()
-    {
-        targetPoint++;
-        if (targetPoint >= pointPatrol.Length)
+        else
         {
-            targetPoint = 0;
+            FaceDirection(-1);
         }
     }
 
@@ -110,7 +116,7 @@ public class MeleeEnemy : Enemy
 
         if (!playerInSigth)
         {
-            transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.transform.position.x, speed * Time.deltaTime),
+            transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.transform.position.x, (speed * 1.5f) * Time.deltaTime),
             transform.position.y);
         }
     }
@@ -130,8 +136,6 @@ public class MeleeEnemy : Enemy
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();
 
         #region Death
@@ -139,7 +143,6 @@ public class MeleeEnemy : Enemy
         #endregion
 
         #region Patrol
-        targetPoint = 0;
 
         isPlayerDetected = false;
         #endregion

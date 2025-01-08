@@ -88,11 +88,21 @@ public class StatesMC : MC
             {
                 other.gameObject.GetComponent<MeleeEnemy>().GetDamage();
             }
-            catch (Exception ex)
+            catch{}
+            
+            try
             {
-                Debug.Log(ex.Message);
+                other.gameObject.GetComponent<FlyEnemy>().GetDamage();
             }
-
+            catch{}
+            
+            try
+            {
+                other.gameObject.GetComponent<ArcherEnemy>().GetDamage();
+            }
+            catch{}
+            
+                
 
         }
     }

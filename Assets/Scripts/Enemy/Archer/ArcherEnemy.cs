@@ -1,15 +1,12 @@
 
 using UnityEngine;
 
-public class ArcherEnemy : MonoBehaviour
+public class ArcherEnemy : Enemy
 {
-    private GameManager gm;
-    private LevelInfo LI;
-
-    public GameObject archerEnemy;
 
     [Header("Targget")]
     public GameObject player;
+    public float ajusteAltura;
     [Space]
 
     [Header("Move")]
@@ -24,10 +21,6 @@ public class ArcherEnemy : MonoBehaviour
 
     public Transform bow;
     public GameObject arrow;
-    [Space]
-
-    [Header("Helth")]
-    public GameObject particle;
 
 #region Move
     void FaceDirection(int direction)
@@ -53,7 +46,7 @@ public class ArcherEnemy : MonoBehaviour
     {
         Vector3 direction = player.transform.position - bow.position;
         //calcula la tangente
-        float angle = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(-direction.y + ajusteAltura, -direction.x) * Mathf.Rad2Deg;
         //
         bow.rotation = Quaternion.Euler(0, 0, angle);
     }
@@ -84,8 +77,6 @@ public class ArcherEnemy : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();
 
         #region Patrol
@@ -101,19 +92,6 @@ public class ArcherEnemy : MonoBehaviour
             TrakingPlayer();
 
             Attack();
-        }
-    }
-
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "Attack")
-        {
-            Debug.Log("A");
-            
-            Instantiate(particle, transform.position, Quaternion.identity);
-            Instantiate(particle, transform.position, Quaternion.identity);
-            LI.Score();
-            Destroy(archerEnemy);
         }
     }
 }

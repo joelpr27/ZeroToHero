@@ -23,7 +23,7 @@ public class MC : MonoBehaviour
     [Header("Attack Triggers")]
     public GameObject DamageTrigger;
     public BoxCollider2D LigtningTrigger;
-    
+
 
     void Awake()
     {
@@ -34,10 +34,12 @@ public class MC : MonoBehaviour
         powerUpMovement = "Fire3";
     }
 
-    public void DamageOn(){
+    public void DamageOn()
+    {
         DamageTrigger.SetActive(true);
     }
-    public void DamageOff(){
+    public void DamageOff()
+    {
         DamageTrigger.SetActive(false);
     }
 
@@ -46,4 +48,5 @@ public class MC : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
     }
 
+    
 }

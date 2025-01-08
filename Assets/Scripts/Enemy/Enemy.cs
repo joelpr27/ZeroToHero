@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     
     protected LevelInfo LI;
+    public GameObject BaseObject;
 
     
 
@@ -26,7 +27,7 @@ public class Enemy : MonoBehaviour
                 Instantiate(particle, transform.position, Quaternion.identity);
                 Instantiate(particle, transform.position, Quaternion.identity);
                 LI.Score();
-                Destroy(gameObject);
+                Destroy(BaseObject);
             }
     }
 }

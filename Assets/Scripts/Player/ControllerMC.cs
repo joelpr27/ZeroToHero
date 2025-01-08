@@ -188,6 +188,16 @@ public class ControllerMC : StatesMC
         }
     }
 
+    public void GetDamage()
+    {
+        isHurt = true;
+    }
+
+
+
+
+
+
     public void Start()
     {
         spawnPoint = GameObject.FindWithTag("Respawn");
