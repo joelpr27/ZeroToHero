@@ -3103,13 +3103,6 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0
-    functionName: SonidoCuello
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 1.2166667
     functionName: ActivarImpactoMordisco
     data: 
@@ -3117,7 +3110,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.6666666
+  - time: 1.5666667
     functionName: DesactivarImpactoMordisco
     data: 
     objectReferenceParameter: {fileID: 0}

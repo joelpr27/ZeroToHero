@@ -263,9 +263,9 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 2.3666666
-        value: {x: -9.076759, y: 2.1887693, z: 0}
-        inSlope: {x: 0, y: 0.22516462, z: 0}
-        outSlope: {x: 0, y: 0.22516462, z: 0}
+        value: {x: -9.03454, y: 1.9354591, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -780,7 +780,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.3666666
-        value: -9.076759
+        value: -9.03454
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -819,9 +819,9 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2.3666666
-        value: 2.1887693
-        inSlope: 0.22516462
-        outSlope: 0.22516462
+        value: 1.9354591
+        inSlope: 0
+        outSlope: 0
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -1368,7 +1368,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Base/Pecho/B3_C1/B2_C1/B1_C1/Superior_C1/Inferior_C1
+    path: Base/Pecho/B3_C2/B2_C2/B1_C2/Superior_C2/Inferior_C2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1380,7 +1380,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Base/Pecho/B3_C1/B2_C1/B1_C1/Superior_C1/Inferior_C1
+    path: Base/Pecho/B3_C2/B2_C2/B1_C2/Superior_C2/Inferior_C2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1392,7 +1392,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Base/Pecho/B3_C1/B2_C1/B1_C1/Superior_C1/Inferior_C1
+    path: Base/Pecho/B3_C2/B2_C2/B1_C2/Superior_C2/Inferior_C2
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1440,7 +1440,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Base/Pecho/B3_C2/B2_C2/B1_C2/Superior_C2/Inferior_C2
+    path: Base/Pecho/B3_C1/B2_C1/B1_C1/Superior_C1/Inferior_C1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1452,7 +1452,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Base/Pecho/B3_C2/B2_C2/B1_C2/Superior_C2/Inferior_C2
+    path: Base/Pecho/B3_C1/B2_C1/B1_C1/Superior_C1/Inferior_C1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1464,7 +1464,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Base/Pecho/B3_C2/B2_C2/B1_C2/Superior_C2/Inferior_C2
+    path: Base/Pecho/B3_C1/B2_C1/B1_C1/Superior_C1/Inferior_C1
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1543,8 +1543,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.11666667
-    functionName: ActivarTriggerCabeza
+  - time: 0.05
+    functionName: ActivarImpactoCabeza
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -1557,36 +1557,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.16666667
-    functionName: SonidoChispas
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 2.4333334
-    functionName: StopAudio
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 2.45
+  - time: 2.35
     functionName: DesactivarChispas
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.4666667
-    functionName: SonidoCuello
+  - time: 2.3666666
+    functionName: DesactivarImpactoCabeza
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.5
-    functionName: DesactivarTriggerCabeza
+  - time: 4.5
+    functionName: GoIdle
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

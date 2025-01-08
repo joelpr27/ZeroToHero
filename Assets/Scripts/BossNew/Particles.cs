@@ -23,6 +23,14 @@ public class Particles : MonoBehaviour
     public ParticleSystem p_C2_Fuego;
     public ParticleSystem p_C3_Fuego;
 
+    [Header("Humo Cabezas:")]
+
+    //Game Object de las particulas del Humo
+    public ParticleSystem p_P1_HumoCabeza1;
+    public ParticleSystem p_P1_HumoCabeza2;
+    public ParticleSystem p_P1_HumoCabeza3;
+
+
     public void Start()
     {
         // Debug.Log("Desactivar Particulas");
@@ -36,6 +44,11 @@ public class Particles : MonoBehaviour
         p_C1_Fuego.Stop();
         p_C2_Fuego.Stop();
         p_C3_Fuego.Stop();
+
+        p_P1_HumoCabeza1.Stop();
+        p_P1_HumoCabeza2.Stop();
+        p_P1_HumoCabeza3.Stop();
+
 
     }
 
@@ -85,6 +98,21 @@ public class Particles : MonoBehaviour
         p_C3_Fuego.Stop();
 
     }
+
+    public void ActivarHumoCabeza1()
+    {
+        p_P1_HumoCabeza1.Play();
+    }
+    public void ActivarHumoCabeza2()
+    {
+        p_P1_HumoCabeza2.Play();
+    }
+    public void ActivarHumoCabeza3()
+    {
+        p_P1_HumoCabeza3.Play();
+    }
+
+
 
 }
 

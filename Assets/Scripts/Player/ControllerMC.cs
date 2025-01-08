@@ -32,27 +32,29 @@ public class ControllerMC : StatesMC
     //Main Actions of the character
     void Jump()
     {
+        // Si está en el suelo y no está presionando el botón de salto, restablece el doble salto
         if (IsGrounded() && !Input.GetButton("Jump") && canMove)
         {
             doubleJump = false;
         }
 
+        // Si se presiona el botón de salto
         if (Input.GetButtonDown("Jump"))
         {
+            // Si está en el suelo o tiene un doble salto disponible
             if (IsGrounded() || doubleJump)
             {
+                // Establece la velocidad en el eje Y al valor fijo de salto
                 rb.velocity = new Vector2(rb.velocity.x, speed.y);
 
+                // Si el power-up Hermes está activo, alterna el estado de doble salto
                 if (HermesPowerUpOn)
                 {
+                    anim.SetInteger("State", 0);
                     doubleJump = !doubleJump;
+
                 }
             }
-        }
-
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
     }
 
@@ -73,7 +75,7 @@ public class ControllerMC : StatesMC
         if (punchAnimLength <= 0.0f && !Input.GetButton(punch))
         {
             punchAnimLength = 0.5f;
-             anim.SetBool("Attack", false);
+            anim.SetBool("Attack", false);
             anim.SetLayerWeight(1, 0);
         }
 
@@ -114,7 +116,7 @@ public class ControllerMC : StatesMC
                 anim.SetBool("AttackAtlas", false);
                 yield return new WaitForSeconds(1.0f);
                 anim.SetLayerWeight(1, 0);
-                
+
                 loaded = false;
                 canMove = true;
             }
@@ -133,7 +135,7 @@ public class ControllerMC : StatesMC
                 anim.SetBool("AttackZeus", true);
                 anim.SetLayerWeight(1, 1);
                 canMove = false;
-                movX=0;
+                movX = 0;
 
                 yield return new WaitForSeconds(1.0f);
 
@@ -144,7 +146,8 @@ public class ControllerMC : StatesMC
 
         }
     }
-    public void SpawnRock(){
+    public void SpawnRock()
+    {
         GameObject newRock = Instantiate(rockPrefab, rockPLaceholder.transform.position, Quaternion.identity);
         newRock.transform.localScale = transform.localScale;
         newRock.GetComponent<Rock>().LaunchRock(transform.localScale);
@@ -194,17 +197,17 @@ public class ControllerMC : StatesMC
         transform.position = spawnPoint.transform.position;
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
-    
+
     void Update()
     {
-        
-        
-        if(HermesPowerUpOn != GM.IsDobleJump) HermesPowerUpOn = GM.IsDobleJump;
-        if(IrisPowerUpOn != GM.IsDash) IrisPowerUpOn = GM.IsDash;
-        if(AtlasPowerUpOn != GM.IsRock) AtlasPowerUpOn = GM.IsRock;
-        if(ZeusPowerUpOn != GM.IsLightPU) ZeusPowerUpOn = GM.IsLightPU;
 
-        Debug.Log(IsGrounded());
+
+        if (HermesPowerUpOn != GM.IsDobleJump) HermesPowerUpOn = GM.IsDobleJump;
+        if (IrisPowerUpOn != GM.IsDash) IrisPowerUpOn = GM.IsDash;
+        if (AtlasPowerUpOn != GM.IsRock) AtlasPowerUpOn = GM.IsRock;
+        if (ZeusPowerUpOn != GM.IsLightPU) ZeusPowerUpOn = GM.IsLightPU;
+
+        // Debug.Log(IsGrounded());
         UpdateState();
 
         switch (mcState)
@@ -242,7 +245,7 @@ public class ControllerMC : StatesMC
                 break;
 
             case States.Hit:
-            
+
                 canMove = false;
                 anim.SetInteger("State", 3);
                 anim.SetLayerWeight(1, 0);
@@ -254,13 +257,13 @@ public class ControllerMC : StatesMC
 
         }
 
-        if(isHurt)
+        if (isHurt)
         {
             currentStunLength += Time.deltaTime;
 
             /* isHurt = true; */
 
-            if(currentStunLength >= stunLength)
+            if (currentStunLength >= stunLength)
             {
                 currentStunLength = 0;
 
@@ -275,12 +278,12 @@ public class ControllerMC : StatesMC
     {
         if (canMove || !IsGrounded())
         {
+            // Capturar el movimiento horizontal
             if (!dash) movX = Input.GetAxis("Horizontal");
-
 
             float tgtVelocityX;
 
-            if (loaded == true)
+            if (loaded)
             {
                 tgtVelocityX = speed.x * (movX / loadedSpeed);
             }
@@ -289,11 +292,13 @@ public class ControllerMC : StatesMC
                 tgtVelocityX = speed.x * movX;
             }
 
+            // Limitar la velocidad máxima
             if (Mathf.Abs(tgtVelocityX) > maxSpeedX)
             {
                 tgtVelocityX = Mathf.Sign(tgtVelocityX) * maxSpeedX;
             }
 
+            // Limitar la velocidad máxima del dash
             if (Mathf.Abs(dashSpeed) > maxDashSpeed)
             {
                 dashSpeed = Mathf.Sign(dashSpeed) * maxDashSpeed;
@@ -305,15 +310,19 @@ public class ControllerMC : StatesMC
             }
             else
             {
-                rb.velocity = new Vector2(tgtVelocityX, rb.velocity.y);
+                if (movX == 0) // Si no hay entrada de movimiento
+                {
+                    rb.velocity = new Vector2(0, rb.velocity.y); // Detener la velocidad horizontal
+                }
+                else
+                {
+                    rb.velocity = new Vector2(tgtVelocityX, rb.velocity.y); // Aplicar velocidad horizontal
+                }
             }
-
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            rb.velocity = Vector2.zero; // Detener completamente si no puede moverse
         }
-
-
     }
 }
