@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class IniciarPelea : MonoBehaviour
 {
+    public GameObject gameManager;
+
     [Header("Arboles y Borde de Pelea Izq:")]
     public GameObject Arbol1;
     public GameObject Arbol2;
@@ -12,6 +14,7 @@ public class IniciarPelea : MonoBehaviour
 
     [Header("Boss:")]
     public GameObject hydra;
+
 
 
 
@@ -52,6 +55,7 @@ public class IniciarPelea : MonoBehaviour
 
             hydra.GetComponent<PeleaNew>().iniciarPelea = true;
 
+            gameManager.GetComponent<FrasesFiloctetes>().ActivarCuadroTexto("LvlHydra", 0);
         }
     }
 
