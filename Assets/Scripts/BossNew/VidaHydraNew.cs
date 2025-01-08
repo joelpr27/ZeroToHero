@@ -28,6 +28,16 @@ public class VidaHydraNew : MonoBehaviour
     public GameObject muñeca2;
     public GameObject muñeca3;
 
+    [Header("Cabezas")]
+    public SpriteRenderer cabeza1;
+    public SpriteRenderer cabeza2;
+    public SpriteRenderer cabeza3;
+
+    private Color colorOriginalCabeza1;
+    private Color colorOriginalCabeza2;
+    private Color colorOriginalCabeza3;
+
+
     [Header("Barra vida")]
     public GameObject barraVida;
     public float smoothSpeed = 5f; // Velocidad del efecto smooth
@@ -42,6 +52,10 @@ public class VidaHydraNew : MonoBehaviour
 
         currentEnemyHealth = enemyHealth;
 
+        colorOriginalCabeza1 = cabeza1.color;
+        colorOriginalCabeza2 = cabeza2.color;
+        colorOriginalCabeza3 = cabeza3.color;
+
     }
 
     // Update is called once per frame
@@ -54,6 +68,13 @@ public class VidaHydraNew : MonoBehaviour
     {
         if (currentEnemyHealth > 0)
         {
+            
+            cabeza1.color = Color.red;
+            cabeza2.color = Color.red;
+            cabeza3.color = Color.red;
+
+            StartCoroutine(DesactivarCuadroTexto());
+
             particle.Play();
             currentEnemyHealth--;
 
@@ -137,7 +158,6 @@ public class VidaHydraNew : MonoBehaviour
         }
     }
 
-
     public void AjustarTamañoSprite()
     {
         float porcentajeVida = (float)currentEnemyHealth / enemyHealth;
@@ -145,11 +165,21 @@ public class VidaHydraNew : MonoBehaviour
         Vector3 nuevaEscala = barraVida.transform.localScale;
         nuevaEscala.x = 1 - porcentajeVida;
 
-        // Actualiza la escala suavemente usando Mathf.Lerp
         barraVida.transform.localScale = Vector3.Lerp(
             barraVida.transform.localScale,
             nuevaEscala,
             Time.deltaTime * smoothSpeed
         );
+    }
+
+    IEnumerator DesactivarCuadroTexto()
+    {
+        Debug.Log("DesactivarCuadroTexto");
+
+        yield return new WaitForSeconds(0.07f);
+
+        cabeza1.color = colorOriginalCabeza1;
+        cabeza2.color = colorOriginalCabeza2;
+        cabeza3.color = colorOriginalCabeza3;
     }
 }
