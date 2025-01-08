@@ -3,11 +3,9 @@ using UnityEngine;
 
 public class MeleeEnemy : MonoBehaviour
 {
-    private GameManager gm;
     private LevelInfo LI;
 
     public GameObject meleeEnemy;
-    private Rigidbody2D rb;
 
     [Header("Targget")]
     public GameObject player;
@@ -84,48 +82,33 @@ public class MeleeEnemy : MonoBehaviour
 
     void Patrol()
     {
-        
-        rb.velocity = Vector2.right * speed * Time.deltaTime;
+        transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, transform.position.x + 1, speed * Time.deltaTime),
+        transform.position.y);
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, circleRadious, grounLayer);
 
         if(!isGrounded && facingRight)
         {
-            FaceDirection(-1);
+            FaceDirection(1);
             facingRight = !facingRight;
+            speed = -speed;
         }
         else if(!isGrounded && !facingRight)
         {
-            FaceDirection(1);
+            FaceDirection(-1);
             facingRight = !facingRight;
+            speed = -speed;
         }
 
-        /* if (transform.position.x == pointPatrol[targetPoint].position.x)
-        {
-            NextTarget();
-        }
-
-        if (pointPatrol[targetPoint].position.x < transform.position.x)
+        if(facingRight)
         {
             FaceDirection(-1);
         }
         else
         {
             FaceDirection(1);
-        } */
-
-        /* transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, pointPatrol[targetPoint].position.x, speed * Time.deltaTime),
-        transform.position.y); */
-    }
-
-    /* void NextTarget()
-    {
-        targetPoint++;
-        if (targetPoint >= pointPatrol.Length)
-        {
-            targetPoint = 0;
         }
-    } */
+    }
 
     void Pursue()
     {
@@ -138,7 +121,7 @@ public class MeleeEnemy : MonoBehaviour
             FaceDirection(1);
         }
 
-        transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.transform.position.x, speed * Time.deltaTime),
+        transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.transform.position.x, (-speed * 1.5f) * Time.deltaTime),
         transform.position.y);
     }
 
@@ -158,10 +141,7 @@ public class MeleeEnemy : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
 
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();
-
-        rb = GetComponent<Rigidbody2D>();
 
         #region Death
         currentEnemyHealth = enemyHealth;

@@ -431,7 +431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 710238395}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -446,12 +446,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710238394}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: -1.139, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.625, y: -1.62375, z: 0}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1588634609}
+  m_Father: {fileID: 1645401733}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &739697466
 GameObject:
@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 739697469}
   - component: {fileID: 739697468}
   - component: {fileID: 739697467}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -577,8 +577,8 @@ Transform:
   m_GameObject: {fileID: 739697466}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.32, y: 0, z: 0}
-  m_LocalScale: {x: 10.6401, y: 2, z: 1}
+  m_LocalPosition: {x: 12, y: 0.5, z: 0}
+  m_LocalScale: {x: 10.6401, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1273,11 +1273,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1588634609 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1519079088666673091, guid: abd7bc6ea99f2bd45b20607bbbb4ad29, type: 3}
-  m_PrefabInstance: {fileID: 1624721264}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1624721264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1338,6 +1333,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5176030281786274141, guid: abd7bc6ea99f2bd45b20607bbbb4ad29, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176030281786274141, guid: abd7bc6ea99f2bd45b20607bbbb4ad29, type: 3}
+      propertyPath: m_Constraints
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192318446172536904, guid: abd7bc6ea99f2bd45b20607bbbb4ad29, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6192318446172536904, guid: abd7bc6ea99f2bd45b20607bbbb4ad29, type: 3}
       propertyPath: groundCheck
       value: 
@@ -1355,13 +1362,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7651823807136179516, guid: abd7bc6ea99f2bd45b20607bbbb4ad29, type: 3}
+    - {fileID: 4439368864635861277, guid: abd7bc6ea99f2bd45b20607bbbb4ad29, type: 3}
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1519079088666673091, guid: abd7bc6ea99f2bd45b20607bbbb4ad29, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 1131846758249445252, guid: abd7bc6ea99f2bd45b20607bbbb4ad29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 710238395}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abd7bc6ea99f2bd45b20607bbbb4ad29, type: 3}
+--- !u!4 &1645401733 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1131846758249445252, guid: abd7bc6ea99f2bd45b20607bbbb4ad29, type: 3}
+  m_PrefabInstance: {fileID: 1624721264}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1701101902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1610,8 +1624,8 @@ Transform:
   m_GameObject: {fileID: 1705853527}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.5, z: 0}
-  m_LocalScale: {x: -50, y: 1, z: 1}
+  m_LocalPosition: {x: -9.175, y: -1.5, z: 0}
+  m_LocalScale: {x: -31.651571, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
