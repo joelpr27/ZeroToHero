@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4503529496184441276}
   - component: {fileID: 4928961689050539638}
   - component: {fileID: 2068901878598664018}
+  - component: {fileID: 501740157560149465}
   m_Layer: 0
   m_Name: Enemigo_Distancia_Flecha
   m_TagString: EnemyAttack
@@ -171,6 +172,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d95db73dfbd2f940805ad1cff8a7b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 6
   delateTime: 10
   particle: {fileID: 7841704217411226927, guid: 08be829b7e535f04fa61c457945a2b25, type: 3}
+--- !u!114 &501740157560149465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288041566594983158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c0063f5a89a9184d87b836bb4879f5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

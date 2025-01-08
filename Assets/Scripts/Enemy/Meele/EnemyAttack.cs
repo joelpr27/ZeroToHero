@@ -15,6 +15,8 @@ public class EnemyAttack : MonoBehaviour
 
             Debug.Log("PalyerIsInRange");
         }
+
+        
     }
     
     public void OnTriggerExit2D(Collider2D other)

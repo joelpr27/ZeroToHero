@@ -1,10 +1,9 @@
 
 using UnityEngine;
 
-public class FlyEnemy : MonoBehaviour
+public class FlyEnemy : Enemy
 {
     private GameManager gm;
-    private LevelInfo LI;
 
     public GameObject flyEnemy;
 
@@ -26,10 +25,6 @@ public class FlyEnemy : MonoBehaviour
 
     [Header("Fight")]
     public int damage;
-    [Space]
-
-    [Header("Helth")]
-    public GameObject particle;
     
 #region Combat
     public void StunPlayer()
@@ -92,13 +87,13 @@ void Update()
 
 public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+       /*  if(other.tag == "Player")
         {
             Debug.Log("A");
             
             Instantiate(particle, transform.position, Quaternion.identity);
             Instantiate(particle, transform.position, Quaternion.identity);
-            Destroy(flyEnemy);
+            Destroy(BaseObject);
         }
 
         if(other.tag == "Attack")
@@ -108,8 +103,8 @@ public void OnTriggerEnter2D(Collider2D other)
             Instantiate(particle, transform.position, Quaternion.identity);
             Instantiate(particle, transform.position, Quaternion.identity);
             LI.Score();
-            Destroy(flyEnemy);
-        }
+            Destroy(BaseObject);
+        } */
 
         if(other.tag == "Ground")
         {
@@ -118,7 +113,7 @@ public void OnTriggerEnter2D(Collider2D other)
             Instantiate(particle, transform.position, Quaternion.identity);
             Instantiate(particle, transform.position, Quaternion.identity);
             
-            Destroy(flyEnemy);
+            Destroy(BaseObject);
         }
     }
 }
