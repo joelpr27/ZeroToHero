@@ -64,9 +64,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.4}
+  m_Offset: {x: 0, y: -0.42}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.3
 --- !u!1 &444714752199373804
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,9 +355,10 @@ GameObject:
   - component: {fileID: 3451012398708372323}
   - component: {fileID: 1270637683112945770}
   - component: {fileID: 1184430296386906193}
+  - component: {fileID: 8973310238956912342}
   m_Layer: 0
   m_Name: EnemyFly
-  m_TagString: EnemyAttack
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -429,6 +430,41 @@ MonoBehaviour:
   body: {fileID: 4554703472785675511}
   damage: 1
   particle: {fileID: 7841704217411226927, guid: 08be829b7e535f04fa61c457945a2b25, type: 3}
+--- !u!70 &8973310238956912342
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945775568062312428}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.04}
+  m_Size: {x: 0.79, y: 1.64}
+  m_Direction: 0
 --- !u!1 &2310281811024932233
 GameObject:
   m_ObjectHideFlags: 0
