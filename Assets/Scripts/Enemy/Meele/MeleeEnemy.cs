@@ -7,6 +7,7 @@ public class MeleeEnemy : MonoBehaviour
     private LevelInfo LI;
 
     public GameObject meleeEnemy;
+    private Rigidbody2D rb;
 
     [Header("Targget")]
     public GameObject player;
@@ -20,8 +21,12 @@ public class MeleeEnemy : MonoBehaviour
 
     public float speed;
 
-    public Transform[] pointPatrol;
-    private int targetPoint;
+    public GameObject groundCheck;
+    private bool facingRight;
+    public bool isGrounded;
+    public float circleRadious;
+
+    public LayerMask grounLayer;
 
     public bool isPlayerDetected;
     [Space]
@@ -74,11 +79,28 @@ public class MeleeEnemy : MonoBehaviour
         Vector3 localScale = transform.localScale;
         localScale.x = Mathf.Abs(localScale.x) * direction;
         transform.localScale = localScale;
+
     }
 
     void Patrol()
     {
-        if (transform.position.x == pointPatrol[targetPoint].position.x)
+        
+        rb.velocity = Vector2.right * speed * Time.deltaTime;
+
+        isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, circleRadious, grounLayer);
+
+        if(!isGrounded && facingRight)
+        {
+            FaceDirection(-1);
+            facingRight = !facingRight;
+        }
+        else if(!isGrounded && !facingRight)
+        {
+            FaceDirection(1);
+            facingRight = !facingRight;
+        }
+
+        /* if (transform.position.x == pointPatrol[targetPoint].position.x)
         {
             NextTarget();
         }
@@ -90,20 +112,20 @@ public class MeleeEnemy : MonoBehaviour
         else
         {
             FaceDirection(1);
-        }
+        } */
 
-        transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, pointPatrol[targetPoint].position.x, speed * Time.deltaTime),
-        transform.position.y);
+        /* transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, pointPatrol[targetPoint].position.x, speed * Time.deltaTime),
+        transform.position.y); */
     }
 
-    void NextTarget()
+    /* void NextTarget()
     {
         targetPoint++;
         if (targetPoint >= pointPatrol.Length)
         {
             targetPoint = 0;
         }
-    }
+    } */
 
     void Pursue()
     {
@@ -139,12 +161,14 @@ public class MeleeEnemy : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();
 
+        rb = GetComponent<Rigidbody2D>();
+
         #region Death
         currentEnemyHealth = enemyHealth;
         #endregion
 
         #region Patrol
-        targetPoint = 0;
+        /* targetPoint = 0; */
 
         isPlayerDetected = false;
         #endregion
@@ -188,5 +212,11 @@ public class MeleeEnemy : MonoBehaviour
                 Destroy(meleeEnemy);
             }
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(groundCheck.transform.position, circleRadious);
     }
 }
