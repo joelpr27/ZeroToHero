@@ -3152,10 +3152,10 @@ MonoBehaviour:
   punch: Fire1
   powerUpAttack: Fire2
   powerUpMovement: Fire3
-  HermesPowerUpOn: 0
+  HermesPowerUpOn: 1
   IrisPowerUpOn: 0
   AtlasPowerUpOn: 0
-  ZeusPowerUpOn: 0
+  ZeusPowerUpOn: 1
   DamageTrigger: {fileID: 6726275643535229982}
   LigtningTrigger: {fileID: 3720286138229798531}
   mcState: 0
@@ -8788,8 +8788,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.03
-      minScalar: 0.01
+      scalar: 0.08
+      minScalar: 0.03
       maxCurve:
         serializedVersion: 2
         m_Curve:
