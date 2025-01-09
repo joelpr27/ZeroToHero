@@ -179,11 +179,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 484d90c459337b34fb0c687d5f75694f, type: 3}
---- !u!4 &717729724 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 237902908643449428, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
-  m_PrefabInstance: {fileID: 1080744103}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &805005649 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2167541260935821396, guid: abd7bc6ea99f2bd45b20607bbbb4ad29, type: 3}
@@ -314,6 +309,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 492076765244275633, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 492076765244275633, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 570048527708704776, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.37584245
@@ -405,6 +408,14 @@ PrefabInstance:
     - target: {fileID: 7548457189151139575, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
       propertyPath: m_Name
       value: Hercules
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183364458125783636, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
+      propertyPath: ZeusPowerUpOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9183364458125783636, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
+      propertyPath: HermesPowerUpOn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9223095682209313242, guid: 5bd70d4630f09744dbec5d3ac3890a09, type: 3}
       propertyPath: m_LocalRotation.w
@@ -525,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d6696f11cb7e04f80146273ea1f106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 717729724}
+  target: {fileID: 0}
 --- !u!114 &1178502755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10961,6 +10972,14 @@ PrefabInstance:
     - target: {fileID: 966361890990271289, guid: 6057d494ff5cbe24b9cc737bcc9c2ffb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404955402695308098, guid: 6057d494ff5cbe24b9cc737bcc9c2ffb, type: 3}
+      propertyPath: IsLightPU
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404955402695308098, guid: 6057d494ff5cbe24b9cc737bcc9c2ffb, type: 3}
+      propertyPath: IsDobleJump
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2614188234094102021, guid: 6057d494ff5cbe24b9cc737bcc9c2ffb, type: 3}
       propertyPath: m_AnchorMax.y
