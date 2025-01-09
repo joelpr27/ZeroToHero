@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 876.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 20
+  controlID: 2689
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -966,6 +966,7 @@ MonoBehaviour:
     - {fileID: 4656882088832188033, guid: 560648dac1458684b8cbe1512469162a, type: 2}
     - {fileID: -5704228340424003394, guid: 2d770fa75a35b434ea94d9d2c8dbc78a, type: 2}
     - {fileID: 7449302673327627747, guid: 4bba42c59be3e7449a6b7239583f3eb7, type: 2}
+    - {fileID: 3770980595708984557, guid: 4154c357df6986040bda7eb97919c079, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.1037736
       e01: 0
@@ -1119,6 +1120,22 @@ MonoBehaviour:
       e11: 0.23052631
       e12: 0
       e13: 279.1
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
       e20: 0
       e21: 0
       e22: 1
@@ -1476,7 +1493,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300002e7a0000f2b50000d4b100000cc9ffff842900007e69000000000000e0970000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1583,7 +1600,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 464
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
