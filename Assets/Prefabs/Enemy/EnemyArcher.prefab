@@ -328,14 +328,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade90ec80a36d6a4791807d205dc7366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  archerEnemy: {fileID: 7900266843613174618}
+  BaseObject: {fileID: 7900266843613174618}
+  enemyHealth: 1
+  currentEnemyHealth: 0
+  particle: {fileID: 7841704217411226927, guid: 08be829b7e535f04fa61c457945a2b25, type: 3}
   player: {fileID: 0}
+  ajusteAltura: 0
   isPlayerDetected: 0
   attackCooldown: 2
   damage: 1
   bow: {fileID: 2220362852671800660}
   arrow: {fileID: 288041566594983158, guid: 99fcfc45aef6ca447a9713a8f279b754, type: 3}
-  particle: {fileID: 7841704217411226927, guid: 08be829b7e535f04fa61c457945a2b25, type: 3}
 --- !u!1 &6596528923030438651
 GameObject:
   m_ObjectHideFlags: 0
