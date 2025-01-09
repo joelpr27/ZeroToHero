@@ -137,7 +137,7 @@ public class ControllerMC : StatesMC
                 canMove = false;
                 movX = 0;
 
-                yield return new WaitForSeconds(1.0f);
+                yield return new WaitForSeconds(2.0f);
 
                 anim.SetBool("AttackZeus", false);
                 anim.SetLayerWeight(1, 0);
