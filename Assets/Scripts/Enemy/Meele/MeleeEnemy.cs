@@ -159,13 +159,13 @@ public class MeleeEnemy : Enemy
 
         if (staticEnemy == false)
         {
-            if (isPlayerDetected == false)
+            if (isPlayerDetected == true && isGrounded == true)
             {
-                Patrol();
+                Pursue();
             }
             else
             {
-                Pursue();
+                Patrol();
             }
         }
     }
