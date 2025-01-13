@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 876.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 3}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 107
+  controlID: 151
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 62
+  controlID: 88
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 20
+  controlID: 89
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -352,7 +352,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -765,9 +765,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 25.603603, y: -5.5848904, z: -0.08541121}
+    m_Target: {x: 54.3813, y: -2.3701704, z: -0.019985616}
     speed: 2
-    m_Value: {x: 25.603603, y: -5.5848904, z: -0.08541121}
+    m_Value: {x: 54.270214, y: -2.36632, z: -0.021290958}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -817,9 +817,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 9.312644
+    m_Target: 2.7702272
     speed: 2
-    m_Value: 9.312644
+    m_Value: 2.9007614
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1069,9 +1069,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 6b625ce198d7cd64eb9747596cf491da, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 0f0cb992d495d954ca529b6c6204996d, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 6230142911052658875, guid: 6b625ce198d7cd64eb9747596cf491da, type: 2}
+  - m_Target: {fileID: -8675367595116223711, guid: 0f0cb992d495d954ca529b6c6204996d, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -1345,7 +1345,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Escenario
+    - Assets/Scripts/Enemy/Meele
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1353,16 +1353,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Escenario
+  - Assets/Scripts/Enemy/Meele
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\TOT\insti\MASTER 2\Hercules\ZeroToHero
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 83.79999}
-    m_SelectedIDs: c8860000
-    m_LastClickedID: 34504
-    m_ExpandedIDs: 0000000096850000988500009a8500004a8600004c860000f2b8000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 203.79999}
+    m_SelectedIDs: 94870000
+    m_LastClickedID: 34708
+    m_ExpandedIDs: 00000000c0850000c2850000c4850000808600008a86000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1390,7 +1390,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000096850000988500009a850000
+    m_ExpandedIDs: 00000000c0850000c2850000c4850000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1482,7 +1482,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -167888
+  m_LastSelectedObjectID: -1392
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1600,10 +1600,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 1100.4}
-      m_SelectedIDs: 3070fdff
-      m_LastClickedID: -167888
-      m_ExpandedIDs: 3470fdff8a70fdff9070fdff9470fdffac70fdffc870fdff9887fdff6c92fdff266fffff2a6ffffff473ffffc483ffffca83ffff9e85ffffa485ffffb4daffff16fbffff98740000
+      scrollPos: {x: 0, y: 764.4}
+      m_SelectedIDs: 7ef1ffff
+      m_LastClickedID: -3714
+      m_ExpandedIDs: 9efaffffbafaffff16fbffffe8740000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

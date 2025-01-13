@@ -159,15 +159,23 @@ public class MeleeEnemy : Enemy
 
         if (staticEnemy == false)
         {
-            if (isPlayerDetected == true && isGrounded == true)
+            if (isGrounded == true)
             {
-                Pursue();
+                if (isPlayerDetected == true)
+                {
+                    Pursue();
+                }
+                else
+                {
+                    Patrol();
+                }
             }
-            else
+            else 
             {
                 Patrol();
             }
         }
+        
     }
 
     public void OnTriggerEnter2D(Collider2D other)
