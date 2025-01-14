@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Unity.VisualStudio.Editor;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class MostrarPowerUps : MonoBehaviour
 {
@@ -22,21 +25,37 @@ public class MostrarPowerUps : MonoBehaviour
     {
         if (ataque == true && GM.GetComponent<GameManager>().IsRock)
         {
-            // gameObject.GetComponent<Image>().sprite = Sprites[0];
+            gameObject.GetComponent<UnityEngine.UI.Image>().sprite = Sprites[0];
+            gameObject.GetComponent<UnityEngine.UI.Image>().color = Color.white;
+
         }
         else if (ataque == true && GM.GetComponent<GameManager>().IsLightPU)
         {
-            // gameObject.GetComponent<Image>().sprite = Sprites[1];
+            gameObject.GetComponent<UnityEngine.UI.Image>().sprite = Sprites[1];
+            gameObject.GetComponent<UnityEngine.UI.Image>().color = Color.white;
+
+        }
+        else if (ataque == true && GM.GetComponent<GameManager>().IsRock == false && GM.GetComponent<GameManager>().IsLightPU == false)
+        {
+            gameObject.GetComponent<UnityEngine.UI.Image>().color = Color.clear;
         }
 
 
         if (movimiento == true && GM.GetComponent<GameManager>().IsDobleJump)
         {
-            // gameObject.GetComponent<Image>().sprite = Sprites[3];
+            gameObject.GetComponent<UnityEngine.UI.Image>().sprite = Sprites[2];
+            gameObject.GetComponent<UnityEngine.UI.Image>().color = Color.white;
+
         }
         else if (movimiento == true && GM.GetComponent<GameManager>().IsDash)
         {
-            // gameObject.GetComponent<Image>().sprite = Sprites[4];
+            gameObject.GetComponent<UnityEngine.UI.Image>().sprite = Sprites[3];
+            gameObject.GetComponent<UnityEngine.UI.Image>().color = Color.white;
+
+        }
+        else if (movimiento == true && GM.GetComponent<GameManager>().IsDobleJump == false && GM.GetComponent<GameManager>().IsDash == false)
+        {
+            gameObject.GetComponent<UnityEngine.UI.Image>().color = Color.clear;
         }
     }
 }
