@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public GameObject PausePanel;
     public GameObject OptionsPanel;
     public GameObject LevelsPanel;
+    public GameObject PowerUpPanel;
+
     public GameObject ConsejosPanel;
     public GameObject CreditsPanel;
     [Space]
@@ -77,7 +79,10 @@ public class GameManager : MonoBehaviour
     public Button rock;
     public Button lightPU;
 
-#region Partida
+
+    public int lvSelecionado;
+
+    #region Partida
     /* public void Score()
     {
         currentPoints += 100;
@@ -129,14 +134,14 @@ public class GameManager : MonoBehaviour
         puntosLevel3.text = guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel3.ToString("0");
         puntosLevelBoss.text = guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivelBoss.ToString("0");
     }
-#endregion
+    #endregion
 
-#region PowerUps
+    #region PowerUps
 
     public void IsDashOn()
     {
         IsDash = !IsDash;
-        if (IsDash) 
+        if (IsDash)
         {
             IsDobleJump = false;
         }
@@ -149,7 +154,7 @@ public class GameManager : MonoBehaviour
     public void IsDobleJumpOn()
     {
         IsDobleJump = !IsDobleJump;
-        if (IsDobleJump) 
+        if (IsDobleJump)
         {
             IsDash = false;
         }
@@ -162,7 +167,7 @@ public class GameManager : MonoBehaviour
     public void IsRockOn()
     {
         IsRock = !IsRock;
-        if (IsRock) 
+        if (IsRock)
         {
             IsLightPU = false;
         }
@@ -175,7 +180,7 @@ public class GameManager : MonoBehaviour
     public void IsLightPUON()
     {
         IsLightPU = !IsLightPU;
-        if (IsLightPU) 
+        if (IsLightPU)
         {
             IsRock = false;
         }
@@ -186,7 +191,7 @@ public class GameManager : MonoBehaviour
 
     public void PowerUps()
     {
-        if(IsDash)
+        if (IsDash)
         {
             dash.GetComponent<Image>().color = new Color32(255, 200, 0, 255);
         }
@@ -195,7 +200,7 @@ public class GameManager : MonoBehaviour
             dash.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         }
 
-        if(IsDobleJump)
+        if (IsDobleJump)
         {
             jump.GetComponent<Image>().color = new Color32(255, 200, 0, 255);
         }
@@ -204,7 +209,7 @@ public class GameManager : MonoBehaviour
             jump.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         }
 
-        if(IsRock)
+        if (IsRock)
         {
             rock.GetComponent<Image>().color = new Color32(255, 200, 0, 255);
         }
@@ -213,7 +218,7 @@ public class GameManager : MonoBehaviour
             rock.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         }
 
-        if(IsLightPU)
+        if (IsLightPU)
         {
             lightPU.GetComponent<Image>().color = new Color32(255, 200, 0, 255);
         }
@@ -222,9 +227,9 @@ public class GameManager : MonoBehaviour
             lightPU.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
         }
     }
-#endregion
+    #endregion
 
-#region Scenes
+    #region Scenes
     public void Menu()
     {
         SceneManager.LoadScene(0);
@@ -232,6 +237,18 @@ public class GameManager : MonoBehaviour
         areYouWinningSon = false;
 
         //menuMusic.Play();
+    }
+
+    public void SetLv(int lv)
+    {
+        lvSelecionado = lv;
+    }
+
+    public void JugarLevel()
+    {
+        SceneManager.LoadScene(lvSelecionado);
+
+        IrAJuego();
     }
 
     public void JugarLevel1()
@@ -268,9 +285,9 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
-#endregion
+    #endregion
 
-#region Panels
+    #region Panels
     public void GamePanelInteract()
     {
         GamePanel.SetActive(!GamePanel.activeSelf);
@@ -279,7 +296,7 @@ public class GameManager : MonoBehaviour
 
     public void PausePanelInteract()
     {
-        if(SceneManager.GetActiveScene().buildIndex >= 1 && Input.GetButtonDown("Cancel") && areYouWinningSon == false)
+        if (SceneManager.GetActiveScene().buildIndex >= 1 && Input.GetButtonDown("Cancel") && areYouWinningSon == false)
         {
             PausePanel.SetActive(!PausePanel.activeSelf);
             Debug.Log(PausePanel.activeSelf);
@@ -287,12 +304,12 @@ public class GameManager : MonoBehaviour
             OptionsPanel.SetActive(false);
         }
 
-        if(SceneManager.GetActiveScene().buildIndex >= 1)
+        if (SceneManager.GetActiveScene().buildIndex >= 1)
         {
-            if(PausePanel.activeSelf == true)
+            if (PausePanel.activeSelf == true)
             {
                 Time.timeScale = 0;
-                
+
                 Cursor.visible = true;
             }
             else
@@ -317,10 +334,26 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
     }
 
+    public void PanelPowerUps()
+    {
+        PowerUpPanel.SetActive(!PowerUpPanel.activeSelf);
+        Debug.Log(PowerUpPanel.activeSelf);
+
+        Cursor.visible = true;
+    }
+
     public void LevelsPanelInteract()
     {
         LevelsPanel.SetActive(!LevelsPanel.activeSelf);
         Debug.Log(LevelsPanel.activeSelf);
+
+        Cursor.visible = true;
+    }
+
+        public void PowerUpsPanelInteract()
+    {
+        PowerUpPanel.SetActive(!PowerUpPanel.activeSelf);
+        Debug.Log(PowerUpPanel.activeSelf);
 
         Cursor.visible = true;
     }
@@ -343,7 +376,7 @@ public class GameManager : MonoBehaviour
 
     public void WinPanel()
     {
-        if(areYouWinningSon == true)
+        if (areYouWinningSon == true)
         {
             VictoryPanel.SetActive(true);
             GamePanel.SetActive(false);
@@ -360,17 +393,17 @@ public class GameManager : MonoBehaviour
 
     public void ButtonHover()
     {
-        SetVolume(2,volumeSlider.value);
+        SetVolume(2, volumeSlider.value);
     }
 
     public void ButtonPress()
     {
-        SetVolume(1,volumeSlider.value);
+        SetVolume(1, volumeSlider.value);
     }
 
     public void Music()
     {
-        SetVolume(0,volumeSlider.value);
+        SetVolume(0, volumeSlider.value);
     }
 
     public void IrAJuego()
@@ -397,9 +430,9 @@ public class GameManager : MonoBehaviour
         LI.starTimer = false;
     }
 
-#endregion
-    
-#region Settings
+    #endregion
+
+    #region Settings
     //repasar el volumen, no va hacia el db negativo y se escuchara muy alto
     public void SetVolume(int indice, float volumen)
     {
@@ -425,75 +458,75 @@ public class GameManager : MonoBehaviour
         Resolution resolution = filteredResolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, true);
     }
-#endregion
+    #endregion
     void Start()
     {
         #region Partida
-            LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();
-            cR = GameObject.Find("GameManager").GetComponent<CalculoRangos>();
+        LI = GameObject.Find("LevelInfo").GetComponent<LevelInfo>();
+        cR = GameObject.Find("GameManager").GetComponent<CalculoRangos>();
 
-            Time.timeScale = 1;
+        Time.timeScale = 1;
 
-            currentCountDelate = maxCountDelate;
+        currentCountDelate = maxCountDelate;
 
-            /* points = 0;
-            currentPoints = points; */
+        /* points = 0;
+        currentPoints = points; */
 
-            if(SceneManager.GetActiveScene().buildIndex == 0)
-            {
-                Cursor.visible = true;
-            }
-            if(SceneManager.GetActiveScene().buildIndex >= 1)
-            {
-                Cursor.visible = false;
-            }
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Cursor.visible = true;
+        }
+        if (SceneManager.GetActiveScene().buildIndex >= 1)
+        {
+            Cursor.visible = false;
+        }
 
-            areYouWinningSon = false;
+        areYouWinningSon = false;
 
-            IsDobleJump = guardado.GetComponent<GuardarPartida>().datosGuardado.dJump;
-            IsDash = guardado.GetComponent<GuardarPartida>().datosGuardado.dash;
-            IsRock = guardado.GetComponent<GuardarPartida>().datosGuardado.rock;
-            IsLightPU = guardado.GetComponent<GuardarPartida>().datosGuardado.light;
+        IsDobleJump = guardado.GetComponent<GuardarPartida>().datosGuardado.dJump;
+        IsDash = guardado.GetComponent<GuardarPartida>().datosGuardado.dash;
+        IsRock = guardado.GetComponent<GuardarPartida>().datosGuardado.rock;
+        IsLightPU = guardado.GetComponent<GuardarPartida>().datosGuardado.light;
 
-            if(guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel1 <= cR.LimitsB)
-            {
-                puntosLevel2Button.interactable = false;
-            }
-            if(guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel2 <= cR.LimitsB)
-            {
-                puntosLevel3Button.interactable = false;
-            }
-            if(guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel3 <= cR.LimitsB)
-            {
-                puntosLevelBossButton.interactable = false;
-            }
+        if (guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel1 <= cR.LimitsB)
+        {
+            puntosLevel2Button.interactable = false;
+        }
+        if (guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel2 <= cR.LimitsB)
+        {
+            puntosLevel3Button.interactable = false;
+        }
+        if (guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel3 <= cR.LimitsB)
+        {
+            puntosLevelBossButton.interactable = false;
+        }
         #endregion
-        
-        #region Panels
-            if(SceneManager.GetActiveScene().buildIndex == 0)
-            {
-                LI.EnterInGame();
 
-                MenuPanel.SetActive(true);
-                GamePanel.SetActive(false);
-                VictoryPanel.SetActive(false);
-                PausePanel.SetActive(false);
-                OptionsPanel.SetActive(false);
-                LevelsPanel.SetActive(false);
-                ConsejosPanel.SetActive(false);
-                CreditsPanel.SetActive(false);
-            }
-            if(SceneManager.GetActiveScene().buildIndex >= 1)
-            {
-                IrAJuego();
-            }
+        #region Panels
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            LI.EnterInGame();
+
+            MenuPanel.SetActive(true);
+            GamePanel.SetActive(false);
+            VictoryPanel.SetActive(false);
+            PausePanel.SetActive(false);
+            OptionsPanel.SetActive(false);
+            LevelsPanel.SetActive(false);
+            ConsejosPanel.SetActive(false);
+            CreditsPanel.SetActive(false);
+        }
+        if (SceneManager.GetActiveScene().buildIndex >= 1)
+        {
+            IrAJuego();
+        }
         #endregion
 
         #region Audio
         controlAudio = GetComponent<AudioSource>();
 
         //Hacer que se sincronice con los otros volumenes
-        if(SceneManager.GetActiveScene().buildIndex <= 3)
+        if (SceneManager.GetActiveScene().buildIndex <= 3)
         {
             menuMusic.Play();
         }
@@ -502,36 +535,36 @@ public class GameManager : MonoBehaviour
         #endregion
 
         #region Settings
-            resolutions = Screen.resolutions;
-            filteredResolutions = new List<Resolution>();
+        resolutions = Screen.resolutions;
+        filteredResolutions = new List<Resolution>();
 
-            resolutionDropdown.ClearOptions();
-            currentRefreshRate = (float)Screen.currentResolution.refreshRateRatio.value; // Convertir a float
+        resolutionDropdown.ClearOptions();
+        currentRefreshRate = (float)Screen.currentResolution.refreshRateRatio.value; // Convertir a float
 
-            for (int i = 0; i < resolutions.Length; i++)
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            // Comparar el refresh rate ratio utilizando su valor convertido a float
+            if ((float)resolutions[i].refreshRateRatio.value == currentRefreshRate)
             {
-                // Comparar el refresh rate ratio utilizando su valor convertido a float
-                if ((float)resolutions[i].refreshRateRatio.value == currentRefreshRate)
-                {
-                    filteredResolutions.Add(resolutions[i]);
-                }
+                filteredResolutions.Add(resolutions[i]);
             }
+        }
 
-            List<string> options = new List<string>();
-            for (int i = 0; i < filteredResolutions.Count; i++)
+        List<string> options = new List<string>();
+        for (int i = 0; i < filteredResolutions.Count; i++)
+        {
+            string resolutionOption = filteredResolutions[i].width + " x " + filteredResolutions[i].height;
+            options.Add(resolutionOption);
+
+            if (filteredResolutions[i].width == Screen.width && filteredResolutions[i].height == Screen.height)
             {
-                string resolutionOption = filteredResolutions[i].width + " x " + filteredResolutions[i].height;
-                options.Add(resolutionOption);
-
-                if (filteredResolutions[i].width == Screen.width && filteredResolutions[i].height == Screen.height)
-                {
-                    currentResolutionIndex = i;
-                }
+                currentResolutionIndex = i;
             }
+        }
 
-            resolutionDropdown.AddOptions(options);
-            resolutionDropdown.value = currentResolutionIndex;
-            resolutionDropdown.RefreshShownValue();
+        resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
         #endregion
 
         //DontDestroyOnLoad(gameObject);
@@ -539,7 +572,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(LevelsPanel.activeSelf)
+        if (LevelsPanel.activeSelf)
         {
             PowerUps();
         }
