@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MeleeEnemy : Enemy
 {
+    private GameManager gameManager;
+
     [Header("Targget")]
     public GameObject player;
     public GameObject AttackPlayerDetect;
@@ -53,6 +55,7 @@ public class MeleeEnemy : Enemy
         if (playerInSigth == true)
         {
             animator.SetBool("Attack", true);
+            //gameManager.SetVolume
         }
         else
         {
@@ -176,7 +179,6 @@ public class MeleeEnemy : Enemy
                 isPlayerDetected = false;
             }
         }
-        
     }
 
     public void OnTriggerEnter2D(Collider2D other)

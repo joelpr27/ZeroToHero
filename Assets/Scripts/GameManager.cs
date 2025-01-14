@@ -393,17 +393,17 @@ public class GameManager : MonoBehaviour
 
     public void ButtonHover()
     {
-        SetVolume(2, volumeSlider.value);
+        SetVolume(2);
     }
 
     public void ButtonPress()
     {
-        SetVolume(1, volumeSlider.value);
+        SetVolume(1);
     }
 
     public void Music()
     {
-        SetVolume(0, volumeSlider.value);
+        SetVolume(0);
     }
 
     public void IrAJuego()
@@ -433,10 +433,17 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Settings
-    //repasar el volumen, no va hacia el db negativo y se escuchara muy alto
-    public void SetVolume(int indice, float volumen)
+    public void SetVolume(int indice)
     {
-        volumen = volumeSlider.value;
+        float volumen = volumeSlider.value;
+
+        controlAudio.PlayOneShot(audios[indice], volumen);
+    }
+
+    public void SetVolume(int indice, float pitch)
+    {
+        pitch = Random.Range(0f,2f);
+        float volumen = volumeSlider.value - pitch;
 
         controlAudio.PlayOneShot(audios[indice], volumen);
     }
