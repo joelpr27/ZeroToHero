@@ -173,6 +173,7 @@ public class MeleeEnemy : Enemy
             else 
             {
                 Patrol();
+                isPlayerDetected = false;
             }
         }
         
