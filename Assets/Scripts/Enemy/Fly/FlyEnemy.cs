@@ -55,7 +55,7 @@ public class FlyEnemy : Enemy
 
     void Pursue()
     {
-        body.transform.position = Vector2.MoveTowards(body.transform.position, targget.transform.position, speed * Time.deltaTime);
+        body.transform.position = Vector2.MoveTowards(body.transform.position, targget.transform.position + new Vector3(0,1,0), speed * Time.deltaTime);
     }
 #endregion
 

@@ -8,6 +8,9 @@ public class MC : MonoBehaviour
     public Animator anim;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    
+    public LayerMask fakeGroundLayer;
+
 
     [Header("Inputs")]
     public string punch;
@@ -45,7 +48,12 @@ public class MC : MonoBehaviour
 
     public bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        if (Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer) || Physics2D.OverlapCircle(groundCheck.position, 0.1f, fakeGroundLayer))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     
