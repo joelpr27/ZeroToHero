@@ -78,8 +78,6 @@ public class MeleeEnemy : Enemy
             transform.position.y);
         }
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, circleRadious, grounLayer);
-
         if(!isGrounded && facingRight)
         {
             FaceDirection(1);
@@ -150,6 +148,8 @@ public class MeleeEnemy : Enemy
 
     void Update()
     {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, circleRadious, grounLayer);
+        
         Attack();
 
         if (!playerInSigth) rueda.transform.Rotate(0, 0, -25 * (5 * Time.deltaTime));

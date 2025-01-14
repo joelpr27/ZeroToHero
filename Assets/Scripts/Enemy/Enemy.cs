@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
     public void GetDamage() {
         if (currentEnemyHealth > 0)
             {
+                StartCoroutine(RedBlink());
+
                 Instantiate(particle, transform.position, Quaternion.identity);
                 currentEnemyHealth--;
             }
@@ -29,5 +31,14 @@ public class Enemy : MonoBehaviour
                 LI.Score();
                 Destroy(BaseObject);
             }
+    }
+
+    IEnumerator RedBlink()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+
+        yield return new WaitForSeconds(0.07f);
+
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
