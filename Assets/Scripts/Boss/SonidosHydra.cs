@@ -3,13 +3,16 @@ using UnityEngine;
 
 public class SonidosHydra : MonoBehaviour
 {
-    public AudioSource altavoz;
-    public AudioSource altavozGolpe;
+    public AudioSource altavozSonidoLargo;
+    public AudioSource altavozSonidoCorto;
 
 
     [Header("Sonidos:")]
-    public AudioClip sonidoCuello;
+    public AudioClip sonidoGolpeCabeza;
     public AudioClip sonidoChispas;
+
+    public AudioClip sonidoZarpazo;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,23 +26,30 @@ public class SonidosHydra : MonoBehaviour
 
     }
 
-    public void SonidoCuello()
+    public void SonidoGolpeCabeza()
     {
-        altavoz.clip = sonidoCuello;
+        altavozSonidoCorto.clip = sonidoGolpeCabeza;
 
-        altavoz.Play();
+        altavozSonidoCorto.Play();
     }
 
     public void SonidoChispas()
     {
-        altavoz.clip = sonidoChispas;
-        altavoz.loop = true;
-        altavoz.Play();
+        altavozSonidoLargo.clip = sonidoChispas;
+        altavozSonidoLargo.loop = true;
+        altavozSonidoLargo.Play();
     }
 
-    public void StopAudio()
+    public void SonidoZarpazo()
     {
-        altavoz.loop = false;
-        altavoz.Stop();
+        altavozSonidoLargo.clip = sonidoZarpazo;
+
+        altavozSonidoLargo.Play();
+    }
+
+    public void StopAudioLargo()
+    {
+        altavozSonidoLargo.loop = false;
+        altavozSonidoLargo.Stop();
     }
 }

@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using UnityEditor.Animations;
 
 public class GameManager : MonoBehaviour
 {
@@ -79,6 +78,9 @@ public class GameManager : MonoBehaviour
     public Button rock;
     public Button lightPU;
 
+
+    public GameObject selectedButtonOptions;
+    public GameObject selectedButtonSalir;
 
     public int lvSelecionado;
 
@@ -302,6 +304,9 @@ public class GameManager : MonoBehaviour
             Debug.Log(PausePanel.activeSelf);
 
             OptionsPanel.SetActive(false);
+
+            EventSystem.current.SetSelectedGameObject(selectedButtonOptions);
+
         }
 
         if (SceneManager.GetActiveScene().buildIndex >= 1)
@@ -342,15 +347,21 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
     }
 
+    public void SelecionMando(GameObject selectedButton)
+    {
+        EventSystem.current.SetSelectedGameObject(selectedButton);
+    }
+
     public void LevelsPanelInteract()
     {
+
         LevelsPanel.SetActive(!LevelsPanel.activeSelf);
         Debug.Log(LevelsPanel.activeSelf);
 
         Cursor.visible = true;
     }
 
-        public void PowerUpsPanelInteract()
+    public void PowerUpsPanelInteract()
     {
         PowerUpPanel.SetActive(!PowerUpPanel.activeSelf);
         Debug.Log(PowerUpPanel.activeSelf);
@@ -384,6 +395,9 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
 
             Cursor.visible = true;
+
+            EventSystem.current.SetSelectedGameObject(selectedButtonSalir);
+
         }
         else
         {
