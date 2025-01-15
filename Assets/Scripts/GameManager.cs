@@ -407,17 +407,17 @@ public class GameManager : MonoBehaviour
 
     public void ButtonHover()
     {
-        SetVolume(2, volumeSlider.value);
+        //SetVolume(2, volumeSlider.value);
     }
 
     public void ButtonPress()
     {
-        SetVolume(1, volumeSlider.value);
+        //SetVolume(1, volumeSlider.value);
     }
 
     public void Music()
     {
-        SetVolume(0, volumeSlider.value);
+        //SetVolume(0, volumeSlider.value);
     }
 
     public void IrAJuego()
@@ -450,8 +450,8 @@ public class GameManager : MonoBehaviour
     //repasar el volumen, no va hacia el db negativo y se escuchara muy alto
     public void SetVolume(int indice, float volumen)
     {
-        volumen = volumeSlider.value;
 
+        volumen = volumeSlider.value;
         controlAudio.PlayOneShot(audios[indice], volumen);
     }
 
@@ -502,18 +502,22 @@ public class GameManager : MonoBehaviour
         IsRock = guardado.GetComponent<GuardarPartida>().datosGuardado.rock;
         IsLightPU = guardado.GetComponent<GuardarPartida>().datosGuardado.light;
 
-        if (guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel1 <= cR.LimitsB)
+       /*  if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-            puntosLevel2Button.interactable = false;
-        }
-        if (guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel2 <= cR.LimitsB)
-        {
-            puntosLevel3Button.interactable = false;
-        }
-        if (guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel3 <= cR.LimitsB)
-        {
-            puntosLevelBossButton.interactable = false;
-        }
+            if (guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel1 <= cR.LimitsB)
+            {
+                puntosLevel2Button.interactable = false;
+            }
+            if (guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel2 <= cR.LimitsB)
+            {
+                puntosLevel3Button.interactable = false;
+            }
+            if (guardado.GetComponent<GuardarPartida>().datosGuardado.puntosNivel3 <= cR.LimitsB)
+            {
+                puntosLevelBossButton.interactable = false;
+            }
+        } */
+
         #endregion
 
         #region Panels
