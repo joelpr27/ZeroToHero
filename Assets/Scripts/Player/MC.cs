@@ -27,6 +27,15 @@ public class MC : MonoBehaviour
     public GameObject DamageTrigger;
     public BoxCollider2D LigtningTrigger;
 
+    
+    public AudioSource audioPegar;
+    public AudioSource audioDash;
+    public AudioSource audioJump;
+    public AudioSource audioRock;
+    public AudioSource audioHit;
+    public AudioSource rayo1;
+    public AudioSource rayo2;
+
 
     void Awake()
     {
@@ -44,6 +53,43 @@ public class MC : MonoBehaviour
     public void DamageOff()
     {
         DamageTrigger.SetActive(false);
+    }
+
+    public void PunchSound()
+    {
+        float rpitch = Random.Range(1f, 2f);
+        audioPegar.pitch=rpitch;
+        audioPegar.Play();
+    }
+
+    public void DashSound()
+    {
+        audioDash.Play();
+    }
+
+    public void JumpSound()
+    {
+        audioJump.Play();
+    }
+
+    public void RockSound()
+    {
+        audioRock.Play();
+    }
+
+    public void HitSound()
+    {
+        audioHit.Play();
+    }
+
+    public void Rayo1()
+    {
+        rayo1.Play();
+    }
+
+    public void Rayo2()
+    {
+        rayo2.Play();
     }
 
     public bool IsGrounded()

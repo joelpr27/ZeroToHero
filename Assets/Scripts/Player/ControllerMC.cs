@@ -29,6 +29,7 @@ public class ControllerMC : StatesMC
 
 
 
+
     //Main Actions of the character
     void Jump()
     {
@@ -44,6 +45,8 @@ public class ControllerMC : StatesMC
             // Si está en el suelo o tiene un doble salto disponible
             if (IsGrounded() || doubleJump)
             {
+                
+                JumpSound();
                 // Establece la velocidad en el eje Y al valor fijo de salto
                 rb.velocity = new Vector2(rb.velocity.x, speed.y);
 
@@ -156,6 +159,7 @@ public class ControllerMC : StatesMC
     {
         if (IrisPowerUpOn && Input.GetButtonDown(powerUpMovement) && !dash && dashReady)
         {
+            DashSound();
             StartCoroutine(DashTime());
         }
     }
