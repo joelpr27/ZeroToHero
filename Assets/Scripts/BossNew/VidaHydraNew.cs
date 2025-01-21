@@ -68,7 +68,7 @@ public class VidaHydraNew : MonoBehaviour
     {
         if (currentEnemyHealth > 0)
         {
-            
+
             cabeza1.color = Color.red;
             cabeza2.color = Color.red;
             cabeza3.color = Color.red;
@@ -76,6 +76,7 @@ public class VidaHydraNew : MonoBehaviour
             StartCoroutine(DesactivarCuadroTexto());
 
             particle.Play();
+            hydra.GetComponent<SonidosHydra>().SonidoRecibirGolpe();
             currentEnemyHealth--;
 
         }

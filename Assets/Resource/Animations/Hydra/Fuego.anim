@@ -5675,14 +5675,28 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1
+  - time: 0.28333333
+    functionName: SonidoTuercas
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.0166667
     functionName: ActivarImpactoFuego
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.2166667
+  - time: 1.15
+    functionName: SonidoFuego
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.2
     functionName: ActivarFuego
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -5775,6 +5789,13 @@ AnimationClip:
     messageOptions: 0
   - time: 3.1833334
     functionName: DesactivarFuego
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 3.25
+    functionName: StopAudioLargo
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
