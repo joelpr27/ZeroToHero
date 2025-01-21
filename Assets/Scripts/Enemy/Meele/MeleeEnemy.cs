@@ -63,6 +63,8 @@ public class MeleeEnemy : Enemy
     #endregion
 
     #region Move
+
+    // TODO Revisar el cambio de dirección hacer uno que cambie bien porque direction = 1 no hace nada
     void FaceDirection(int direction)
     {
         Vector3 localScale = transform.localScale;
@@ -81,14 +83,30 @@ public class MeleeEnemy : Enemy
         if(!isGrounded && facingRight)
         {
             FaceDirection(1);
-            facingRight = !facingRight;
+            facingRight = true;
             speed = -speed;
         }
         else if(!isGrounded && !facingRight)
         {
             FaceDirection(-1);
-            facingRight = !facingRight;
+            facingRight = false;
             speed = -speed;
+        }
+    }
+
+    void Pursue()
+    {
+        if (player.transform.position.x - transform.position.x == 0)
+        {
+            
+        }
+        else if (player.transform.position.x < transform.position.x)
+        {
+            facingRight = false;
+        }
+        else
+        {
+            facingRight = true;
         }
 
         if(facingRight)
@@ -99,24 +117,12 @@ public class MeleeEnemy : Enemy
         {
             FaceDirection(-1);
         }
-    }
-
-    void Pursue()
-    {
-        if (player.transform.position.x < transform.position.x)
-        {
-            FaceDirection(-1);
-        }
-        else
-        {
-            FaceDirection(1);
-        }
-
+/* 
         if (!playerInSigth)
         {
             transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.transform.position.x, (speed * 1.5f) * Time.deltaTime),
             transform.position.y);
-        }
+        } */
     }
 
     void Seguimiento()
