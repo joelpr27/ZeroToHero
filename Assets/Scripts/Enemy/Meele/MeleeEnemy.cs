@@ -71,14 +71,14 @@ public class MeleeEnemy : Enemy
         if (facingRight && transform.localScale.x < 0.0f)
         {
             Vector3 localScale = transform.localScale;
-            localScale.x = Mathf.Abs(localScale.x) * 1;
+            localScale.x *= -1;
             transform.localScale = localScale;
         }
         
         if (!facingRight && transform.localScale.x > 0.0f)
         {
             Vector3 localScale = transform.localScale;
-            localScale.x = Mathf.Abs(localScale.x) * -1;
+            localScale.x *= -1;
             transform.localScale = localScale;
         }
     }
@@ -97,14 +97,9 @@ public class MeleeEnemy : Enemy
             transform.position.y);
         }
 
-        if (!isGrounded && transform.localScale.x < 0.0f)
+        if (!isGrounded)
         {
-            facingRight = true;
-        }
-
-        if (!isGrounded && transform.localScale.x > 0.0f)
-        {
-            facingRight = false;
+            facingRight = !facingRight;
         }
 
         
@@ -115,11 +110,14 @@ public class MeleeEnemy : Enemy
 
     void Pursue()
     {
-        if (player.transform.position.x - transform.position.x == 0)
-        {
 
+        if (!playerInSigth)
+        {
+            transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.transform.position.x, (speed * 1.5f) * Time.deltaTime),
+            transform.position.y);
         }
-        else if (player.transform.position.x < transform.position.x)
+
+        if (player.transform.position.x < transform.position.x)
         {
             facingRight = false;
         }
@@ -128,14 +126,9 @@ public class MeleeEnemy : Enemy
             facingRight = true;
         }
 
-
         FaceDirection(facingRight);
 
-        if (!playerInSigth)
-        {
-            transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.transform.position.x, (speed * 1.5f) * Time.deltaTime),
-            transform.position.y);
-        }
+        
     }
 
     void Seguimiento()
