@@ -11,13 +11,13 @@ public class MeleeEnemy : Enemy
     public GameObject DetectPlayer;
     [Space]
 
-     [Header("Move")]
+    [Header("Move")]
     public bool staticEnemy;
 
     public float speed;
 
     public GameObject groundCheck;
-    private bool facingRight;
+    public bool facingRight;
     public bool isGrounded;
     public float circleRadious;
 
@@ -63,60 +63,72 @@ public class MeleeEnemy : Enemy
     #endregion
 
     #region Move
-    void FaceDirection(int direction)
+
+    // TODO Revisar el cambio de dirección hacer uno que cambie bien porque direction = 1 no hace nada
+    void FaceDirection(bool facingRight)
     {
-        Vector3 localScale = transform.localScale;
-        localScale.x = Mathf.Abs(localScale.x) * direction;
-        transform.localScale = localScale;
+
+        if (facingRight && transform.localScale.x < 0.0f)
+        {
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1;
+            transform.localScale = localScale;
+        }
+        
+        if (!facingRight && transform.localScale.x > 0.0f)
+        {
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1;
+            transform.localScale = localScale;
+        }
     }
 
     void Patrol()
     {
-        if (!playerInSigth)
+        if (!playerInSigth && facingRight)
         {
-            transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.transform.position.x, speed * Time.deltaTime),
+            transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, transform.position.x + 1, speed * Time.deltaTime),
             transform.position.y);
         }
 
-        if(!isGrounded && facingRight)
+        if (!playerInSigth && !facingRight)
         {
-            FaceDirection(1);
-            facingRight = !facingRight;
-            speed = -speed;
-        }
-        else if(!isGrounded && !facingRight)
-        {
-            FaceDirection(-1);
-            facingRight = !facingRight;
-            speed = -speed;
+            transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, transform.position.x - 1, speed * Time.deltaTime),
+            transform.position.y);
         }
 
-        if(facingRight)
+        if (!isGrounded)
         {
-            FaceDirection(1);
+            facingRight = !facingRight;
         }
-        else
-        {
-            FaceDirection(-1);
-        }
+
+        
+        
+        FaceDirection(facingRight);
+        
     }
 
     void Pursue()
     {
-        if (player.transform.position.x < transform.position.x)
-        {
-            FaceDirection(-1);
-        }
-        else
-        {
-            FaceDirection(1);
-        }
 
         if (!playerInSigth)
         {
             transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, player.transform.position.x, (speed * 1.5f) * Time.deltaTime),
             transform.position.y);
         }
+
+        if (player.transform.position.x < transform.position.x)
+        {
+            facingRight = false;
+        }
+        else
+        {
+            facingRight = true;
+        }
+
+        FaceDirection(facingRight);
+
+        
     }
 
     void Seguimiento()
@@ -143,17 +155,18 @@ public class MeleeEnemy : Enemy
         #region Patrol
 
         isPlayerDetected = false;
+        facingRight = true;
         #endregion
     }
 
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.transform.position, circleRadious, grounLayer);
-        
+
         Attack();
 
         if (!playerInSigth) rueda.transform.Rotate(0, 0, -25 * (5 * Time.deltaTime));
-        
+
 
         Seguimiento();
 
@@ -170,13 +183,13 @@ public class MeleeEnemy : Enemy
                     Patrol();
                 }
             }
-            else 
+            else
             {
                 Patrol();
                 isPlayerDetected = false;
             }
         }
-        
+
     }
 
     public void OnTriggerEnter2D(Collider2D other)

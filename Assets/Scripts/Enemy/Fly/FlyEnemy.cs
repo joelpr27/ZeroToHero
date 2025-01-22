@@ -87,16 +87,14 @@ void Update()
 
 public void OnTriggerEnter2D(Collider2D other)
     {
-       /*  if(other.tag == "Player")
+         if(other.tag == "Player")
         {
             Debug.Log("A");
-            
-            Instantiate(particle, transform.position, Quaternion.identity);
             Instantiate(particle, transform.position, Quaternion.identity);
             Destroy(BaseObject);
         }
 
-        if(other.tag == "Attack")
+        /* if(other.tag == "Attack")
         {
             Debug.Log("A");
             
@@ -104,13 +102,12 @@ public void OnTriggerEnter2D(Collider2D other)
             Instantiate(particle, transform.position, Quaternion.identity);
             LI.Score();
             Destroy(BaseObject);
-        } */
+        }  */
 
         if(other.tag == "Ground")
         {
             Debug.Log("A");
             
-            Instantiate(particle, transform.position, Quaternion.identity);
             Instantiate(particle, transform.position, Quaternion.identity);
             
             Destroy(BaseObject);
