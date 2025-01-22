@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     public AudioClip[] audios;
     [Space]
     private AudioSource controlAudio;
-    public Slider volumeSlider;
+    //public Slider volumeSlider;
     [Space]
     public AudioSource menuMusic;
     [Space]
@@ -448,7 +448,7 @@ public class GameManager : MonoBehaviour
 
     #region Settings
     //repasar el volumen, no va hacia el db negativo y se escuchara muy alto
-    public void SetVolume(int indice, float volumen)
+    /* public void SetVolume(int indice, float volumen)
     {
 
         volumen = volumeSlider.value;
@@ -460,7 +460,7 @@ public class GameManager : MonoBehaviour
         guardado.GetComponent<GuardarPartida>().datosGuardado.audioVolume = volumeSlider.value;
 
         menuMusic.volume = volumeSlider.value;
-    }
+    } */
 
     public void FullScreen(bool isFullScreen)
     {
@@ -549,7 +549,7 @@ public class GameManager : MonoBehaviour
             menuMusic.Play();
         }
 
-        volumeSlider.value = guardado.GetComponent<GuardarPartida>().datosGuardado.audioVolume;
+        //volumeSlider.value = guardado.GetComponent<GuardarPartida>().datosGuardado.audioVolume;
         #endregion
 
         #region Settings
@@ -595,7 +595,7 @@ public class GameManager : MonoBehaviour
             PowerUps();
         }
 
-        Volume();
+        //Volume();
 
         UpdateTimeDelate();
 
