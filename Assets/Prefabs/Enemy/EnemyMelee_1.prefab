@@ -695,10 +695,13 @@ MonoBehaviour:
   enemyHealth: 3
   currentEnemyHealth: 0
   particle: {fileID: 7841704217411226927, guid: 08be829b7e535f04fa61c457945a2b25, type: 3}
-  enemyAudioSource: {fileID: 0}
+  enemyAudioSource: {fileID: 3141315120335092002}
   enemySounds:
   - {fileID: 8300000, guid: 496486f9391f88a4dae0354db62562a3, type: 3}
   - {fileID: 8300000, guid: 2a669da645aa13d4c9c1a5300c009fc4, type: 3}
+  Body:
+  - {fileID: 7539836477970855620}
+  - {fileID: 880698258342240231}
   player: {fileID: 0}
   AttackPlayerDetect: {fileID: 3142798298848310954}
   RangeNoDetect: {fileID: 8844072573431346034}
@@ -749,8 +752,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 496486f9391f88a4dae0354db62562a3, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

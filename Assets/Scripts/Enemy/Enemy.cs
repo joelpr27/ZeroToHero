@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -55,12 +56,22 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Death()
     {
-        gameObject.GetComponent<Animator>().enabled = false;
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+
+        try{gameObject.GetComponent<Animator>().enabled = false;}
+        catch{}
+        try{gameObject.GetComponent<SpriteRenderer>().enabled = false;}
+        catch{}
+        try{gameObject.GetComponent<PolygonCollider2D>().enabled = false;}
+        catch{}
+        try{gameObject.GetComponent<CircleCollider2D>().enabled = false;}
+        catch{}
+        try{gameObject.GetComponent<CapsuleCollider2D>().enabled = false;}
+        catch{}
+
 
         foreach (var part in Body)
         {
-            part.GetComponent<SpriteRenderer>().enabled = false;
+            part.SetActive(false);
         }
         yield return new WaitForSeconds(enemySounds[1].length);
 
