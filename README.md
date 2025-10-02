@@ -1,6 +1,7 @@
 # 🛡️ ZeroToHero
 **Juego 2D inspirado en Hércules, desarrollado en C# con Unity**
-***Aventura épica con mecánicas clásicas de plataformas y combate.***
+
+**Aventura épica con mecánicas clásicas de plataformas y combate.**
 
 Características destacadas:
 
